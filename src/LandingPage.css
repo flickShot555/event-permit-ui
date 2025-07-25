@@ -1,0 +1,2577 @@
+/* ─── GLOBAL & CONTAINER ───────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+.lp {
+  font-family: system-ui, sans-serif;
+  color: #2d3748;
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+}
+
+/* ─── SPECTACULAR ENTRANCE ANIMATIONS ───────────────────────────────────── */
+
+/* Navigation Spectacular Entrance */
+.lp-nav {
+  width: 100%;
+  background: #324858;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  animation: navSlideDown 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes navSlideDown {
+  from {
+    transform: translateY(-100%) rotateX(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.logo-entrance {
+  animation: logoSpectacular 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s both;
+}
+
+@keyframes logoSpectacular {
+  from {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(-90deg);
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.nav-link-entrance {
+  animation: navLinkSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.5s + var(--delay)) both;
+}
+
+@keyframes navLinkSpectacular {
+  from {
+    transform: translateY(-50px) rotateY(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.btn-entrance {
+  animation: btnSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.5s + var(--delay)) both;
+}
+
+@keyframes btnSpectacular {
+  from {
+    transform: translateX(100px) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hero Spectacular Animations */
+.hero-title-spectacular {
+  animation: heroTitleSpectacular 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.8s both;
+}
+
+@keyframes heroTitleSpectacular {
+  from {
+    transform: translateY(100px) scale(0.8) rotateX(-45deg);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1) rotateX(0deg);
+    filter: blur(5px);
+  }
+  to {
+    transform: translateY(0) scale(1) rotateX(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.hero-subtitle-spectacular {
+  animation: heroSubtitleSpectacular 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.2s both;
+}
+
+@keyframes heroSubtitleSpectacular {
+  from {
+    transform: translateY(50px) rotateX(-30deg);
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.search-spectacular {
+  animation: searchSpectacular 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.6s both;
+}
+
+@keyframes searchSpectacular {
+  from {
+    transform: translateY(30px) scale(0.8);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(150, 187, 187, 0);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(150, 187, 187, 0.3);
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    box-shadow: 0 5px 15px rgba(150, 187, 187, 0.2);
+  }
+}
+
+/* Section Spectacular Animations */
+.section-visible .content-slide-spectacular {
+  animation: contentSlideSpectacular 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.section-visible .image-slide-spectacular {
+  animation: imageSlideSpectacular 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+}
+
+.section-visible .title-spectacular {
+  animation: titleSpectacular 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.section-visible .text-spectacular {
+  animation: textSpectacular 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+}
+
+.content-slide-spectacular,
+.image-slide-spectacular,
+.title-spectacular,
+.text-spectacular {
+  opacity: 0;
+}
+
+@keyframes contentSlideSpectacular {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) rotateY(-45deg);
+    filter: blur(10px);
+  }
+  50% {
+    transform: translateX(20px) rotateY(0deg);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes imageSlideSpectacular {
+  from {
+    opacity: 0;
+    transform: translateX(100px) rotateY(45deg) scale(0.8);
+    filter: blur(10px);
+  }
+  50% {
+    transform: translateX(-20px) rotateY(0deg) scale(1.05);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes titleSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-30deg);
+    filter: blur(8px);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(0deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes textSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* Card Spectacular Animations */
+.section-visible .card-spectacular {
+  animation: cardSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.2s + var(--delay)) forwards;
+}
+
+.card-spectacular {
+  opacity: 0;
+  transform: translateY(50px) rotateX(-15deg);
+}
+
+@keyframes cardSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-15deg) scale(0.8);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(5deg) scale(1.05);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Icon Spectacular Animations */
+.section-visible .icon-spectacular {
+  animation: iconSpectacular 2s ease-in-out infinite;
+}
+
+@keyframes iconSpectacular {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+.section-visible .emoji-spectacular {
+  animation: emojiSpectacular 2s ease-in-out infinite;
+}
+
+@keyframes emojiSpectacular {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(10deg);
+  }
+}
+
+/* Persona Spectacular Animations */
+.section-visible .persona-spectacular {
+  animation: personaSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.1s + var(--delay)) forwards;
+}
+
+.persona-spectacular {
+  opacity: 0;
+  transform: translateY(40px) scale(0.8) rotateZ(-10deg);
+}
+
+@keyframes personaSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8) rotateZ(-10deg);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1) rotateZ(5deg);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateZ(0deg);
+    filter: blur(0px);
+  }
+}
+
+/* List Spectacular Animations */
+.section-visible .list-item-spectacular {
+  animation: listItemSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.3s + var(--delay)) forwards;
+}
+
+.list-item-spectacular {
+  opacity: 0;
+  transform: translateX(-50px) rotateY(-30deg);
+}
+
+@keyframes listItemSpectacular {
+  from {
+    opacity: 0;
+    transform: translateX(-50px) rotateY(-30deg);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateX(10px) rotateY(0deg);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+    filter: blur(0px);
+  }
+}
+
+/* Step Spectacular Animations */
+.section-visible .step-spectacular {
+  animation: stepSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.2s + var(--delay)) forwards;
+}
+
+.step-spectacular {
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+}
+
+@keyframes stepSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8) rotateX(-20deg);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1) rotateX(10deg);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+.section-visible .step-icon-spectacular {
+  animation: stepIconSpectacular 3s ease-in-out infinite;
+}
+
+@keyframes stepIconSpectacular {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-15deg) scale(1.1);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0deg) scale(1.05);
+  }
+  75% {
+    transform: translateY(-10px) rotate(15deg) scale(1.1);
+  }
+}
+
+/* Feature Card Spectacular Animations */
+.section-visible .feature-card-spectacular {
+  animation: featureCardSpectacular 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.2s + var(--delay)) forwards;
+}
+
+.feature-card-spectacular {
+  opacity: 0;
+  transform: translateY(60px) rotateX(-20deg) scale(0.8);
+}
+
+@keyframes featureCardSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(60px) rotateX(-20deg) scale(0.8);
+    filter: blur(8px);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(10deg) scale(1.05);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.section-visible .feature-item-spectacular {
+  animation: featureItemSpectacular 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.5s + var(--delay)) forwards;
+}
+
+.feature-item-spectacular {
+  opacity: 0;
+  transform: translateX(-30px) rotateZ(-5deg);
+}
+
+@keyframes featureItemSpectacular {
+  from {
+    opacity: 0;
+    transform: translateX(-30px) rotateZ(-5deg);
+    filter: blur(3px);
+  }
+  50% {
+    transform: translateX(5px) rotateZ(2deg);
+    filter: blur(1px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateZ(0deg);
+    filter: blur(0px);
+  }
+}
+
+/* About Section Spectacular Animations */
+.section-visible .about-text-spectacular {
+  animation: aboutTextSpectacular 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.section-visible .about-image-spectacular {
+  animation: aboutImageSpectacular 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+}
+
+.about-text-spectacular,
+.about-image-spectacular {
+  opacity: 0;
+}
+
+@keyframes aboutTextSpectacular {
+  from {
+    opacity: 0;
+    transform: translateX(-80px) rotateY(-30deg);
+    filter: blur(8px);
+  }
+  50% {
+    transform: translateX(20px) rotateY(0deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes aboutImageSpectacular {
+  from {
+    opacity: 0;
+    transform: translateX(80px) rotateY(30deg) scale(0.8);
+    filter: blur(8px);
+  }
+  50% {
+    transform: translateX(-20px) rotateY(0deg) scale(1.05);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.section-visible .about-item-spectacular {
+  animation: aboutItemSpectacular 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.4s + var(--delay)) forwards;
+}
+
+.about-item-spectacular {
+  opacity: 0;
+  transform: translateX(-40px) rotateZ(-10deg);
+}
+
+@keyframes aboutItemSpectacular {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) rotateZ(-10deg);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateX(10px) rotateZ(5deg);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateZ(0deg);
+    filter: blur(0px);
+  }
+}
+
+.section-visible .about-link-spectacular {
+  animation: aboutLinkSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.8s forwards;
+}
+
+.about-link-spectacular {
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+}
+
+@keyframes aboutLinkSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    filter: blur(3px);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.1);
+    filter: blur(1px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* CTA Spectacular Animations */
+.section-visible .cta-title-spectacular {
+  animation: ctaTitleSpectacular 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.section-visible .cta-footer-spectacular {
+  animation: ctaFooterSpectacular 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+}
+
+.cta-title-spectacular,
+.cta-footer-spectacular {
+  opacity: 0;
+}
+
+@keyframes ctaTitleSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotateX(-20deg);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(10deg);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes ctaFooterSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.section-visible .cta-button-spectacular {
+  animation: ctaButtonSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s forwards;
+}
+
+.cta-button-spectacular {
+  opacity: 0;
+  transform: scale(0.8) rotateZ(-10deg);
+}
+
+@keyframes ctaButtonSpectacular {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotateZ(-10deg);
+    filter: blur(3px);
+  }
+  50% {
+    transform: scale(1.1) rotateZ(5deg);
+    filter: blur(1px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateZ(0deg);
+    filter: blur(0px);
+  }
+}
+
+.section-visible .cta-link-spectacular {
+  animation: ctaLinkSpectacular 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.7s + var(--delay)) forwards;
+}
+
+.cta-link-spectacular {
+  opacity: 0;
+  transform: translateY(20px) rotateX(-15deg);
+}
+
+@keyframes ctaLinkSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotateX(-15deg);
+    filter: blur(3px);
+  }
+  50% {
+    transform: translateY(-5px) rotateX(5deg);
+    filter: blur(1px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+/* Footer Spectacular Animations */
+.footer-spectacular {
+  animation: footerSpectacular 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes footerSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-15deg);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(5deg);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+.footer-spectacular .footer-logo-spectacular {
+  animation: footerLogoSpectacular 3s ease-in-out infinite;
+}
+
+@keyframes footerLogoSpectacular {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-5deg) scale(1.05);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0deg) scale(1.02);
+  }
+  75% {
+    transform: translateY(-8px) rotate(5deg) scale(1.05);
+  }
+}
+
+.footer-spectacular .footer-nav-spectacular {
+  animation: footerNavSpectacular 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.2s + var(--delay)) forwards;
+}
+
+.footer-nav-spectacular {
+  opacity: 0;
+  transform: translateY(20px) rotateX(-10deg);
+}
+
+@keyframes footerNavSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotateX(-10deg);
+    filter: blur(3px);
+  }
+  50% {
+    transform: translateY(-5px) rotateX(5deg);
+    filter: blur(1px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+.footer-spectacular .footer-contact-spectacular {
+  animation: footerContactSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s forwards;
+}
+
+.footer-contact-spectacular {
+  opacity: 0;
+  transform: translateX(40px) rotateY(20deg);
+}
+
+@keyframes footerContactSpectacular {
+  from {
+    opacity: 0;
+    transform: translateX(40px) rotateY(20deg);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateX(-10px) rotateY(0deg);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+    filter: blur(0px);
+  }
+}
+
+.footer-spectacular .social-spectacular {
+  animation: socialSpectacular 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.6s + var(--delay)) forwards;
+}
+
+.social-spectacular {
+  opacity: 0;
+  transform: scale(0.5) rotate(-180deg);
+}
+
+@keyframes socialSpectacular {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(-180deg);
+    filter: blur(3px);
+  }
+  50% {
+    transform: scale(1.2) rotate(-90deg);
+    filter: blur(1px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0px);
+  }
+}
+
+/* Button Spectacular Animations */
+.section-visible .cta-buttons-spectacular {
+  animation: ctaButtonsSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s forwards;
+}
+
+.cta-buttons-spectacular {
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+}
+
+@keyframes ctaButtonsSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.section-visible .demo-link-spectacular {
+  animation: demoLinkSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.8s forwards;
+}
+
+.demo-link-spectacular {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+}
+
+@keyframes demoLinkSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    filter: blur(3px);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.05);
+    filter: blur(1px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Read More Spectacular Animation */
+.section-visible .read-more-spectacular {
+  animation: readMoreSpectacular 2s ease-in-out infinite;
+}
+
+@keyframes readMoreSpectacular {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.section-visible .more-text-spectacular {
+  animation: moreTextSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes moreTextSpectacular {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-20px) rotateX(-15deg);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateY(10px) rotateX(5deg);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+/* Title Slide Spectacular */
+.section-visible .title-slide-spectacular {
+  animation: titleSlideSpectacular 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.title-slide-spectacular {
+  opacity: 0;
+}
+
+@keyframes titleSlideSpectacular {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) rotateY(-30deg);
+    filter: blur(8px);
+  }
+  50% {
+    transform: translateX(20px) rotateY(0deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+    filter: blur(0px);
+  }
+}
+
+.section-visible .text-fade-spectacular {
+  animation: textFadeSpectacular 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+}
+
+.text-fade-spectacular {
+  opacity: 0;
+}
+
+@keyframes textFadeSpectacular {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* ─── ORIGINAL STYLES PRESERVED ───────────────────────────────────────────── */
+.lp-nav-container {
+  max-width: 100%;
+  margin: 0px;
+  padding: 30px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.lp-logo {
+  height: 45px;
+}
+
+.lp-nav-links {
+  display: flex;
+  gap: 30px;
+  position: relative;
+  text-decoration: none;
+  color: #0000;
+}
+
+.lp-nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.lp-nav-links a:hover {
+  transform: scale(1.3);
+}
+
+.lp-nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #96bbbb;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.lp-nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.lp-nav-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-outline {
+  border: 1px solid #fff;
+  color: #96bbbb;
+  padding: 6px 16px;
+  border-radius: 4px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: #fff;
+  color: #2c3e50;
+}
+
+.btn-solid {
+  background-color: #96bbbb;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-solid:hover {
+  background-color: #96bbbb;
+}
+
+/* ─── HERO ─────────────────────────────────────────── */
+.lp-hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 80px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.lp-hero::before {
+  display: none !important;
+}
+
+.lp-hero-content {
+  padding-bottom: 90px;
+}
+
+.lp-hero * {
+  position: relative;
+  z-index: 1;
+}
+
+.lp-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.lp-hero p {
+  margin-bottom: 30px;
+}
+
+.lp-search-bar {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lp-search-bar:focus {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(150, 187, 187, 0.3);
+  outline: none;
+}
+
+/* ─── ENHANCED HOVER EFFECTS ───────────────────────────────────────────── */
+.lp-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lp-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.persona-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(150, 187, 187, 0.2);
+}
+
+.lp-feature-card:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── CONTENT SECTION ───────────────────────────────────────────────────── */
+.lp-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  padding: 100px 20px;
+}
+
+.lp-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.lp-content h2 {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.lp-content p {
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.lp-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #96bbbb;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 0;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  color: #96bbbb;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #96bbbb;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #96bbbb;
+}
+
+.btn-secondary-outline {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #96bbbb;
+  border-radius: 6px;
+  background-color: white;
+  color: #96bbbb;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #96bbbb;
+  z-index: -1;
+  transition: left 0.5s ease;
+}
+
+.btn-secondary-outline:hover::before {
+  left: 0;
+}
+
+.btn-secondary-outline:hover {
+  color: white;
+  transform: scale(1.05);
+  border-color: #96bbbb;
+}
+
+.lp-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  .lp-section {
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+  }
+  .lp-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ─── SECTION TITLES ───────────────────────────────────────────────────── */
+.lp-section-title {
+  font-size: 2rem;
+  margin: 40px 0 20px;
+}
+
+.lp-works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.lp-card-icon {
+  font-size: 1.5rem;
+  color: #96bbbb;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.lp-card-text h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.lp-card-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+/* ─── WHO IT'S MADE FOR ──────────────────────── */
+.lp-section--padded {
+  padding: 0 35px;
+}
+
+#who .lp-who-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 35px;
+  gap: 20px;
+}
+
+#who .persona-card {
+  flex: 1 1 calc((100% - 7 * 32px) / 8);
+  max-width: calc((100% - 7 * 32px) / 8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border: none;
+  padding: 10;
+  transition: transform 0.3s ease;
+}
+
+#who .persona-icon {
+  stroke: #096;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+#who .persona-content h3 {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+  padding-bottom: 6px;
+}
+
+#who .persona-content h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: #fdd835;
+}
+
+#who .persona-content p {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0;
+}
+
+#who .persona-card:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  #who .lp-who-grid {
+    justify-content: center;
+  }
+  #who .persona-card {
+    flex: 1 1 120px;
+    max-width: 120px;
+    margin: 0 8px;
+  }
+}
+/* ─── WHY THEO WORKS BETTER ───────────────────────────────────────────── */
+/* Works Section Card */
+.lp-works-grid .lp-card {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.lp-works-grid .lp-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card icon row */
+.lp-card-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Icon */
+.lp-card-icon {
+  width: 40px;
+  height: 40px;
+  stroke: #96BBBB;
+  margin-right:10px;
+  transition: transform 0.2s ease;
+}
+
+.lp-works-grid .lp-card:hover .lp-card-icon {
+  transform: scale(1.2);
+}
+
+/* Icon title */
+.lp-icon-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Headline with badge */
+.lp-card h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.lp-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 2px;
+  background-color: #FDD835;
+}
+
+.lp-card-badge-icon {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+/* Description */
+.lp-card p {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0;
+}
+
+.lp-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lp-card-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9bbbbb;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.lp-icon {
+  width: 20px;
+  height: 20px;
+  color: #9bbbbb;
+  object-fit: contain;
+}
+
+.lp-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.lp-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+/* Fix spacing above card grid */
+.lp-works-section {
+  padding: 100px 35px;
+  display: block;
+}
+
+.lp-works-section h1{
+  font-size: 2rem;
+}
+
+/* Card grid CTA buttons at bottom */
+.lp-feature-ctas--bottom {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+}
+
+/* Adjust title above cards */
+.lp-section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Buttons */
+/* Base styling for the sliding‑background primary button */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #96bbbb; /* original green */
+  color: white;              /* original text */
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;     /* remove underline if any */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Sliding white layer behind the button text */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;               /* pin behind text */
+  transition: left 0.5s ease;
+}
+
+/* Slide the layer in on hover */
+.btn-primary:hover::before {
+  left: 0;
+}
+
+/* On hover: scale up button and swap text color */
+.btn-primary:hover {
+  transform: scale(1.05);
+  color: #96bbbb;            /* original background color */
+}
+
+/* Base container for the outline button */
+.btn-secondary-outline {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #96bbbb;
+  border-radius: 6px;
+  background-color: white;
+  color: #96bbbb;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Sliding green layer behind the text */
+.btn-secondary-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #96bbbb;
+  z-index: -1;               /* behind the button content */
+  transition: left 0.5s ease;
+}
+
+/* Slide the green layer in on hover */
+.btn-secondary-outline:hover::before {
+  left: 0;
+}
+
+/* On hover: flip text to white and scale up */
+.btn-secondary-outline:hover {
+  color: white;
+  transform: scale(1.05);
+  /* keep the border if you like, or remove it: */
+  border-color: #96bbbb;
+}
+
+/* ─── WHY THEO WORKS BETTER ───────────────────────────────────────────── */
+.lp-works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.lp-works-grid .lp-card:nth-child(4) {
+  grid-column: 1 / 2;
+}
+
+@media (max-width: 900px) {
+  .lp-works-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .lp-works-grid .lp-card:nth-child(4) {
+    grid-column: auto;
+  }
+}
+
+.lp-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lp-card-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9bbbbb;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.lp-icon {
+  width: 20px;
+  height: 20px;
+  color: #9bbbbb;
+  object-fit: contain;
+}
+
+.lp-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.lp-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.lp-works-section {
+  padding: 100px 35px;
+  display: block;
+  background-color: white;
+}
+
+.lp-works-section h1 {
+  font-size: 2rem;
+}
+
+.lp-feature-ctas--bottom {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+}
+
+.lp-section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* ─── WHY THEO MATTERS ─────────────────────────────────────────────────── */
+.lp-who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.lp-why-theo-matters {
+  padding: 35px;
+  background-color: white;
+}
+
+.lp-why-theo-matters h1 {
+  font-size: 2rem;
+}
+
+.lp-why-theo-matters li {
+  font-size: 1.25rem;
+  padding: 10px;
+}
+
+.persona-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.persona-card.active {
+  background-color: #9bbbbb;
+  color: white;
+  border: none;
+}
+
+.persona-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: #9bbbbb;
+}
+
+.persona-content h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.persona-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+/* ─── WHY THEO MATTERS ─────────────────────────────────────────────────── */
+/* Section container */
+.lp-why-theo-matters {
+  padding: 35px;
+}
+
+/* Title text */
+.lp-why-theo-matters h1,
+.lp-why-theo-matters h3.lp-section-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+/* Paragraph text */
+.lp-section-text {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+/* Grid reused */
+.lp-who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+/* Persona card base */
+.persona-card {
+  flex: 1 1 auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+/* Hover lift */
+.persona-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Icon styling */
+.persona-icon {
+  stroke: #96BBBB;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  transition: transform 0.2s ease;
+  align-self: center;
+}
+
+.persona-card:hover .persona-icon {
+  transform: scale(1.2);
+}
+/* target only the Why TheO Matters cards if you prefer: */
+.lp-why-theo-matters .persona-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* centre everything horizontally */
+  text-align: center;     /* ensure child text is centred */
+  gap: 8px;               /* optional, for breathing room */
+}
+
+/* remove the manual left‑shift on your icon */
+.lp-why-theo-matters .persona-icon {
+  margin: 0;              
+}
+
+/* make your underline container span the full width of the card */
+.lp-why-theo-matters .persona-content {
+  width: 100%;            
+}
+
+/* the rest of your h3::after centring can stay the same */
+.lp-why-theo-matters .persona-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background-color: #FDD835;
+  transition: width 0.3s ease;
+}
+
+
+/* Card title with animated underline */
+.persona-content h3 {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+  padding-bottom: 6px;
+  
+  overflow: hidden;
+  
+  
+
+}
+
+.persona-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background-color: #FDD835;
+  transition: width 0.3s ease;
+}
+
+.persona-card:hover .persona-content h3::after {
+  width: 100%;
+  left: 0;
+  transform: none;
+}
+
+/* Subtext */
+.persona-content p {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0;
+}
+
+
+.persona-card {
+  
+  
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  
+}
+
+.persona-card:hover {
+  transition: scale(1.05);
+}
+
+.persona-card.active {
+  background-color: #9bbbbb;
+  color: white;
+  border: none;
+}
+
+.persona-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+  margin-left: 14px;
+  color: #9bbbbb;
+}
+
+
+
+.persona-content h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.persona-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ─── HOW IT WORKS ─────────────────────────────────────────────────────── */
+.lp-how-it-works {
+  max-width: 100%;
+  padding: 60px 35px;
+  text-align: center;
+  background-color: white;
+}
+
+.lp-how-it-works .lp-section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.lp-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.lp-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.lp-step-icon {
+  stroke: #96bbbb;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+}
+
+.lp-step h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.lp-step p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.lp-live-demo {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 5px 12px;
+  border-radius: 6px;
+  color: #96bbbb;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.lp-live-demo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #96bbbb;
+  z-index: -1;
+  transition: left 0.5s ease;
+}
+
+.lp-live-demo:hover::before {
+  left: 0;
+}
+
+.lp-live-demo:hover {
+  color: white;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+/* ─── FEATURES & BENEFITS ─────────────────────────────────────────────── */
+.lp-features {
+  max-width: 100%;
+  padding: 60px 35px;
+  background-color: white;
+}
+
+.lp-feature-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 44px;
+  flex-wrap: wrap;
+}
+
+.lp-feature-card {
+  flex: 0 0 calc(33.333% - 16px);
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, background-color 0.4s ease, color 0.1s ease;
+}
+
+.lp-feature-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: #96bbbb;
+  color: #ffff;
+  transform: translateY(-8px) rotateX(2deg);
+}
+
+.lp-feature-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.lp-feature-card ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.lp-feature-card li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* ─── ABOUT TheO ───────────────────────────────────────────────────────── */
+#about {
+  text-align: left;
+  padding: 80px 35px;
+  background-color: white;
+}
+
+.lp-about-section .lp-about {
+  display: flex;
+  gap: 90px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.lp-about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lp-about-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 16px;
+}
+
+.lp-about-text .lp-hero-ctas {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.lp-about-href {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 0;
+  width: fit-content;
+}
+
+.lp-about-href a {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #96bbbb;
+  background-color: transparent;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.lp-about-href::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #96bbbb;
+  z-index: 1;
+  transition: left 0.5s ease;
+}
+
+.lp-about-href:hover::before {
+  left: 0;
+}
+
+.lp-about-href:hover a {
+  color: white;
+  transform: scale(1.05);
+  width: fit-content;
+}
+
+.lp-about-image {
+  flex: 1;
+  display: flex;
+}
+
+.lp-about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ─── CTA SECTION ─────────────────────────────────────────────────────── */
+.lp-cta {
+  padding: 100px 35px;
+  text-align: left;
+  background-color: white;
+}
+
+.lp-cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 24px;
+}
+
+.lp-cta-footer {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn-demo {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background-color: #96bbbb;
+  color: white;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-demo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transition: left 0.5s ease;
+}
+
+.btn-demo:hover::before {
+  left: 0;
+}
+
+.btn-demo:hover {
+  transform: scale(1.05);
+  color: #96bbbb;
+}
+
+.lp-cta-links {
+  display: flex;
+  gap: 24px;
+}
+
+.lp-cta-link-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 0;
+  width: fit-content;
+}
+
+.lp-cta-link-wrapper a {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #96bbbb;
+  background-color: transparent;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
+}
+
+.lp-cta-link-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #96bbbb;
+  z-index: 1;
+  transition: left 0.5s ease;
+}
+
+.lp-cta-link-wrapper:hover::before {
+  left: 0;
+}
+
+.lp-cta-link-wrapper:hover a {
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ─── FOOTER ────────────────────────────────── */
+.lp-footer {
+  background: #324858;
+  color: #f7fafc;
+  padding: 24px 0;
+}
+
+.lp-footer-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 20px;
+  gap: 25px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-info {
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: left;
+  height: 46px;
+}
+
+.footer-info p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #f7fafc;
+}
+
+.footer-nav {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+  transform: scale(1.3);
+}
+
+.footer-contact {
+  flex: 1;
+  text-align: right;
+  line-height: 1.4;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.footer-contact p {
+  margin: 4px 0;
+  font-size: 0.875rem;
+  color: #f7fafc;
+}
+
+.lp-social {
+  margin-top: 8px;
+  display: inline-flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-right: 25px;
+}
+
+.lp-social a {
+  transition: transform 0.3s ease;
+}
+
+.lp-social a:hover {
+  transform: scale(1.2);
+}
+
+.lp-social img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* ─── TRANSFORMING EVENT PLANNING FRAME ─────────────────────────── */
+.lp-transforming-frame {
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  padding: 60px 10px;
+  background: #f4f4f4;
+  margin: 0;
+}
+
+.lp-transforming-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.lp-transforming-content h1 {
+  font-size: 2.5rem;
+}
+
+.lp-transforming-image {
+  flex: 1;
+}
+
+.lp-transforming-image img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.lp-transforming-image img:hover {
+  transform: scale(1.02);
+}
+
+.lp-read-more {
+  transition: all 0.3s ease;
+}
+
+.lp-more-text {
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .lp-transforming-frame {
+    flex-direction: column;
+    text-align: center;
+  }
+  .lp-transforming-image {
+    margin-top: 24px;
+  }
+}
+
+/* ─── RESPONSIVE STYLES ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.dashboard,
+.lp,
+.login-page,
+.signup-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.lp-nav-container,
+.dashboard-header,
+.footer-content,
+.login-page,
+.signup-page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions-grid,
+.status-container,
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .actions-grid,
+  .status-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .lp-nav-links,
+  .lp-nav-actions,
+  .dashboard-header .header-left,
+  .dashboard-header .header-right {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .lp-hero {
+    padding: 80px 12px;
+  }
+  .login-left,
+  .signup-left,
+  .login-right,
+  .signup-right {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .lp-nav-container {
+    flex-direction: column;
+  }
+  .lp-nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .welcome-text {
+    font-size: 1.2rem;
+  }
+}
+
+.lp-how-it-works .lp-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.lp-how-it-works .lp-step {
+  flex: none;
+}
+
+@media (max-width: 576px) {
+  .lp-how-it-works .lp-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lp-features .lp-feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.lp-features .lp-feature-card {
+  flex: none;
+}
+
+@media (max-width: 768px) {
+  .lp-features .lp-feature-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .lp-features .lp-feature-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+.lp {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lp-nav,
+.lp-hero,
+footer {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.lp-nav .lp-nav-container,
+footer .footer-content {
+  max-width: 100%;
+  margin: 0;
+  padding: 30px 50px;
+  box-sizing: border-box;
+}
+
+footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+footer .footer-content > * {
+  flex: 1 1 200px;
+  box-sizing: border-box;
+}
+
+footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  footer .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  footer .footer-content > * {
+    flex: 1 1 100%;
+  }
+  footer .footer-links {
+    justify-content: center;
+  }
+}
+
+.lp {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+  .lp {
+    max-width: none;
+  }
+}
+
+@media (min-width: 2000px) {
+  .lp {
+    max-width: 1800px;
+  }
+}
+
+/* ─── SECTION BACKGROUNDS ───────────────────────────────────────────────── */
+.lp-section--padded,
+.lp-works-section,
+.lp-why-theo-matters,
+.lp-how-it-works,
+.lp-features,
+.lp-about-section,
+.lp-cta {
+  background-color: white;
+}
+
+.lp-transforming-frame {
+  background: #f4f4f4;
+}
+
+.lp {
+  background-color: white;
+}
+
+body {
+  background-color: white;
+}

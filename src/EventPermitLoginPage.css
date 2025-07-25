@@ -1,0 +1,188 @@
+/* ─── Container ───────────────────────────────────────────────────────── */
+.login-page {
+  display: flex;
+  height: 100vh;
+  max-width: 100%;
+  margin: 0;
+  padding:0;
+  /* ensure items stretch to full height */
+  align-items: stretch;
+  font-family: system-ui, sans-serif;
+}
+
+/* Each side always occupies half of the container */
+.login-left,
+.login-right {
+  flex: 0 0 50%;
+  position: relative;
+}
+
+/* ─── LEFT HALF: hero image + overlay ─────────────────────────────────── */
+
+.login-left {
+  overflow: hidden;
+}
+
+/* Hero image fills entire left half */
+.login-hero-image {
+  display: block;
+  width: 100%;      /* full width of left column */
+  height: 100%;     /* full height of left column */
+  object-fit: cover;
+}
+
+/* Overlay text centered over image */
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.login-overlay h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+/* ─── RIGHT HALF: login card ───────────────────────────────────────────── */
+.login-right {
+  flex: 1;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color: #F7FAFC;
+}
+.login-card {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  padding: 40px;
+  box-sizing: border-box;
+}
+.login-card h2 {
+  justify-self: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  
+}
+.login-card p {
+  color: #4A5568;
+  margin-bottom: 24px;
+  padding: 4px 10px;
+}
+
+/* ─── FORM ─────────────────────────────────────────────────────────────── */
+.login-form {
+  display: grid;
+  row-gap: 10px;
+  padding:10px;
+}
+.login-form label {
+  display: block;
+  font-size: 0.875rem;
+  color: #4A5568;
+  margin-bottom: 4px;
+}
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.forgot-password {
+  text-align: right;
+}
+.forgot-password a {
+  font-size: 0.875rem;
+  color: #92BCEA;
+  text-decoration: none;
+}
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #319795;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Switch-to-admin button styling */
+.switch-btn {
+  align-self: center;
+  width: 90%;
+  margin-top: 12px;
+  padding: 10px;
+  background-color: transparent;
+  color: #628585;
+  border: 2px solid #628585;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.switch-btn:hover {
+  background-color: #628585;
+  color: #fff;
+}
+
+/* Admin mode overrides */
+.login-card.admin {
+  background-color: #96BBBB !important;
+  color: #fff;
+}
+
+.login-card.admin .login-form input,
+.login-card.admin .login-form button,
+.login-card.admin .forgot-password a,
+.login-card.admin .user-toggle label {
+  background-color: #96BBBB;
+  color: #fff;
+  border-color: #fff;
+}
+
+.login-card.admin .request-access {
+  display: none; /* hide the need-access link */
+}
+
+
+/* ─── REQUEST ACCESS LINK ─────────────────────────────────────────────── */
+.request-access {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: #4A5568;
+}
+.request-access .link {
+  color: #3182CE;
+  text-decoration: none;
+}
+/* ─── INLINE ERROR MESSAGES ───────────────────────────────────────────── */
+.login-form .error {
+  color: #e53e3e;            /* red for errors */
+  font-size: 0.875rem;       /* match your label size */
+  margin-top: 4px;           /* a little breathing room */
+}
+
+/* ─── DISABLED LOGIN BUTTON ───────────────────────────────────────────── */
+.login-btn:disabled {
+  opacity: 0.6;              /* faded look */
+  cursor: not-allowed;       /* indicate cannot click */
+} 

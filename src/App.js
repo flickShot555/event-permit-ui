@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+import LandingPage from './LandingPage';
+import EventPermitLoginPage from './EventPermitLoginPage';
+import SignUpPage from './SignUpPage';
+import ForgotPasswordPage from './ForgotPasswordPage';
+import Dashboard from './Dashboard';
+import Loader from './components/Loader';
+
+export default function App() {
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowLoader(false), 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    {/* Overlay Loader on top for 4 seconds */}
+    {showLoader && <Loader />}
+      {/* Mount all routes immediately */}
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<EventPermitLoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+
+      
+    </BrowserRouter>
   );
 }
-
-export default App;

@@ -1,0 +1,116 @@
+/* src/AuthPage.css */
+
+/* full‑browser flex container */
+.auth-page {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+  }
+  
+  /* LEFT: hero image + overlay */
+  .auth-hero {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  .auth-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .auth-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .auth-hero-overlay h1 {
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  /* RIGHT: the white card */
+  .auth-card-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F7FAFC;
+  }
+  .auth-card {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+  }
+  .auth-card h2 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .auth-card p {
+    margin: 0 0 24px;
+    color: #4A5568;
+  }
+  
+  /* form */
+  .auth-form {
+    display: grid;
+    row-gap: 16px;
+  }
+  .auth-form label {
+    font-size: 0.875rem;
+    color: #4A5568;
+    margin-bottom: 4px;
+  }
+  .auth-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #F9FAFB;
+  }
+  .auth-form input:focus {
+    outline: none;
+    border-color: #38A169;
+  }
+  
+  /* buttons */
+  .auth-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+  }
+  .auth-btn--primary {
+    background-color: #38A169;
+    color: #fff;
+  }
+  
+  /* footer link */
+  .auth-footer {
+    margin-top: 24px;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  .auth-link {
+    color: #3182CE;
+    text-decoration: none;
+  }
+  .auth-link:hover {
+    text-decoration: underline;
+  }
+  
