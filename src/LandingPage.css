@@ -1015,6 +1015,19 @@ html {
 }
 
 .lp-hero-content {
+  width: 800px;
+  align-self: center;
+  justify-self: center;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent */
+  backdrop-filter: blur(10px);           /* glass blur */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  color: white;
+  
   padding-bottom: 90px;
 }
 
@@ -1256,6 +1269,7 @@ html {
   justify-content: space-between;
   padding: 0 35px;
   gap: 20px;
+  cursor: pointer;
 }
 
 #who .persona-card {
@@ -1958,6 +1972,70 @@ html {
   text-decoration: none;
 }
 
+/* ---------------animation styling--------------------------------------- */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1400px;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 240px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.step:nth-child(1) { animation-delay: 0s; }
+.step:nth-child(3) { animation-delay: 1s; }
+.step:nth-child(5) { animation-delay: 2s; }
+.step:nth-child(7) { animation-delay: 3s; }
+.step:nth-child(9) { animation-delay: 4s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.step p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.connector {
+  flex: 1;
+  height: 2px;
+  background: #aaa;
+  opacity: 0;
+  animation: drawLine 0.8s ease forwards;
+}
+
+.connector:nth-of-type(1) { animation-delay: 0.8s; }
+.connector:nth-of-type(2) { animation-delay: 1.8s; }
+.connector:nth-of-type(3) { animation-delay: 2.8s; }
+.connector:nth-of-type(4) { animation-delay: 3.8s; }
+
+@keyframes drawLine {
+  from { width: 0; opacity: 0; }
+  to { width: 100%; opacity: 1; }
+}
+
 /* ─── FEATURES & BENEFITS ─────────────────────────────────────────────── */
 .lp-features {
   max-width: 100%;
@@ -1971,6 +2049,7 @@ html {
   justify-content: space-between;
   gap: 44px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .lp-feature-card {

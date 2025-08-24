@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Compass, Search, FileText } from "lucide-react"
-import { Pencil, CheckCircle, Users } from "lucide-react"
+import { Pencil, CheckCircle, Users } from "lucide-react";
+//import HowItWorks from "./components/HowItWorks";
 import { Link } from "react-router-dom"
 import { Linkedin, Twitter } from "lucide-react"
 import "./LandingPage.css"
@@ -77,7 +78,7 @@ export default function LandingPage() {
       {/* NAV */}
       <header className="lp-nav">
         <div className="lp-nav-container">
-          <img src="/images/logo-white.png" alt="TheO Logo" className="lp-logo logo-entrance" />
+          <img src="/images/logo-3.png" alt="TheO Logo" className="lp-logo logo-entrance" />
           <nav className="lp-nav-links">
             <a href="#home" className="nav-link-entrance" style={{ "--delay": "0.1s" }}>
               Home
@@ -114,8 +115,8 @@ export default function LandingPage() {
         style={{ backgroundImage: `url(${sliderImages[currentIndex]})` }}
       >
         <div className="lp-hero-content">
-          <h1 className="hero-title-spectacular">How may we help?</h1>
-          <p className="hero-subtitle-spectacular">Access public event information and apply online – all from here.</p>
+          <h1 className="hero-title-spectacular">What permit(s) can we help you with?</h1>
+          <p className="hero-subtitle-spectacular">Access permit information and apply online - all from here</p>
           <input type="text" placeholder="Search…" className="lp-search-bar search-spectacular" />
         </div>
       </section>
@@ -126,13 +127,13 @@ export default function LandingPage() {
         className={`lp-transforming-frame ${visibleSections.has("transforming") ? "section-visible" : ""}`}
       >
         <div className="lp-transforming-content content-slide-spectacular">
-          <h1 className="title-slide-spectacular">Transforming Event Planning with One Seamless Platform</h1>
+          <h1 className="title-slide-spectacular">Transforming Planning with One Seamless Platform</h1>
           <p className="text-fade-spectacular">
-            TheO is a world-first digital solution that revolutionizes how public events are planned, approved, and
-            delivered. Born from years of industry research and frontline experience, TheO brings together every element
-            of event permitting into a single, intelligent platform— eliminating the delays, duplication, and
-            uncertainty that have long plagued organizers, authorities, and stakeholders alike.
+          From festivals to roadworks, trading to temporary structures—TheO unifies permit applications, 
+          approvals, and oversight into one intuitive system. Built for councils, agencies, businesses, 
+          and organisers, it simplifies every step of the permitting process across sectors.
           </p>
+          {/*
           {!showMore && (
             <div className="lp-read-more read-more-spectacular" onMouseEnter={() => setShowMore(true)}>
               READ MORE
@@ -154,81 +155,21 @@ export default function LandingPage() {
                 industry has been waiting for.
               </p>
             </div>
-          )}
+          )}*/}
         </div>
         <div className="lp-transforming-image image-slide-spectacular">
           <img src="/images/4.jpeg" alt="Illustration of seamless event planning" />
         </div>
       </section>
 
-      {/* Why TheO Works Better */}
-     <section id="features" className="lp-works-section">
-        <h1 className="lp-section-title">Why TheO Works Better</h1>
-
-        <div className="lp-works-grid">
-          {/* Dashboard */}
-          <div className="lp-card">
-            <div className="lp-card-row">
-              <Compass className="lp-card-icon" />
-              <span className="lp-icon-title">Dashboard</span>
-            </div>
-            <h3>
-              
-              All‑in‑One Dashboard
-            </h3>
-            <p>Manage permits, timelines & payments in one place.</p>
-          </div>
-
-          {/* Approvals */}
-          <div className="lp-card">
-            <div className="lp-card-row">
-              <Search className="lp-card-icon" />
-              <span className="lp-icon-title">Approvals</span>
-            </div>
-            <h3>
-              Transparent Approvals
-            </h3>
-            <p>Real‑time tracking & stakeholder feedback.</p>
-          </div>
-
-          {/* Collaboration */}
-          <div className="lp-card">
-            <div className="lp-card-row">
-              <MessageCircle className="lp-card-icon" />
-              <span className="lp-icon-title">Collaboration</span>
-            </div>
-            <h3>
-              Built for Collaboration
-            </h3>
-            <p>Seamless communication across departments.</p>
-          </div>
-
-          {/* Docs */}
-          <div className="lp-card">
-            <div className="lp-card-row">
-              <FileText className="lp-card-icon" />
-              <span className="lp-icon-title">Docs</span>
-            </div>
-            <h3>
-              Instant Documentation
-            </h3>
-            <p>Auto‑generated permits, compliance reports, and more.</p>
-          </div>
-        </div>
-
-        <div className="lp-feature-ctas--bottom">
-          <button className="btn-primary">See Real Results</button>
-          <button className="btn-secondary-outline">Compare with Paper Process</button>
-            </div>
-      </section>
-
-      {/* WHO IT'S MADE FOR */}
+      {/* WHO IT'S MADE FOR new: One system. Multiple users. Real impact. */}
       <section
         ref={whoRef}
         id="who"
         className={`lp-section--padded ${visibleSections.has("who") ? "section-visible" : ""}`}
       >
-        <h1 className="lp-section-title title-spectacular">Who It's Made For</h1>
+        <h1 className="lp-section-title title-spectacular">One system. Multiple users. Real impact.</h1>
+        <h3>TheO supports the full ecosystem of permitting — making life easier for councils, organisers, agencies, businesses, and citizens alike. Click below to see how each stakeholder benefits:</h3>
         <div className="lp-who-grid">
           {[
             {
@@ -289,42 +230,16 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
+        <p style={{marginTop: 20}}>
+          TheO Adapts to You - With role-based access and workflow controls, TheO delivers a tailored experience for each user type — 
+          while maintaining transparency, consistency, and compliance across the board.
+        </p>
+        <div className="lp-feature-ctas--bottom">
+          <button className="btn-primary">Book a demo</button>
+          <button className="btn-secondary-outline">Contact the team</button>
+        </div>
       </section>
 
-    {/* WHY THEO MATTERS */}
-      <section className="lp-why-theo-matters" id="why-matters">
-          <h3 className="lp-section-title">Why TheO Matters</h3>
-          <p className="lp-section-text">
-            Paper‑based permitting systems are no longer scalable. TheO was created in direct consultation with Irish councils, emergency services, and
-            stakeholders—digitising every step of the process for faster, safer and smarter planning.
-          </p>
-
-          <div className="lp-who-grid">
-            <div className="persona-card">
-              <Rocket className="persona-icon" />
-              <div className="persona-content">
-                <h3>Cut Processing Time</h3>
-                <p>Reduces overall application time by 80%.</p>
-              </div>
-            </div>
-
-            <div className="persona-card">
-              <Landmark className="persona-icon" />
-              <div className="persona-content">
-                <h3>Trusted Locally</h3>
-                <p>Already adopted by Fingal County Council.</p>
-              </div>
-            </div>
-
-            <div className="persona-card">
-              <TrendingUp className="persona-icon" />
-              <div className="persona-content">
-                <h3>National Scalability</h3>
-                <p>Built to scale across all 31 councils in Ireland.</p>
-              </div>
-            </div>
-          </div>
-        </section>
 
       {/* HOW IT WORKS */}
       <section
@@ -332,6 +247,7 @@ export default function LandingPage() {
         id="how"
         className={`lp-how-it-works ${visibleSections.has("how") ? "section-visible" : ""}`}
       >
+      
         <h2 className="lp-section-title title-spectacular">How It Works</h2>
         <div className="lp-steps">
           {[
@@ -368,10 +284,112 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
+        
         <a href="#live-demo" className="lp-live-demo demo-link-spectacular">
           → See a Live Demo
         </a>
       </section>
+      {/*<HowItWorks howRef={{howRef}} visibleSections={{visibleSections}} />*/}
+
+      {/* Why TheO Works Better --combined to merged section */}
+     <section id="features" className="lp-works-section">
+        <h1 className="lp-section-title">Why TheO Works</h1>
+        <h3>Because Permits Shouldn’t Be a Puzzle.</h3>
+
+        <div className="lp-works-grid">
+          {/* Dashboard */}
+          <div className="lp-card">
+            <div className="lp-card-row">
+              <Compass className="lp-card-icon" />
+              <span className="lp-icon-title">Dashboard</span>
+            </div>
+            <h3>
+              
+              All‑in‑One Dashboard
+            </h3>
+            <p>Manage permits, timelines & payments in one place.</p>
+          </div>
+
+          {/* Approvals */}
+          <div className="lp-card">
+            <div className="lp-card-row">
+              <Search className="lp-card-icon" />
+              <span className="lp-icon-title">Approvals</span>
+            </div>
+            <h3>
+              Transparent Approvals
+            </h3>
+            <p>Real‑time tracking & stakeholder feedback.</p>
+          </div>
+
+          {/* Collaboration */}
+          <div className="lp-card">
+            <div className="lp-card-row">
+              <MessageCircle className="lp-card-icon" />
+              <span className="lp-icon-title">Collaboration</span>
+            </div>
+            <h3>
+              Built for Collaboration
+            </h3>
+            <p>Seamless communication across departments.</p>
+          </div>
+
+          {/* Docs */}
+          <div className="lp-card">
+            <div className="lp-card-row">
+              <FileText className="lp-card-icon" />
+              <span className="lp-icon-title">Docs</span>
+            </div>
+            <h3>
+              Instant Documentation
+            </h3>
+            <p>Auto‑generated permits, compliance reports, and more.</p>
+          </div>
+        </div>
+
+        <div className="lp-feature-ctas--bottom">
+          <button className="btn-primary">See Real Results</button>
+          <button className="btn-secondary-outline">Compare with Paper Process</button>
+            </div>
+      </section>
+
+
+
+     {/* WHY THEO MATTERS */}
+      <section className="lp-why-theo-matters" id="why-matters">
+          <h3 className="lp-section-title">Why TheO Works -2</h3>
+          <p className="lp-section-text">
+            Paper‑based permitting systems are no longer scalable. TheO was created in direct consultation with Irish councils, emergency services, and
+            stakeholders—digitising every step of the process for faster, safer and smarter planning.
+          </p>
+
+          <div className="lp-who-grid">
+            <div className="persona-card">
+              <Rocket className="persona-icon" />
+              <div className="persona-content">
+                <h3>Cut Processing Time</h3>
+                <p>Reduces overall application time by 80%.</p>
+              </div>
+            </div>
+
+            <div className="persona-card">
+              <Landmark className="persona-icon" />
+              <div className="persona-content">
+                <h3>Trusted Locally</h3>
+                <p>Already adopted by Fingal County Council.</p>
+              </div>
+            </div>
+
+            <div className="persona-card">
+              <TrendingUp className="persona-icon" />
+              <div className="persona-content">
+                <h3>National Scalability</h3>
+                <p>Built to scale across all 31 councils in Ireland.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
       {/* FEATURES & BENEFITS */}
       <section
@@ -380,6 +398,12 @@ export default function LandingPage() {
         className={`lp-features ${visibleSections.has("features") ? "section-visible" : ""}`}
       >
         <h2 className="lp-section-title title-spectacular">Features & Benefits</h2>
+        <h4>
+          Permits are central to how we use and share public space. From events and road closures to 
+          street trading, signage, and temporary structures, they impact safety, operations, business, and community life. 
+          But traditional permitting systems are fragmented, outdated, and hard to navigate.
+          TheO replaces all of that with a smarter, unified platform that works for everyone.
+        </h4>
         <div className="lp-feature-cards">
           {[
             {
@@ -414,6 +438,11 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
+        
+        <div className="lp-feature-ctas--bottom">
+          <button className="btn-secondary-outline">Learn More</button>
+        </div>
+
       </section>
 
       {/* ABOUT SECTION */}
@@ -424,8 +453,16 @@ export default function LandingPage() {
       >
         <div className="lp-about">
           <div className="lp-about-text about-text-spectacular">
-            <h2>About TheO</h2>
-            <p>We're reimagining how Ireland plans public events—with safer, faster and fairer digital tools.</p>
+            <h2>About Us</h2>
+            <h4 style={{marginBottom: 20}}>
+              TheO is transforming how local governments, organisers, and the public manage shared spaces.
+              Born from real-world industry experience and built in collaboration with councils and agencies, 
+              TheO is Ireland’s first unified platform for multi-permit management—streamlining everything from 
+              applications to approvals, payments, safety compliance, and public engagement.
+
+              Our mission is simple: make permitting easier, safer, and smarter for everyone.
+
+            </h4>
             <ul>
               <li className="about-item-spectacular" style={{ "--delay": "0.1s" }}>
                 Phase 1: National rollout across Ireland
@@ -450,7 +487,7 @@ export default function LandingPage() {
       {/* CTA SECTION */}
       <section ref={ctaRef} className={`lp-cta ${visibleSections.has("cta") ? "section-visible" : ""}`}>
         <h2 className="lp-cta-title cta-title-spectacular">
-          Let's Build Better Public Events—<strong>Together</strong>
+        Connecting People, Permits & Public Services.
         </h2>
         <div className="lp-cta-footer cta-footer-spectacular">
           <button className="btn-demo cta-button-spectacular">Book Your Demo</button>
