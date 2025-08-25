@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Compass, Search, FileText } from "lucide-react"
+import { Compass, Search, FileText, Mail, PhoneCall, MessageSquare, AlignCenter } from "lucide-react"
 import { Pencil, CheckCircle, Users } from "lucide-react";
 //import HowItWorks from "./components/HowItWorks";
 import { Link } from "react-router-dom"
@@ -79,23 +79,6 @@ export default function LandingPage() {
       <header className="lp-nav">
         <div className="lp-nav-container">
           <img src="/images/logo-3.png" alt="TheO Logo" className="lp-logo logo-entrance" />
-          <nav className="lp-nav-links">
-            <a href="#home" className="nav-link-entrance" style={{ "--delay": "0.1s" }}>
-              Home
-            </a>
-            <a href="#how" className="nav-link-entrance" style={{ "--delay": "0.2s" }}>
-              How it Works
-            </a>
-            <a href="#features" className="nav-link-entrance" style={{ "--delay": "0.3s" }}>
-              Features
-            </a>
-            <a href="#about" className="nav-link-entrance" style={{ "--delay": "0.4s" }}>
-              About
-            </a>
-            <a href="#start" className="nav-link-entrance" style={{ "--delay": "0.5s" }}>
-              Get Started
-            </a>
-          </nav>
           <div className="lp-nav-actions">
             <Link to="/login" className="btn-outline btn-entrance" style={{ "--delay": "0.6s" }}>
               Login
@@ -506,11 +489,11 @@ export default function LandingPage() {
       <footer className="lp-footer footer-spectacular">
         <div className="lp-footer-container">
           <img
-            src="/images/logo-white.png"
+            src="/images/logo-3.png"
             alt="TheO Logo"
             className="lp-footer-col footer-info footer-logo-spectacular"
           />
-          <nav className="lp-footer-col footer-nav">
+          {/*<nav className="lp-footer-col footer-nav">
             {["Home", "How It Works", "Features", "About", "Contact"].map((item, index) => (
               <a
                 key={item}
@@ -521,11 +504,28 @@ export default function LandingPage() {
                 {item}
               </a>
             ))}
+          </nav>*/}
+          <nav className="lp-nav-links">
+            <a href="#home" className="nav-link-entrance" style={{ "--delay": "0.1s" }}>
+              Home
+            </a>
+            <a href="#how" className="nav-link-entrance" style={{ "--delay": "0.2s" }}>
+              How it Works
+            </a>
+            <a href="#features" className="nav-link-entrance" style={{ "--delay": "0.3s" }}>
+              Features
+            </a>
+            <a href="#about" className="nav-link-entrance" style={{ "--delay": "0.4s" }}>
+              About
+            </a>
+            <a href="#start" className="nav-link-entrance" style={{ "--delay": "0.5s" }}>
+              Get Started
+            </a>
           </nav>
           <div className="lp-footer-col footer-contact footer-contact-spectacular">
-            <p>✉ hello@theo-platform.com</p>
-            <p>📞 +353 1 234 5678</p>
-            <p>💬 Live Chat</p>
+            <p><Mail size={16} color="#ffff" style={{ marginRight: 5}} /> hello@theo-platform.com</p>
+            <p><PhoneCall size={16} color="#ffff" style={{ marginRight: 5}} /> +353 1 234 5678</p>
+            <p><MessageSquare size={16} color="#ffff" style={{ marginRight: 5}} /> Live Chat</p>
             <div className="lp-social">
               <a href="#" className="social-spectacular" style={{ "--delay": "0.1s" }}>
                 <Linkedin color="#ffff" />
