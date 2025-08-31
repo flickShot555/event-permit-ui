@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import LandingPage from './LandingPage';
-import EventPermitLoginPage from './EventPermitLoginPage';
-import SignUpPage from './SignUpPage';
-import ForgotPasswordPage from './ForgotPasswordPage';
+//import EventPermitLoginPage from '../backup/EventPermitLoginPage';
+//import SignUpPage from './SignUpPage';
+//import ForgotPasswordPage from '../backup/ForgotPasswordPage';
 import Dashboard from './Dashboard';
 import Loader from './components/Loader';
+import Login from './Login/Login';
 
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -24,9 +25,9 @@ export default function App() {
       {/* Mount all routes immediately */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<EventPermitLoginPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/login" element={<Login />} />
+        {/*<Route path="/signup" element={<SignUpPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />*/}
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 

@@ -1,8 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* ─── RESPONSIVE OVERRIDES ───────────────────────────────────────────────── */
 
+/* ─── RESPONSIVE OVERRIDES ───────────────────────────────────────────────── */
+body {
+  @apply bg-red-500;
+}
 /* 1) Make all images/videos/iframes scale down */
 img,
 video,
