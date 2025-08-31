@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { Search, Bell, User  } from 'lucide-react';
+import { Search, Bell, User, LogOut, Settings, Pen, FileText, MessageCircle, Calendar, Lightbulb } from 'lucide-react';
 import "./Dashboard.css"
 import LogoutModal from "./components/LogoutModal";
 import EventsSection from "./components/EventsSection";
+import  ScrollToTopButton from "./components/ScrollToTopButton";
 
 export default function Dashboard() {
   const [showDropdown, setShowDropdown] = useState(false)
@@ -77,10 +78,13 @@ export default function Dashboard() {
             {showDropdown && (
               <div className="dropdown-menu">
                 <div className="dropdown-item" onClick={() => navigate("/settings")}>
-                  ⚙️ Settings
+                  {/* Settings Icon */}
+                  <Settings size={24} color="#96BBBB" strokeWidth={2} className="icon-settings" />
+                  Settings
                 </div>
                 <div className="dropdown-item logout" onClick={() => navigate("/login")}>
-                  🚪 Logout
+                  {/* Logout Icon */}
+                  <LogOut size={24} color="#96BBBB" strokeWidth={2} className="icon-logout" /> Logout
                 </div>
               </div>
             )}
@@ -120,33 +124,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* EVENTS 
-        <div className="events-section">
-          <h2 className="section-title">Your Events & Applications</h2>
-          <div className="events-container">
-            <div className="event-row">
-              <div className="event-info">
-                <p className="event-title">Summer Fest – Cork</p>
-                <span className="event-badge approved">✅ Approved</span>
-                <p className="event-updated">Updated 2 days ago</p>
-              </div>
-              <div className="event-action">
-                <button className="event-button primary">View Details</button>
-              </div>
-            </div>
-
-            <div className="event-row">
-              <div className="event-info">
-                <p className="event-title">Food Market – Galway</p>
-                <span className="event-badge in-review">🟡 In Review</span>
-                <p className="event-updated">Updated 3 days ago</p>
-              </div>
-              <div className="event-action">
-                <button className="event-button secondary">Continue</button>
-              </div>
-            </div>
-          </div>
-        </div>*/}
+        {/* EVENTS */}
         <EventsSection />
 
         {/* QUICK ACTIONS */}
@@ -155,7 +133,7 @@ export default function Dashboard() {
           <div className="actions-grid">
             <button className="action-box new-app">
               <div className="action-icon-container">
-                <span className="action-icon">🖊</span>
+                <Pen size={24} color="#96BBBB" strokeWidth={2} />
               </div>
               <span className="action-label">New Application</span>
               <div className="action-shine"></div>
@@ -163,7 +141,7 @@ export default function Dashboard() {
 
             <button className="action-box upload-docs">
               <div className="action-icon-container">
-                <span className="action-icon">📁</span>
+                <FileText size={24} color="#96BBBB" strokeWidth={2} />
               </div>
               <span className="action-label">Upload Documents</span>
               <div className="action-shine"></div>
@@ -171,7 +149,7 @@ export default function Dashboard() {
 
             <button className="action-box messages">
               <div className="action-icon-container">
-                <span className="action-icon">💬</span>
+              <MessageCircle size={24} color="#96BBBB" strokeWidth={2} />
               </div>
               <span className="action-label">Messages</span>
               <div className="action-shine"></div>
@@ -184,16 +162,16 @@ export default function Dashboard() {
           <h2 className="section-title">Calendar</h2>
           <div className="calendar-container">
             <div className="calendar-preview">
-              <div className="calendar-icon-large">📅</div>
+              <Calendar className="calendar-icon-large" size={80} color="#96BBBB" />
               <p className="calendar-text">Your calendar preview will appear here</p>
               <button className="calendar-button" onClick={() => navigate("/calendar")}>
-                <span className="button-icon">📅</span>
+                <Calendar className="calButton" size={24}  />
                 View Calendar
               </button>
             </div>
 
             <div className="idea-note">
-              <span className="idea-icon">💡</span>
+              <Lightbulb size={36} color="#96BBBB" />
               <span className="idea-text">"Group your permit types to simplify the process."</span>
             </div>
           </div>
@@ -202,15 +180,16 @@ export default function Dashboard() {
 
       {/* FOOTER */}
       <footer className="dashboard-footer">
-        <div className="footer-content">
+        <div className="user-dash-footer-content">
           <div className="footer-left">
             <div className="footer-logo-container">
-              <div className="footer-logo-icon">P</div>
-              <span className="footer-brand">PermitPro</span>
+              {/*<div className="footer-logo-icon">P</div>
+              <span className="footer-brand">PermitPro</span>*/}
+              <img src="/images/logo-3.png"/>
             </div>
-            <span className="footer-tagline">– Smarter Permitting for Ireland</span>
+            <span className="footer-tagline">– Transforming Planning with One Seamless Platform</span>
           </div>
-          <nav className="footer-links">
+          <nav className="user-dash-footer-links">
             <a href="#" className="footer-link">
               Home
             </a>
@@ -224,6 +203,7 @@ export default function Dashboard() {
               LinkedIn
             </a>
           </nav>
+          <ScrollToTopButton />
         </div>
       </footer>
     </div>
