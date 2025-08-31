@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { Search, Bell, User  } from 'lucide-react';
 import "./Dashboard.css"
 import LogoutModal from "./components/LogoutModal";
+import EventsSection from "./components/EventsSection";
 
 export default function Dashboard() {
   const [showDropdown, setShowDropdown] = useState(false)
@@ -12,6 +14,13 @@ export default function Dashboard() {
   // inside your component:
   const [logoutOpen, setLogoutOpen] = useState(false);
 
+  //suppose we have the Name of the user from the database over here
+  //we will use this name further in the dashboard.
+  const user = "Smith";
+
+  //suppose we are fetching the data fro the database here. all the hardcoded values will be fetched dynamically from the db.
+  const activeApplications= 12;
+  const pendingApplications = 5;
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -35,26 +44,36 @@ export default function Dashboard() {
             ←
           </button>
           <div className="logo-container">
-            <div className="logo-icon-modern">P</div>
-            <span className="brand-name">PermitPro</span>
+            <span className="brand-name">TheO -Beta</span>
           </div>
         </div>
 
         <h1 className="welcome-text">
-          <span className="wave-emoji">👋</span>
-          <span className="welcome-message">Welcome back, Smith</span>
+          {/*<Wave className="wave-icon" role="img" aria-label="Waving hand" />*/}
+          <span className="welcome-message">Welcome back, {user}</span>
         </h1>
 
         <div className="header-right">
-          <div className="search-container">
+          {/*<div className="search-container">
             <input type="text" placeholder="🔍 Search..." className="search-bar" />
+          </div>*/}
+          <div className="search-container search-inline-wrapper" role="search" aria-label="Site search">
+            <Search className="search-icon-inline" aria-hidden="true" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="search-bar-inline"
+              aria-label="Search"
+            />
           </div>
           <div className="notification-container">
-            <span className="icon notification-bell">🔔</span>
+            <button className="icon notification-bell" aria-label="Notifications">
+              <Bell />
+            </button>
             <div className="notification-badge"></div>
           </div>
           <div className="profile" onClick={() => setShowDropdown(!showDropdown)}>
-            <span className="icon profile-avatar">👤</span>
+            <User className="icon profile-avatar" aria-hidden="true" />
             {showDropdown && (
               <div className="dropdown-menu">
                 <div className="dropdown-item" onClick={() => navigate("/settings")}>
@@ -78,7 +97,7 @@ export default function Dashboard() {
                 <span className="status-icon green">✅</span>
               </div>
               <div className="status-info">
-                <p className="status-title">12</p>
+                <p className="status-title">{activeApplications}</p>
                 <p className="status-label">Active Applications</p>
                 <p className="status-sub">Currently in progress</p>
               </div>
@@ -92,7 +111,7 @@ export default function Dashboard() {
                 <span className="status-icon yellow">🕒</span>
               </div>
               <div className="status-info">
-                <p className="status-title">5</p>
+                <p className="status-title">{pendingApplications}</p>
                 <p className="status-label">Pending Review</p>
                 <p className="status-sub">Awaiting stakeholder review</p>
               </div>
@@ -101,7 +120,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* EVENTS */}
+        {/* EVENTS 
         <div className="events-section">
           <h2 className="section-title">Your Events & Applications</h2>
           <div className="events-container">
@@ -127,7 +146,8 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
+        <EventsSection />
 
         {/* QUICK ACTIONS */}
         <div className="quick-actions">

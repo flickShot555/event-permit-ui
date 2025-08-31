@@ -1,0 +1,200 @@
+/* ==============================
+   Events Section Styling
+   ============================== */
+   .events-section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-family: "Inter", sans-serif;
+    color: #333;
+    max-width: 100%;
+    margin: 20px auto;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    margin-bottom: 16px;
+  }
+  
+  /* ==============================
+     Container
+     ============================== */
+  .events-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* ==============================
+     States
+     ============================== */
+  .events-loading,
+  .events-error,
+  .events-empty {
+    text-align: center;
+    padding: 32px 16px;
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  /* Skeleton */
+  .skeleton {
+    background: #f0f0f0;
+    height: 60px;
+    border-radius: 8px;
+    margin: 8px 0;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: #f0f0f0;
+    }
+    50% {
+      background-color: #e2e2e2;
+    }
+    100% {
+      background-color: #f0f0f0;
+    }
+  }
+  
+  /* ==============================
+     Event List & Rows
+     ============================== */
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .event-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fafafa;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .event-row:hover {
+    background: #f5f5f5;
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+  
+  .event-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .event-title {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .event-updated {
+    font-size: 0.875rem;
+    color: #888;
+    margin: 0;
+  }
+  
+  /* ==============================
+     Status Badges
+     ============================== */
+  .event-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: 2px;
+  }
+  
+  .approved {
+    background-color: #e6f9f0;
+    color: #27ae60;
+  }
+  
+  .in-review {
+    background-color: #fff7e6;
+    color: #f39c12;
+  }
+  
+  .rejected {
+    background-color: #fdecea;
+    color: #e74c3c;
+  }
+  
+  .draft {
+    background-color: #f0f2f5;
+    color: #555;
+  }
+  
+  /* ==============================
+     Buttons
+     ============================== */
+  .event-action {
+    display: flex;
+    align-items: center;
+  }
+  
+  .event-button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s ease, transform 0.1s ease;
+  }
+  
+  .event-button:hover {
+    transform: translateY(-1px);
+  }
+  
+  .event-button:active {
+    transform: translateY(0);
+  }
+  
+  .event-button.primary {
+    background-color: #96bbbb;
+    color: #fff;
+  }
+  
+  .event-button.primary:hover {
+    background-color: #86a9a9;
+  }
+  
+  .event-button.secondary {
+    background-color: #f3f4f6;
+    color: #333;
+  }
+  
+  .event-button.secondary:hover {
+    background-color: #e5e7eb;
+  }
+  
+  /* ==============================
+     Responsive
+     ============================== */
+  @media (max-width: 600px) {
+    .event-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .event-action {
+      width: 100%;
+    }
+    .event-button {
+      width: 100%;
+    }
+  }
+  

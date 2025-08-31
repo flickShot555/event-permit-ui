@@ -84,8 +84,6 @@ iframe {
   }
 
   /* Slightly smaller text in status / quick actions */
-  .status-title,
-  .status-sub,
   .quick-actions h2 {
     font-size: 14px;
   }
