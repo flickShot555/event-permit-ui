@@ -3,11 +3,14 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Dashboard.css"
+import LogoutModal from "./components/LogoutModal";
 
 export default function Dashboard() {
   const [showDropdown, setShowDropdown] = useState(false)
   const [mounted, setMounted] = useState(false)
   const navigate = useNavigate()
+  // inside your component:
+  const [logoutOpen, setLogoutOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true)
@@ -19,10 +22,16 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
+      {/* place this near top-level so overlay covers screen */}
+      <LogoutModal
+        isOpen={logoutOpen}
+        onClose={() => setLogoutOpen(false)}
+        redirectTo="/"
+      />
       {/* HEADER */}
       <header className="dashboard-header">
         <div className="header-left">
-          <button type="button" className="back-button" onClick={() => navigate("/login")}>
+          <button type="button" className="back-button" onClick={() => setLogoutOpen(true)}>
             ←
           </button>
           <div className="logo-container">

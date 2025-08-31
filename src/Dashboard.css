@@ -1,15 +1,19 @@
 /* General Reset & Base Styles */
 * {
   margin: 0;
-  padding: 0;
+  padding:0;
   box-sizing: border-box;
+  
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
   color: #2d3748;
   min-height: 100vh;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .dashboard {
@@ -17,6 +21,8 @@ body {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   position: relative;
   overflow-x: hidden;
+  width: 100%;
+
 }
 
 /* Loading Skeleton */

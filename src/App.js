@@ -9,6 +9,7 @@ import LandingPage from './LandingPage';
 import Dashboard from './Dashboard';
 import Loader from './components/Loader';
 import Login from './Login/Login';
+//import AdminRoot from "./admin/AdminRoot";
 
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -29,6 +30,8 @@ export default function App() {
         {/*<Route path="/signup" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />*/}
         <Route path="/dashboard" element={<Dashboard />} />
+        {/* admin mounted at /admin/* 
+        <Route path="/admin/*" element={<AdminRoot />} />*/}
       </Routes>
 
       
