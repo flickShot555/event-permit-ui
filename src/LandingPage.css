@@ -2428,7 +2428,7 @@ html {
   box-sizing: border-box;
 }
 
-.dashboard,
+
 .lp,
 .login-page,
 .signup-page {
@@ -2439,7 +2439,6 @@ html {
 }
 
 .lp-nav-container,
-.dashboard-header,
 .footer-content,
 .login-page,
 .signup-page {
@@ -2466,9 +2465,7 @@ html {
 
 @media (max-width: 768px) {
   .lp-nav-links,
-  .lp-nav-actions,
-  .dashboard-header .header-left,
-  .dashboard-header .header-right {
+  .lp-nav-actions {
     width: 100%;
     justify-content: center;
     margin-bottom: 16px;

@@ -9,6 +9,7 @@ import LandingPage from './LandingPage';
 import Dashboard from './Dashboard';
 import Loader from './components/Loader';
 import Login from './Login/Login';
+import './index.css'
 //import AdminRoot from "./admin/AdminRoot";
 
 export default function App() {
