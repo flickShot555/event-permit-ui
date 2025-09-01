@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import LandingPage from './LandingPage';
@@ -10,6 +10,8 @@ import Dashboard from './Dashboard';
 import Loader from './components/Loader';
 import Login from './Login/Login';
 import './index.css'
+import HowItWorksDetailed from './components/HowItWorksDetailed';
+import LearnMoreAboutTheO from './components/LearnMoreAboutTheo';
 //import AdminRoot from "./admin/AdminRoot";
 
 export default function App() {
@@ -31,6 +33,22 @@ export default function App() {
         {/*<Route path="/signup" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />*/}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+        path="/how-it-works"
+          element={
+            <Suspense fallback={<div>Loading…</div>}>
+              <HowItWorksDetailed />
+            </Suspense>
+          }
+        />
+        <Route
+          path='/learn-more'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <LearnMoreAboutTheO />
+              </Suspense>
+            }
+        />
         {/* admin mounted at /admin/* 
         <Route path="/admin/*" element={<AdminRoot />} />*/}
       </Routes>

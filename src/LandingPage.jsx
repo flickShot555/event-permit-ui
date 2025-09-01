@@ -1,19 +1,24 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Compass, Search, FileText, Mail, PhoneCall, MessageSquare, AlignCenter } from "lucide-react"
+import { Compass, Search, FileText, Mail, PhoneCall, MessageSquare } from "lucide-react"
 import { Pencil, CheckCircle, Users } from "lucide-react";
+import { useNavigationType, useNavigate } from "react-router-dom";
 //import HowItWorks from "./components/HowItWorks";
 import { Link } from "react-router-dom"
 import { Linkedin, Twitter } from "lucide-react"
 import "./LandingPage.css"
 import ScrollToTopButton from "./components/ScrollToTopButton"
+import HowLink from "./components/HowLink";
+//import PlatformHighlightsSection from "./components/PlatformHighlightsSection";
 import { MessageCircle, CreditCard, PhoneIncoming, Globe2, Building, Megaphone, ShieldCheck, TrendingUp, Rocket, Landmark } from "lucide-react"
 
 export default function LandingPage() {
   const [showMore, setShowMore] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [visibleSections, setVisibleSections] = useState(new Set())
+  const navigationType = useNavigationType(); // returns 'POP' | 'PUSH' | 'REPLACE'
+  const navigate = useNavigate();
 
   const sliderImages = ["/images/hero2.png", "/images/3.jpeg", "/images/music.jpg", "/images/performance.jpg"]
 
@@ -33,7 +38,7 @@ export default function LandingPage() {
       setCurrentIndex((prev) => (prev + 1) % sliderImages.length)
     }, 4000)
     return () => clearInterval(interval)
-  }, [])
+  }, []);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -69,7 +74,23 @@ export default function LandingPage() {
     })
 
     return () => observer.disconnect()
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    // only restore if we arrived here via browser back/forward
+    if (navigationType === "POP") {
+      try {
+        const pos = sessionStorage.getItem("landingScroll");
+        if (pos !== null) {
+          // restore scroll position (no smooth to avoid odd animations)
+          window.scrollTo({ top: parseInt(pos, 10) || 0, behavior: "auto" });
+          sessionStorage.removeItem("landingScroll");
+        }
+      } catch (err) {
+        // ignore storage errors
+      }
+    }
+  }, [navigationType]);
 
   return (
     <div className="lp">
@@ -271,6 +292,7 @@ export default function LandingPage() {
         <a href="#live-demo" className="lp-live-demo demo-link-spectacular">
           → See a Live Demo
         </a>
+        <HowLink>How it works</HowLink>
       </section>
       {/*<HowItWorks howRef={{howRef}} visibleSections={{visibleSections}} />*/}
 
@@ -375,6 +397,8 @@ export default function LandingPage() {
 
 
       {/* FEATURES & BENEFITS */}
+      {/*<PlatformHighlightsSection />*/}
+
       <section
         ref={featuresRef}
         id="features"
@@ -446,7 +470,7 @@ export default function LandingPage() {
               Our mission is simple: make permitting easier, safer, and smarter for everyone.
 
             </h4>
-            <ul>
+            {/*<ul>
               <li className="about-item-spectacular" style={{ "--delay": "0.1s" }}>
                 Phase 1: National rollout across Ireland
               </li>
@@ -456,9 +480,17 @@ export default function LandingPage() {
               <li className="about-item-spectacular" style={{ "--delay": "0.3s" }}>
                 Phase 3: Global integration with AI & forecasting
               </li>
-            </ul>
+            </ul>*/}
             <div className="lp-about-href about-link-spectacular">
-              <a href="#vision">Learn More About Our Vision</a>
+              <a
+                href="/learn-more"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/learn-more");
+                }}
+              >
+                Learn More About Our Vision
+              </a>
             </div>
           </div>
           <div className="lp-about-image about-image-spectacular">
