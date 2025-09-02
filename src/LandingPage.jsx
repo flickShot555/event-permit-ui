@@ -10,6 +10,8 @@ import { Linkedin, Twitter } from "lucide-react"
 import "./LandingPage.css"
 import ScrollToTopButton from "./components/ScrollToTopButton"
 import HowLink from "./components/HowLink";
+import PricingPage from "./components/PricingPage";
+import FeatureHighlights from "./components/FeatureHighlights";
 //import PlatformHighlightsSection from "./components/PlatformHighlightsSection";
 import { MessageCircle, CreditCard, PhoneIncoming, Globe2, Building, Megaphone, ShieldCheck, TrendingUp, Rocket, Landmark } from "lucide-react"
 
@@ -397,8 +399,9 @@ export default function LandingPage() {
 
 
       {/* FEATURES & BENEFITS */}
+      <FeatureHighlights ref={featuresRef} visible={visibleSections.has("features")} />
       {/*<PlatformHighlightsSection />*/}
-
+{/* 
       <section
         ref={featuresRef}
         id="features"
@@ -451,6 +454,10 @@ export default function LandingPage() {
         </div>
 
       </section>
+      */}
+
+      {/*new section under the features and benefits section */}
+      <PricingPage />
 
       {/* ABOUT SECTION */}
       <section
