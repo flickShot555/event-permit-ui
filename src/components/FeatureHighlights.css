@@ -1,12 +1,3 @@
-/* FeatureHighlights.css (regenerated)
-   - Fully namespaced with "fh-" prefix to avoid collisions
-   - Horizontal, scrollable card strip with scroll-snap
-   - Each card is accessible (focus styles) and has a hover placeholder for later customization
-   - Respects user "prefers-reduced-motion"
-
-   Keep this file imported in a root-level place for Next.js or inside the component for CRA/Expo.
-*/
-
 :root {
     --fh-gap: 1rem;
     --fh-padding-vertical: 60px;
@@ -19,7 +10,7 @@
   
     --fh-card-radius: 12px;
     --fh-card-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
-    --fh-card-shadow-hover: 0 16px 40px rgba(16, 24, 40, 0.12);
+    --fh-card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15); /* stronger hover shadow like action-box */
     --fh-transition: 220ms cubic-bezier(.2,.9,.3,1);
   }
   
@@ -45,16 +36,16 @@
   }
   
   /* Horizontal card row */
-/* container: keep horizontal scroll but allow vertical overflow so scaled cards aren't clipped */
-.fh-cards {
+  .fh-cards {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: var(--fh-gap);
-    overflow-x: hidden;        /* horizontal scrolling preserved */
-    overflow-y: visible;     /* important: allow vertical overflow so scaled cards aren't clipped */
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: 1rem;
     padding-bottom: 1rem;
-
+  
     scroll-snap-type: x mandatory;
     align-items: center;
     justify-content: space-around;
@@ -63,7 +54,7 @@
   /* card: base */
   .fh-cards .fh-card {
     --delay: 0.12s;
-    position: relative;              /* allow z-index to work */
+    position: relative;
     flex: 0 0 320px;
     min-width: 280px;
     background: var(--fh-bg);
@@ -73,31 +64,29 @@
     display: flex;
     gap: 0.75rem;
     align-items: flex-start;
-  
-    /* single transition declaration (no duplicates) */
-    transition: transform var(--fh-transition), box-shadow var(--fh-transition), background-color var(--fh-transition);
+    transition: transform var(--fh-transition), box-shadow var(--fh-transition), background-color var(--fh-transition), opacity var(--fh-transition);
     scroll-snap-align: center;
   
-    /* initial state (animation may set translateY to 0 at end) */
     transform: translateY(6px) scale(1);
-    
     animation: fh-appear 360ms ease-in;
     animation-delay: var(--delay);
   
     will-change: transform, box-shadow;
     transform-origin: center;
     z-index: 0;
+    overflow: hidden; /* for the shine sweep */
   }
   
-  /* hover & focus (scale + lift) — higher specificity to avoid being overridden */
+  /* hover & focus — now matches action-box behaviour */
   .fh-cards .fh-card:hover,
   .fh-cards .fh-card:focus-visible {
-    transform: translateY(-6px) scale(1.09); /* change 1.04 -> 1.06 for stronger effect */
+    transform: translateY(-8px) scale(1.03);
     box-shadow: var(--fh-card-shadow-hover);
-    z-index: 10; /* keep it above its neighbors while scaled */
+    z-index: 10;
     cursor: pointer;
   }
   
+  /* fade-in animation */
   @keyframes fh-appear {
     to {
       opacity: 1;
@@ -105,21 +94,40 @@
     }
   }
   
-  /* Card content */
+  /* Card icon container (mirrors .action-icon-container) */
+  .fh-card-icon-container {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    color: #96BBBB;
+  }
+  
+  /* when card hovered, animate icon like action-box */
+  .fh-cards .fh-card:hover .fh-card-icon-container,
+  .fh-cards .fh-card:focus-visible .fh-card-icon-container {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  /* preserve older fh-card-icon (wrapper) if present — keep spacing consistent */
   .fh-card-icon {
-    width: 44px;
-    height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
   }
   
+  /* content 
   .fh-card-title {
     margin: 0 0 0.25rem 0;
     font-size: 1rem;
     color: var(--fh-heading);
-  }
+  }*/
   
   .fh-card-desc {
     margin: 0;
@@ -128,27 +136,32 @@
     line-height: 1.4;
   }
   
+  /* shine sweep element (same behaviour as .action-shine) */
+  .fh-card-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    /*background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);*/
+    background: linear-gradient(90deg, transparent, #96BBBB, transparent);
+    transition: left 0.5s ease;
+    pointer-events: none; /* don't block clicks */
+    z-index: 2;
+  }
+  
+  /* move the shine across on hover */
+  .fh-cards .fh-card:hover .fh-card-shine,
+  .fh-cards .fh-card:focus-visible .fh-card-shine {
+    left: 100%;
+  }
+  
   /* CTA */
   .fh-cta {
     margin-top: 1rem;
     text-align: left;
   }
-  /*
-  .fh-btn {
-    background: transparent;
-    border: 1px solid var(--fh-accent);
-    color: var(--fh-accent);
-    padding: 0.5rem 0.9rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color var(--fh-transition), color var(--fh-transition), transform var(--fh-transition);
-  }
   
-  .fh-btn:hover,
-  .fh-btn:focus-visible {
-    background-color: rgba(14,165,164,0.06);
-  }*/
-
   .fh-btn {
     position: relative;
     display: inline-block;
@@ -178,7 +191,6 @@
   
   .fh-btn:hover::before {
     left: 0;
-   
   }
   
   .fh-btn:hover {
@@ -188,21 +200,29 @@
     cursor: pointer;
   }
   
-  /* When parent is marked visible: keep existing animation behaviour in place. Kept for compatibility. */
-  .fh-section-visible .fh-card {
-    /* no-op — animation driven by keyframes and inline --delay */
+  /* Keep reduced motion accessible */
+  @media (prefers-reduced-motion: reduce) {
+    .fh-card {
+      animation: none;
+      transition: none;
+      transform: none;
+      opacity: 1;
+    }
+    .fh-card:hover,
+    .fh-card:focus-visible {
+      transform: none;
+      box-shadow: var(--fh-card-shadow);
+    }
+    .fh-card-icon-container {
+      transform: none;
+    }
+    .fh-card-shine {
+      transition: none;
+      left: 0; /* don't animate */
+    }
   }
   
-  /* Scrollbar styling (non-essential) */
-  .fh-cards::-webkit-scrollbar {
-    height: 8px;
-  }
-  .fh-cards::-webkit-scrollbar-thumb {
-    background: rgba(17,24,39,0.08);
-    border-radius: 999px;
-  }
-  
-  /* Responsive */
+  /* Responsive tweaks remain as before */
   @media (max-width: 880px) {
     .fh-card {
       flex: 0 0 82%;
@@ -221,210 +241,23 @@
       font-size: 1.25rem;
     }
   }
-  
-  /* Respect reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .fh-card {
-      animation: none;
-      transition: none;
-      transform: none;
-      opacity: 1;
-    }
-    .fh-card:hover,
-    .fh-card:focus-visible {
-      transform: none;
-      box-shadow: var(--fh-card-shadow);
-    }
-  }
-/* FeatureHighlights.css (regenerated)
-   - Fully namespaced with "fh-" prefix to avoid collisions
-   - Horizontal, scrollable card strip with scroll-snap
-   - Each card is accessible (focus styles) and has a hover placeholder for later customization
-   - Respects user "prefers-reduced-motion"
 
-   Keep this file imported in a root-level place for Next.js or inside the component for CRA/Expo.
-
-
-:root {
-  --fh-gap: 1rem;
-  --fh-padding-vertical: 2.5rem;
-  --fh-max-width: 1200px;
-
-  --fh-bg: #ffffff;
-  --fh-text-muted: #4b5563;
-  --fh-heading: #111827;
-  --fh-accent: #0ea5a4;
-
-  --fh-card-radius: 12px;
-  --fh-card-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
-  --fh-card-shadow-hover: 0 16px 40px rgba(16, 24, 40, 0.12);
-  --fh-transition: 220ms cubic-bezier(.2,.9,.3,1);
-}
-
-/* Container 
-.fh-features {
-  padding: var(--fh-padding-vertical) 1.25rem;
-  max-width: var(--fh-max-width);
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.fh-section-title {
-  font-size: 1.5rem;
-  color: var(--fh-heading);
-  margin: 0 0 0.5rem 0;
-}
-
-.fh-intro {
-  margin: 0 0 1rem 0;
-  color: var(--fh-text-muted);
-  line-height: 1.45;
-  font-size: 0.95rem;
-}
-
-/* Horizontal card row 
-.fh-cards {
-  display: flex;
-  flex-direction: row;
-  gap: var(--fh-gap);
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  align-items: stretch;
-}
-
-/* Individual card 
-.fh-card {
-  --delay: 0.12s;
-  flex: 0 0 320px;
-  min-width: 280px;
-  background: var(--fh-bg);
-  border-radius: var(--fh-card-radius);
-  padding: 1rem 1rem;
-  box-shadow: var(--fh-card-shadow);
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  transition: transform var(--fh-transition), box-shadow var(--fh-transition), background-color var(--fh-transition);
-  scroll-snap-align: center;
-  transform: translateY(6px);
-  opacity: 0;
-  animation: fh-appear 360ms ease forwards;
-  animation-delay: var(--delay);
-  outline: none; /* focus handled by :focus-visible 
-}
-
-/* Accessible focus state 
-.fh-card:focus-visible {
-  box-shadow: var(--fh-card-shadow-hover);
-  transform: translateY(-6px);
-  border: 1px solid rgba(14,165,164,0.12);
-}
-
-/* Hover placeholder: keep subtle and safe to override later 
-.fh-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--fh-card-shadow-hover);
-}
-
-@keyframes fh-appear {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Card content
-.fh-card-icon {
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
+  /* animate title color and change on hover/focus of the card */
 .fh-card-title {
-  margin: 0 0 0.25rem 0;
-  font-size: 1rem;
-  color: var(--fh-heading);
-}
-
-.fh-card-desc {
-  margin: 0;
-  color: var(--fh-text-muted);
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-/* CTA 
-.fh-cta {
-  margin-top: 1rem;
-  text-align: left;
-}
-
-.fh-btn {
-  background: transparent;
-  border: 1px solid var(--fh-accent);
-  color: var(--fh-accent);
-  padding: 0.5rem 0.9rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color var(--fh-transition), color var(--fh-transition), transform var(--fh-transition);
-}
-
-.fh-btn:hover,
-.fh-btn:focus-visible {
-  background-color: rgba(14,165,164,0.06);
-}
-
-/* When parent is marked visible: keep existing animation behaviour in place. Kept for compatibility. 
-.fh-section-visible .fh-card {
-  /* no-op — animation driven by keyframes and inline --delay 
-}
-
-/* Scrollbar styling (non-essential) 
-.fh-cards::-webkit-scrollbar {
-  height: 8px;
-}
-.fh-cards::-webkit-scrollbar-thumb {
-  background: rgba(17,24,39,0.08);
-  border-radius: 999px;
-}
-
-/* Responsive 
-@media (max-width: 880px) {
-  .fh-card {
-    flex: 0 0 82%;
-    min-width: 260px;
+    color: var(--fh-heading);
+    transition: color var(--fh-transition);
   }
-}
-
-@media (max-width: 480px) {
-  .fh-card {
-    flex: 0 0 88%;
-    min-width: 220px;
-    padding: 0.85rem;
+  
+  /* when the card is hovered or keyboard-focused, tint the title */
+  .fh-cards .fh-card:hover .fh-card-title,
+  .fh-cards .fh-card:focus-visible .fh-card-title {
+    color: #96BBBB;
   }
-
-  .fh-section-title {
-    font-size: 1.25rem;
+  
+  /* reduced motion: avoid transitions if user prefers */
+  @media (prefers-reduced-motion: reduce) {
+    .fh-card-title {
+      transition: none;
+    }
   }
-}
-
-/* Respect reduced motion 
-@media (prefers-reduced-motion: reduce) {
-  .fh-card {
-    animation: none;
-    transition: none;
-    transform: none;
-    opacity: 1;
-  }
-  .fh-card:hover,
-  .fh-card:focus-visible {
-    transform: none;
-    box-shadow: var(--fh-card-shadow);
-  }
-}
-*/
+  

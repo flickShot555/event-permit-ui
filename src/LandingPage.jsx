@@ -12,6 +12,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton"
 import HowLink from "./components/HowLink";
 import PricingPage from "./components/PricingPage";
 import FeatureHighlights from "./components/FeatureHighlights";
+
 //import PlatformHighlightsSection from "./components/PlatformHighlightsSection";
 import { MessageCircle, CreditCard, PhoneIncoming, Globe2, Building, Megaphone, ShieldCheck, TrendingUp, Rocket, Landmark } from "lucide-react"
 

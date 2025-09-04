@@ -2,11 +2,6 @@ import React from "react";
 import "./FeatureHighlights.css";
 import { MessageSquare, Users, ShieldCheck, Lightbulb, Layers, Cloud, CheckCircle } from 'lucide-react';
 
-// FeatureHighlights.jsx
-// - Standalone component (NOT a <section>)
-// - Minimal props: `visible` boolean + forwarded ref for intersection/animations
-// - Uses namespaced `fh-` classes from FeatureHighlights.css
-
 const HIGHLIGHTS = [
   {
     title: "Real-Time Communication",
@@ -40,70 +35,73 @@ const HIGHLIGHTS = [
   },
 ];
 
-// Recommended icon map (uses your titles as the key)
 const iconMap = {
-    "Real-Time Communication": MessageSquare,
-    "Stakeholder-Centric Design": Users,
-    "Built-In Safety and Compliance": ShieldCheck,
-    "Smart Guidance, Not Just Submission": Lightbulb,
-    "All-in-One Platform": Layers,
-    "Digital End-to-End": Cloud,
-  };
+  "Real-Time Communication": MessageSquare,
+  "Stakeholder-Centric Design": Users,
+  "Built-In Safety and Compliance": ShieldCheck,
+  "Smart Guidance, Not Just Submission": Lightbulb,
+  "All-in-One Platform": Layers,
+  "Digital End-to-End": Cloud,
+};
 
-  const FeatureHighlights = React.forwardRef(function FeatureHighlights({ visible = false }, ref) {
-    return (
-      <div
-        ref={ref}
-        id="fh-features"
-        className={`fh-features ${visible ? "fh-section-visible" : ""}`}
-        role="region"
-        aria-labelledby="fh-section-title"
-      >
-        <h1 id="fh-section-title" className="fh-section-title">
-          Features &amp; Benefits
-        </h1>
-  
-        <p className="fh-intro">
-          Permits are central to how we use and share public space. From events and road closures to
-          street trading, signage, and temporary structures, they impact safety, operations, business, and community life.
-          TheO replaces traditional fragmented permitting systems with a smarter, unified platform.
-        </p>
-  
-        <div className="fh-cards" aria-live="polite">
-          {HIGHLIGHTS.map((h, idx) => {
-            // Choose icon in this order: explicit h.Icon -> mapping by title -> default CheckCircle
-            const Icon = h.Icon || iconMap[h.title] || CheckCircle;
-  
-            return (
-              <article
-                key={idx}
-                className="fh-card"
-                style={{ "--delay": `${0.1 + idx * 0.05}s` }}
-                aria-labelledby={`fh-card-title-${idx}`}
-              >
-                <div className="fh-card-icon" aria-hidden>
-                  <Icon size={20} />
+const FeatureHighlights = React.forwardRef(function FeatureHighlights({ visible = false }, ref) {
+  return (
+    <div
+      ref={ref}
+      id="fh-features"
+      className={`fh-features ${visible ? "fh-section-visible" : ""}`}
+      role="region"
+      aria-labelledby="fh-section-title"
+    >
+      <h1 id="fh-section-title" className="fh-section-title">
+        Features &amp; Benefits
+      </h1>
+
+      <p className="fh-intro">
+        Permits are central to how we use and share public space. From events and road closures to
+        street trading, signage, and temporary structures, they impact safety, operations, business, and community life.
+        TheO replaces traditional fragmented permitting systems with a smarter, unified platform.
+      </p>
+
+      <div className="fh-cards" aria-live="polite">
+        {HIGHLIGHTS.map((h, idx) => {
+          const Icon = h.Icon || iconMap[h.title] || CheckCircle;
+
+          return (
+            <article
+              key={idx}
+              className="fh-card"
+              style={{ "--delay": `${0.1 + idx * 0.05}s` }}
+              aria-labelledby={`fh-card-title-${idx}`}
+            >
+              {/* icon container updated to match action-box behaviour */}
+              <div className="fh-card-icon" aria-hidden>
+                <div className="fh-card-icon-container">
+                  <Icon size={24} />
                 </div>
-  
-                <div className="fh-card-body">
-                  <h3 id={`fh-card-title-${idx}`} className="fh-card-title">
-                    {h.title}
-                  </h3>
-                  <p className="fh-card-desc">{h.desc}</p>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-  
-        <div className="fh-cta">
-          <button className="fh-btn" type="button">
-            Learn More
-          </button>
-        </div>
+              </div>
+
+              <div className="fh-card-body">
+                <h3 id={`fh-card-title-${idx}`} className="fh-card-title">
+                  {h.title}
+                </h3>
+                <p className="fh-card-desc">{h.desc}</p>
+              </div>
+
+              {/* shine sweep element (matches action-box .action-shine behaviour) */}
+              <div className="fh-card-shine" aria-hidden></div>
+            </article>
+          );
+        })}
       </div>
-    );
-  });
-  
+
+      <div className="fh-cta">
+        <button className="fh-btn" type="button">
+          Learn More
+        </button>
+      </div>
+    </div>
+  );
+});
 
 export default FeatureHighlights;
