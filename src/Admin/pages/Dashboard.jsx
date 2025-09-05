@@ -17,7 +17,7 @@ const COLORS = ["#10b981", "#f59e0b", "#ef4444"];
 
 export default function Dashboard() {
   return (
-    <div className="dashboard-content">
+    <div className="admin-dashboard-content">
       {/* Status */}
       <div className="status-container">
         <StatsCard icon="✅" title="Active Applications" value={orders.length} variant="active" />
