@@ -191,6 +191,11 @@ export default function Login() {
         setAdminMsg({ type: "success", text: "Admin authenticated." });
         // do admin navigation or show admin dashboard, etc.
         // e.g. navigate('/admin-dashboard');
+              // small delay so user sees message (adjust if you want immediate redirect)
+        setTimeout(() => {
+          // navigate to dashboard
+          navigate("/Admin-Dashboard");
+        }, 400);
       } else {
         setAdminMsg({ type: "error", text: "Invalid admin credentials." });
       }
@@ -298,7 +303,7 @@ export default function Login() {
             aria-controls="admin-panel"
             title={adminOpen ? "Close admin panel" : "Open admin panel"}
         >
-            Admin
+            Login as Admin
         </button>
 
         <div className="overlay" />

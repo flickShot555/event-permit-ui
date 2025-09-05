@@ -16,7 +16,7 @@
   
   /* Container */
   .fh-features {
-    padding: var(--fh-padding-vertical) 35px;
+    padding: var(--fh-padding-vertical) 4%;
     max-width: var(--fh-max-width);
     margin: 0 auto;
     box-sizing: border-box;
@@ -35,47 +35,56 @@
     font-size: 0.95rem;
   }
   
-  /* Horizontal card row */
   .fh-cards {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr)); /* 3 columns */
+    grid-auto-rows: auto;
     gap: var(--fh-gap);
-    overflow-x: hidden;
-    overflow-y: visible;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  
-    scroll-snap-type: x mandatory;
+    justify-content: center; /* center grid when there is extra width */
     align-items: center;
-    justify-content: space-around;
+    padding-bottom: 1rem;
+    padding-left:2rem;
+    margin-left: 3%;
+    /* allow horizontal scrolling if viewport < total grid width (preserves fixed 3x2) */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  
+    /* keep vertical overflow visible so scaled/animated cards aren't clipped */
+    overflow-y: visible;
+  
+    /* disable flex-specific properties previously used */
+    scroll-snap-type: none;
   }
   
   /* card: base */
-  .fh-cards .fh-card {
-    --delay: 0.12s;
-    position: relative;
-    flex: 0 0 320px;
-    min-width: 280px;
-    background: var(--fh-bg);
-    border-radius: var(--fh-card-radius);
-    padding: 1rem;
-    box-shadow: var(--fh-card-shadow);
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    transition: transform var(--fh-transition), box-shadow var(--fh-transition), background-color var(--fh-transition), opacity var(--fh-transition);
-    scroll-snap-align: center;
-  
-    transform: translateY(6px) scale(1);
-    animation: fh-appear 360ms ease-in;
-    animation-delay: var(--delay);
-  
-    will-change: transform, box-shadow;
-    transform-origin: center;
-    z-index: 0;
-    overflow: hidden; /* for the shine sweep */
-  }
+  /* Each card: remove the old flex-basis/min-width rules and keep card internals as flex */
+.fh-cards .fh-card {
+  --delay: 0.12s;
+  position: relative;
+  /* a consistent width helps preserve the 3-col rhythm; grid will respect it.
+     If you prefer the cards to expand equally instead, remove this width. */
+  width: 320px;
+
+  /* keep box model and visual styles */
+  box-sizing: border-box;
+  background: var(--fh-bg);
+  border-radius: var(--fh-card-radius);
+  padding: 1rem;
+  box-shadow: var(--fh-card-shadow);
+  display: flex;             /* keeps icon + body layout */
+  gap: 0.75rem;
+  align-items: flex-start;
+
+  transition: transform var(--fh-transition), box-shadow var(--fh-transition), background-color var(--fh-transition), opacity var(--fh-transition);
+  transform: translateY(6px) scale(1);
+  animation: fh-appear 360ms ease-in;
+  animation-delay: var(--delay);
+
+  will-change: transform, box-shadow;
+  transform-origin: center;
+  z-index: 0;
+  overflow: hidden; /* for the shine sweep */
+}
   
   /* hover & focus — now matches action-box behaviour */
   .fh-cards .fh-card:hover,

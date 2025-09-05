@@ -41,16 +41,16 @@ export default function LPFooter({
     const style = document.createElement("style");
     style.id = "lp-footer-styles";
     style.innerHTML = `
-.lp-footer {
+.comp-footer {
   background: #324858;
   color: #f7fafc;
   padding: 24px 0;
 }
 
-.lp-footer-container {
-  max-width: 1100px;
+.comp-footer-container {
+  max-width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1%;
   gap: 25px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -88,24 +88,70 @@ export default function LPFooter({
 }
 
 .footer-nav a:hover {
-  text-decoration: underline;
-  transform: scale(1.05);
+  text-decoration: none;
+  transform: scale(1.5);
 }
 
-.footer-contact {
+.comp-nav-links {
+  display: flex;
+  gap: 30px;
+  position: relative;
+  text-decoration: none;
+  color: #0000;
+}
+
+.comp-nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.comp-nav-links a:hover {
+  transform: scale(1.3);
+  
+}
+
+.comp-nav-links a::after {
+  text-decoration: none !important;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #96bbbb;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.comp-nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.comp-nav-actions {
+  display: flex;
+  gap: 10px;
+}
+/*.comp-nav-link-entrance {
+  animation: navLinkSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) calc(0.5s + var(--delay)) both;
+}*/
+.comp-footer-contact {
   text-align: right;
   line-height: 1.4;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 25%;
+  padding-right: 0;
 }
 
-.footer-contact p {
+.comp-footer-contact p {
   margin: 4px 0;
   font-size: 0.875rem;
   color: #f7fafc;
 }
 
-.lp-social {
+.comp-social {
   margin-top: 8px;
   display: inline-flex;
   gap: 12px;
@@ -113,27 +159,43 @@ export default function LPFooter({
   padding-right: 25px;
 }
 
-.lp-social a {
+.comp-social a {
   transition: transform 0.3s ease, opacity 0.25s ease;
   display: inline-flex;
   align-items: center;
 }
 
-.lp-social a:hover { transform: scale(1.2); opacity: 0.95; }
+.comp-social a:hover { transform: scale(1.2); opacity: 0.95; }
 
-.lp-footer-col { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.comp-footer-col { display: flex; flex-direction: column; gap: 0; align-items: flex-start; }
+.footer-spectacular .comp-footer-contact-spectacular {
+  animation: footerContactSpectacular 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s forwards;
+}
+
+
+.comp-footer-contact-spectacular {
+  
+  transform: translateX(40px) rotateY(20deg);
+}
+
+
+
+.comp-social-spectacular {
+  color: white
+  /*transform: scale(0.5) rotate(-180deg);*/
+}
 
 /* logo */
 .footer-logo-spectacular { max-height: 46px; object-fit: contain; }
 
 /* responsive */
 @media (max-width: 880px) {
-  .lp-footer-container {
+  .comp-footer-container {
     grid-template-columns: 1fr;
     text-align: left;
     gap: 12px;
   }
-  .footer-contact { text-align: left; }
+  .comp-footer-contact { text-align: left; }
   .lp-social { justify-content: flex-start; padding-right: 0; }
   .footer-nav { justify-content: flex-start; gap: 12px; flex-wrap: wrap; }
 }
@@ -150,20 +212,20 @@ export default function LPFooter({
   };
 
   return (
-    <footer className={`lp-footer footer-spectacular ${className}`}>
-      <div className="lp-footer-container">
+    <footer className={`comp-footer ${className}`}>
+      <div className="comp-footer-container">
         <img
           src={logoSrc}
           alt={logoAlt}
-          className="lp-footer-col footer-info footer-logo-spectacular"
+          className="comp-footer-col footer-info footer-logo-spectacular"
         />
 
-        <nav className="lp-nav-links footer-nav" aria-label="Footer navigation">
+        <nav className="comp-nav-links footer-nav" aria-label="Footer navigation">
           {navLinks.map((nl, i) => (
             <a
               key={nl.label + i}
               href={nl.href}
-              className="nav-link-entrance"
+              className="comp-nav-link-entrance"
               style={{ ["--delay"]: nl.delay || `${(i + 1) * 0.1}s` }}
             >
               {nl.label}
@@ -171,7 +233,7 @@ export default function LPFooter({
           ))}
         </nav>
 
-        <div className="lp-footer-col footer-contact footer-contact-spectacular" aria-label="Contact">
+        <div className="comp-footer-col comp-footer-contact comp-footer-contact-spectacular" aria-label="Contact">
           <p>
             <Mail size={16} color="#ffff" style={{ marginRight: 8 }} />
             <a href={`mailto:${contact.email}`} style={{ color: "inherit", textDecoration: "none" }}>
@@ -189,12 +251,12 @@ export default function LPFooter({
             <span style={{ color: "inherit" }}>{contact.liveChatLabel}</span>
           </p>
 
-          <div className="lp-social" aria-label="Social links">
+          <div className="comp-social" aria-label="Social links">
             {socialLinks.map((s, idx) => (
               <a
                 key={idx}
                 href={s.href}
-                className="social-spectacular"
+                className="comp-social-spectacular"
                 style={{ ["--delay"]: s.delay || `${(idx + 1) * 0.1}s` }}
                 aria-label={s.type}
               >

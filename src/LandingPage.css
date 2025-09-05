@@ -1094,7 +1094,7 @@ html {
   flex-wrap: wrap;
   gap: 40px;
   align-items: center;
-  padding: 100px 20px;
+  padding: 100px 4%;
 }
 
 .lp-content {
@@ -1260,7 +1260,7 @@ html {
 
 /* ─── WHO IT'S MADE FOR ──────────────────────── */
 .lp-section--padded {
-  padding: 0 35px;
+  padding: 0 4%;
 }
 
 #who .lp-who-grid {
@@ -1457,7 +1457,7 @@ html {
 }
 /* Fix spacing above card grid */
 .lp-works-section {
-  padding: 100px 35px;
+  padding: 100px 4%;
   display: block;
 }
 
@@ -1629,11 +1629,11 @@ html {
   color: #4a5568;
 }
 
-.lp-works-section {
+/*.lp-works-section {
   padding: 100px 35px;
   display: block;
   background-color: white;
-}
+}*/
 
 .lp-works-section h1 {
   font-size: 2rem;
@@ -1660,7 +1660,7 @@ html {
 }
 
 .lp-why-theo-matters {
-  padding: 35px;
+  padding: 4%;
   background-color: white;
 }
 
@@ -1710,10 +1710,10 @@ html {
   line-height: 1.4;
 }
 /* ─── WHY THEO MATTERS ─────────────────────────────────────────────────── */
-/* Section container */
+/* Section container 
 .lp-why-theo-matters {
   padding: 35px;
-}
+}*/
 
 /* Title text */
 .lp-why-theo-matters h1,
@@ -1890,7 +1890,7 @@ html {
 /* ─── HOW IT WORKS ─────────────────────────────────────────────────────── */
 .lp-how-it-works {
   max-width: 100%;
-  padding: 60px 35px;
+  padding: 60px 4%;
   text-align: center;
   background-color: white;
 }
@@ -2088,7 +2088,7 @@ html {
 /* ─── ABOUT TheO ───────────────────────────────────────────────────────── */
 #about {
   text-align: left;
-  padding: 80px 35px;
+  padding: 80px 4%;
   background-color: white;
 }
 
@@ -2121,12 +2121,15 @@ html {
 }
 
 .lp-about-href {
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: inline-block;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   padding: 0;
   width: fit-content;
+  border: 1px solid #96BBBB;
 }
 
 .lp-about-href a {
@@ -2177,7 +2180,7 @@ html {
 
 /* ─── CTA SECTION ─────────────────────────────────────────────────────── */
 .lp-cta {
-  padding: 100px 35px;
+  padding: 100px 4%;
   text-align: left;
   background-color: white;
 }
@@ -2373,7 +2376,7 @@ html {
   display: flex;
   width: 100%;
   gap: 50px;
-  padding: 60px 10px;
+  padding: 60px 3%;
   background: #f4f4f4;
   margin: 0;
 }

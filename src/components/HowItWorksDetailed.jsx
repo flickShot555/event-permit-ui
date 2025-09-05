@@ -441,10 +441,10 @@ export default function HowItWorksDetailed({
 
 .footer-contact {
   flex: 1;
-  text-align: right;
+  text-align: left;
   line-height: 1.4;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 50%;
+  padding-right: 0;
 }
 
 .footer-contact p {

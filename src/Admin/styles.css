@@ -10,7 +10,7 @@ body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; ba
 /* Header (kept your vibe) */
 .dashboard-header{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.2);box-shadow:0 8px 32px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;animation:slideDown .6s ease-out}
 .header-left{display:flex;align-items:center;gap:16px;animation:slideInLeft .8s ease-out}
-.back-button{background:linear-gradient(135deg,#667eea 0,#764ba2 100%);border:none;color:#fff;font-size:20px;width:44px;height:44px;border-radius:12px;cursor:pointer;transition:.3s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(102,126,234,.4)}
+.back-button{border:none;color:#fff;font-size:20px;width:44px;height:44px;border-radius:12px;cursor:pointer;transition:.3s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(102,126,234,.4)}
 .back-button:hover{transform:translateY(-2px) rotate(-5deg) scale(1.05);box-shadow:0 8px 25px rgba(102,126,234,.6)}
 .logo-container{display:flex;align-items:center;gap:12px}
 .logo-icon-modern{width:44px;height:44px;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;box-shadow:0 4px 15px rgba(102,126,234,.4);animation:pulse 2s ease-in-out infinite}

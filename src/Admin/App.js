@@ -8,7 +8,7 @@ import Settings from "./pages/Settings";
 import Notifications from "./pages/Notifications";
 import ActivityLogs from "./pages/ActivityLogs";
 
-export default function App() {
+export default function AdminApp() {
   return (
     <div className="dashboard">
       <Header />

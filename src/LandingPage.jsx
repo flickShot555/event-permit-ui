@@ -140,29 +140,18 @@ export default function LandingPage() {
           approvals, and oversight into one intuitive system. Built for councils, agencies, businesses, 
           and organisers, it simplifies every step of the permitting process across sectors.
           </p>
-          {/*
-          {!showMore && (
-            <div className="lp-read-more read-more-spectacular" onMouseEnter={() => setShowMore(true)}>
-              READ MORE
-            </div>
-          )}
-          {showMore && (
-            <div className="lp-more-text more-text-spectacular">
-              <p>
-                Whether you're applying for a road closure, coordinating with emergency services, or managing multiple
-                permits across departments, TheO simplifies it all—automating workflows, ensuring regulatory compliance,
-                and unlocking real-time collaboration. For the first time, local authorities, statutory agencies, event
-                organizers, and suppliers can work from the same digital ecosystem.
-              </p>
-              <p>
-                Built to support not only public events but also general business permitting, TheO is more than
-                software—it's a scalable, future-proof infrastructure for better governance, safer events, and stronger
-                community engagement. From local councils to global markets, TheO empowers smarter decision-making
-                through data, transparency, and shared insight. It's not just a system—it's the solution the event
-                industry has been waiting for.
-              </p>
-            </div>
-          )}*/}
+          <div className="lp-about-href about-link-spectacular">
+              <a
+                href="/how-TheO-Works"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/how-TheO-Works");
+                }}
+              >
+                Explore how it works
+              </a>
+          </div>
+          <p>TheO is a multi-permit platform for businesses, events, works, and trading—designed to streamline workflows, reduce risk, and ensure smarter governance.</p>
         </div>
         <div className="lp-transforming-image image-slide-spectacular">
           <img src="/images/4.jpeg" alt="Illustration of seamless event planning" />
@@ -303,6 +292,13 @@ export default function LandingPage() {
      <section id="features" className="lp-works-section">
         <h1 className="lp-section-title">Why TheO Works</h1>
         <h3>Because Permits Shouldn’t Be a Puzzle.</h3>
+        <p>Permits affect everything from public safety and business operations to community engagement and 
+          infrastructure planning. But for too long, outdated systems, siloed processes, and endless back-and-forth 
+          have made permitting slow, confusing, and inefficient.
+          TheO changes that—by unifying permit workflows, simplifying compliance, 
+          and giving every stakeholder the visibility and tools they need to make smarter, 
+          faster decisions.
+        </p>
 
         <div className="lp-works-grid">
           {/* Dashboard */}

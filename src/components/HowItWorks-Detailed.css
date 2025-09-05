@@ -1,0 +1,605 @@
+/* HowItWorks-detailed.css
+   Theme: primary color --theme is #96BBBB
+*/
+
+:root {
+    --theme: #96BBBB;
+    --bg: #ffffff;
+    --muted: #4b5563;
+    --heading: #111827;
+    --card-radius: 12px;
+    --gap: 1rem;
+    --container-padding: 5%;
+    --max-width: 100%;
+    --transition: 220ms cubic-bezier(.2,.9,.3,1);
+    --shadow: 0 8px 20px rgba(16,24,40,0.06);
+    --shadow-hover: 0 20px 40px rgba(0,0,0,0.12);
+  }
+  
+  /* Page shell */
+  .hiw-page {
+    background: var(--bg);
+    color: var(--heading);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Main content */
+  .hiw-main {
+    flex: 1 0 auto;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 5% 5%;
+    box-sizing: border-box;
+  }
+  
+  /* Hero */
+  .hiw-hero {
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .hiw-hero-inner {
+    width: 100%;
+    padding-bottom: 4%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .hiw-back-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-size: 14px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .hiw-title {
+    font-size: 1.9rem;
+    margin: 0 0 6px;
+    color: var(--heading);
+    line-height: 1.12;
+  }
+  .hiw-underline {
+    width: 420px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(150,187,187,0.1), var(--theme));
+    margin: 12px auto 16px;
+    border-radius: 3px;
+  }
+  .hiw-lead {
+    margin: 0 auto;
+    
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 0.99rem;
+  }
+  
+  /* Section titles */
+  .hiw-section-title {
+    font-size: 1.25rem;
+    margin: 28px 0 12px;
+    color: var(--heading);
+  }
+  
+  /* Steps grid */
+  .hiw-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for steps */
+    gap: 25px;
+    margin-top: 8px;
+  }
+  
+  /* Step card 
+  .hiw-step-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: var(--card-radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* hover behaviour similar to Quick Actions 
+  .hiw-step-card:hover,
+  .hiw-step-card:focus-within {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    cursor: pointer;
+  }*/
+  /* ===== hiw-step-card: background swipe + shine (drop this in at the end) ===== */
+
+.hiw-step-card {
+    /* keep existing layout but ensure layering & overflow for shine */
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: linear-gradient(
+      90deg,
+      #ffffff 0%,
+      rgba(150,187,187,0.03) 48%,
+      rgba(150,187,187,0.04) 52%,
+      #ffffff 100%
+    );
+    background-size: 200% 100%; /* slide across on hover */
+    background-position: 0% 0;
+    border-radius: var(--card-radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition),
+      background-position var(--transition);
+    position: relative;
+    overflow: hidden;
+    /* ensure the card starts slightly lower for the appear animation (if used) */
+    transform: translateY(6px) scale(1);
+    will-change: transform, box-shadow, background-position;
+  }
+  
+  /* keep lift & scale while also triggering the background swipe */
+  .hiw-step-card:hover,
+  .hiw-step-card:focus-within {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    background-position: 100% 0; /* background swipe */
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  /* gloss / shine sweep (appears above the background, semi-transparent) */
+  .hiw-step-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(150,187,187,0.18) 45%,
+      rgba(150,187,187,0.12) 52%,
+      transparent 100%
+    );
+    transition: left 0.52s ease;
+    pointer-events: none;
+    z-index: 2; /* sits above background but below content unless we raise content */
+    mix-blend-mode: screen; /* nicer visual blend */
+  }
+  
+  /* move the shine across on hover/focus */
+  .hiw-step-card:hover::before,
+  .hiw-step-card:focus-within::before {
+    left: 100%;
+  }
+  
+  /* ensure icon + body are above any subtle overlays so text remains crisp */
+  .hiw-step-card > .hiw-step-icon,
+  .hiw-step-card > .hiw-step-body {
+    position: relative;
+    z-index: 3;
+  }
+  
+  /* animate the small icon bubble like the Quick Actions behavior */
+  .hiw-step-icon {
+    transition: transform 300ms ease;
+    transform-origin: center;
+  }
+  
+  /* icon transforms on card hover/focus */
+  .hiw-step-card:hover .hiw-step-icon,
+  .hiw-step-card:focus-within .hiw-step-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  /* keep accessible focus outline (optional) */
+  .hiw-step-card:focus-within,
+  .hiw-step-card:focus {
+    outline: 3px solid rgba(150,187,187,0.12);
+    outline-offset: 4px;
+  }
+  
+  /* Reduced motion: disable background swipe and shine */
+  @media (prefers-reduced-motion: reduce) {
+    .hiw-step-card {
+      transition: none;
+      background-position: 0% 0 !important;
+    }
+    .hiw-step-card::before {
+      transition: none;
+      left: 0 !important;
+      display: none; /* remove visual complexity */
+    }
+    .hiw-step-icon {
+      transition: none;
+      transform: none !important;
+    }
+  }
+  
+  /* small icon bubble */
+  .hiw-step-icon {
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(150,187,187,0.08);
+    color: var(--theme);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  /* step body */
+  .hiw-step-title {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: var(--heading);
+    transition: color var(--transition);
+  }
+  
+  /* change title color on hover/focus of the card */
+  .hiw-step-card:hover .hiw-step-title,
+  .hiw-step-card:focus-within .hiw-step-title {
+    color: var(--theme);
+  }
+
+  .hiw-process {
+    padding-bottom: 4%;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  
+  /* bullets */
+  .hiw-bullets {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    line-height: 1.45;
+    font-size: 0.95rem;
+  }
+  .hiw-bullets li {
+    margin-bottom: 6px;
+  }
+  
+  /* for-target line */
+  .hiw-for {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  
+  /* Process visual (timeline) */
+  .hiw-visual {
+    padding-bottom: 3%;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .hiw-visual .hiw-timeline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    /*padding:;*/
+    margin-top: 8px;
+  }
+
+  .timelineholder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  /*.hiw-timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+  }
+  .hiw-timeline-icon {
+    width: 26px;
+    height: 26px;
+    display: inline-grid;
+    place-items: center;
+    color: var(--theme);
+  }
+  .hiw-timeline-label {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .hiw-timeline-arrow {
+    color: rgba(0,0,0,0.2);
+  }*/
+
+  /* === hiw-timeline-item: hover / focus visual (theme tint, white icon/text, scale + shadow) === */
+
+.hiw-timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition),
+      background-color var(--transition),
+      color var(--transition);
+    transform-origin: center;
+    cursor: pointer;
+    /* ensure the icon + label can animate color smoothly */
+  }
+  
+  .hiw-timeline-icon,
+  .hiw-timeline-label {
+    transition: color var(--transition), transform 220ms ease;
+  }
+
+  .hiw-timeline-icon {
+    color: #96BBBB;
+  }
+  
+  /* Hover & keyboard-focus (use focus-visible for keyboard users) */
+  .hiw-timeline-item:hover,
+  .hiw-timeline-item:focus,
+  .hiw-timeline-item:focus-visible {
+    background: var(--theme);       /* #96BBBB via --theme */
+    transform: scale(1.06);
+    box-shadow: var(--shadow-hover);
+    z-index: 6;
+  }
+  
+  /* Icon + label color -> white on hover/focus */
+  .hiw-timeline-item:hover .hiw-timeline-icon,
+  .hiw-timeline-item:focus .hiw-timeline-icon,
+  .hiw-timeline-item:focus-visible .hiw-timeline-icon {
+    color: #ffffff;
+  }
+  
+  /* Ensure svg icons inside adopt currentColor for stroke/fill */
+  .hiw-timeline-item .hiw-timeline-icon svg {
+    stroke: currentColor;
+    fill: none; /* keep strokes visible; change to currentColor if you want filled icons */
+  }
+  
+  /* label turns white */
+  .hiw-timeline-item:hover .hiw-timeline-label,
+  .hiw-timeline-item:focus .hiw-timeline-label,
+  .hiw-timeline-item:focus-visible .hiw-timeline-label {
+    color: #ffffff;
+  }
+  
+  /* Optional: slightly lift the icon for extra polish */
+  .hiw-timeline-item:hover .hiw-timeline-icon,
+  .hiw-timeline-item:focus .hiw-timeline-icon {
+    transform: translateY(-2px) scale(1.02);
+  }
+  
+  /* Accessible focus ring (visible for keyboard users) */
+  .hiw-timeline-item:focus-visible {
+    outline: 3px solid rgba(150,187,187,0.16);
+    outline-offset: 4px;
+  }
+  
+  /* Prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hiw-timeline-item,
+    .hiw-timeline-icon,
+    .hiw-timeline-label {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+  
+  
+  /* Benefits list */
+  .hiw-benefits {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  
+  .hiw-benefits-list {
+    list-style: none;
+    padding: 1%;
+    margin: 8px 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .hiw-benefit-item {
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .hiw-benefit-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+  }
+  .hiw-check-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+  
+  /* Permits list */
+  .hiw-permits {
+    padding-bottom: 3%;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .hiw-permits-list {
+    columns: 2;
+    column-gap: 24px;
+    padding-left: 4%;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .hiw-permits-list li {
+    margin-bottom: 8px;
+  }
+  
+  /* CTA row */
+  .hiw-demo-cta {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+    align-items: center;
+  }
+  .hiw-demooo-btn,
+  .hiw-contact-btn {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+  }
+  .hiw-demooo-btn {
+    background: linear-gradient(90deg, rgba(150,187,187,0.15), var(--theme));
+    color: #fff;
+    padding-left: 12px;
+    box-shadow: 0 10px 30px rgba(9, 62, 61, 0.06);
+  }
+  .hiw-demooo-btn svg {
+    color: white;
+    opacity: 0.95;
+  }
+  .hiw-demooo-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    filter: brightness(1.02);
+  }
+  .hiw-contact-btn {
+    background: transparent;
+    color: var(--theme);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .hiw-contact-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    background: rgba(150,187,187,0.06);
+  }
+
+  /**/
+  /* Duplicate of .btn-demo but for .hiw-action-btn (left-to-right wipe + scale + color swap) */
+.hiw-demo-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #96bbbb;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .hiw-demo-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: left 0.5s ease;
+  }
+  
+  .hiw-demo-btn:hover::before {
+    left: 0;
+  }
+  
+  .hiw-demo-btn:hover {
+    transform: scale(1.05);
+    color: #96bbbb;
+  }
+  
+  /* Ensure icons inside the button pick up the color change (if you place an inline svg) */
+  .hiw-demo-btn svg {
+    
+    stroke: currentColor;
+    fill: none;
+    transition: stroke 0.3s ease, transform 0.3s ease;
+  }
+
+  .buttonIcon{
+    margin-top:5px;
+  }
+  
+  /* Slight lift for icon when hovered (optional polish) */
+  .hiw-demo-btn:hover svg {
+    transform: translateY(-2px);
+  }
+  
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hiw-demo-btn,
+    .hiw-demo-btn::before,
+    .hiw-demo-btn svg {
+      transition: none !important;
+      transform: none !important;
+    }
+    .hiw-demo-btn::before { left: 0; } /* make it static */
+  }
+  
+  /**/
+  
+  /* accessible focus styles */
+  .hiw-step-card:focus-within,
+  .hiw-step-card:focus {
+    outline: 3px solid rgba(150,187,187,0.14);
+    outline-offset: 4px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 880px) {
+    .hiw-steps-grid {
+      grid-template-columns: 1fr;
+    }
+    .hiw-benefits-list {
+      grid-template-columns: 1fr;
+    }
+    .hiw-permits-list {
+      columns: 1;
+    }
+    .hiw-hero-inner {
+      padding: 0 12px;
+    }
+  }
+  
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  

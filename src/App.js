@@ -12,7 +12,9 @@ import Login from './Login/Login';
 import './index.css'
 import HowItWorksDetailed from './components/HowItWorksDetailed';
 import LearnMoreAboutTheO from './components/LearnMoreAboutTheo';
+import HowTheoWorksDetailed from './components/HowItWorks-Detailed';
 //import AdminRoot from "./admin/AdminRoot";
+import AdminAppFromIndex from './Admin/index';
 
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -49,6 +51,23 @@ export default function App() {
               </Suspense>
             }
         />
+        <Route
+          path='/how-TheO-Works'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <HowTheoWorksDetailed />
+              </Suspense>
+            }
+        />
+        <Route
+          path='/Admin-Dashboard'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <AdminAppFromIndex />
+              </Suspense>
+            }
+        />
+
         {/* admin mounted at /admin/* 
         <Route path="/admin/*" element={<AdminRoot />} />*/}
       </Routes>

@@ -28,7 +28,7 @@ export default function LogoutModal({ isOpen = false, onClose = () => {}, redire
       }
       // fallback navigation — this works regardless of router
       window.location.href = redirectTo;
-    }, 500);
+    }, 0);
   };
 
   const handleNo = () => {
