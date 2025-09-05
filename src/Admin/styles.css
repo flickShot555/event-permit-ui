@@ -10,23 +10,27 @@ body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; ba
 /* Header (kept your vibe) */
 .dashboard-header{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.2);box-shadow:0 8px 32px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;animation:slideDown .6s ease-out}
 .header-left{display:flex;align-items:center;gap:16px;animation:slideInLeft .8s ease-out}
-.back-button{border:none;color:#fff;font-size:20px;width:44px;height:44px;border-radius:12px;cursor:pointer;transition:.3s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(102,126,234,.4)}
-.back-button:hover{transform:translateY(-2px) rotate(-5deg) scale(1.05);box-shadow:0 8px 25px rgba(102,126,234,.6)}
+.back-button{border:none;color:#96BBBB;font-size:20px;width:44px;height:44px;border-radius:12px;cursor:pointer;transition:.3s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(102,126,234,.4)}
+.back-button:hover{transform:translateY(-2px) rotate(-5deg) scale(1.05);box-shadow:0 8px 25px #96BBBB}
 .logo-container{display:flex;align-items:center;gap:12px}
 .logo-icon-modern{width:44px;height:44px;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;box-shadow:0 4px 15px rgba(102,126,234,.4);animation:pulse 2s ease-in-out infinite}
-.brand-name{font-size:20px;font-weight:700;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.welcome-text{flex:1;text-align:center;font-size:24px;font-weight:700;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeInUp .8s ease-out .2s both}
+.brand-name{font-size:20px;font-weight:700;background:transparent;-webkit-background-clip:text;-webkit-text-fill-color:#96BBBB;background-clip:text}
+.welcome-text{flex:1;text-align:center;font-size:24px;font-weight:700;background:transparent;-webkit-background-clip:text;-webkit-text-fill-color:#96BBBB;background-clip:text;animation:fadeInUp .8s ease-out .2s both}
 .wave-emoji{display:inline-block;animation:wave 2s ease-in-out infinite;margin-right:12px}
 .header-right{display:flex;align-items:center;gap:16px;animation:slideInRight .8s ease-out}
 .search-bar{padding:12px 20px;border:2px solid rgba(102,126,234,.2);border-radius:25px;font-size:14px;width:280px;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);outline:none;transition:.3s}
 .search-bar:focus{border-color:#667eea;background:rgba(255,255,255,.95);box-shadow:0 0 0 4px rgba(102,126,234,.1);transform:scale(1.02)}
-.icon{font-size:24px;padding:10px;border-radius:12px;transition:.3s;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.8);backdrop-filter:blur(10px)}
+.icon{font-size:28px;padding:10px;border-radius:12px;transition:.3s;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.8);backdrop-filter:blur(10px)}
 .icon:hover{background:rgba(102,126,234,.1);transform:scale(1.1)}
 .notification-container{position:relative;cursor:pointer}
-.notification-bell{animation:swing 2s ease-in-out infinite}
-.notification-badge{position:absolute;top:8px;right:8px;width:12px;height:12px;background:#ff4757;border-radius:50%;animation:ping 2s cubic-bezier(0,0,.2,1) infinite}
+.notification-bell{animation:swing 2s ease-in-out infinite;   color: #96BBBB;        /* lucide icons use stroke=currentColor */
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    vertical-align: middle;}
+.notification-badge{position:absolute;top:6px;right:2px;width:6px;height:6px;background:#ff4757;border-radius:50%;animation:ping 2s cubic-bezier(0,0,.2,1) infinite}
 .profile{position:relative}
-.profile-avatar{background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#fff;box-shadow:0 4px 15px rgba(102,126,234,.4)}
+.profile-avatar{background:transparent;color:#96BBBB;box-shadow:0 4px 15px rgba(102,126,234,.4)}
 .dropdown-menu{position:absolute;top:60px;right:0;width:180px;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);box-shadow:0 20px 40px rgba(0,0,0,.15);border-radius:16px;overflow:hidden;z-index:1000;animation:scaleIn .2s ease-out;border:1px solid rgba(255,255,255,.2)}
 .dropdown-item{padding:16px 20px;font-size:14px;cursor:pointer;transition:.3s;display:flex;align-items:center;gap:8px}
 .dropdown-item:hover{background:rgba(102,126,234,.1);transform:translateX(4px)}

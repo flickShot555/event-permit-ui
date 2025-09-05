@@ -13,7 +13,7 @@ export default function Header() {
     //suppose we have the Name of the user from the database over here
   //we will use this name further in the dashboard.
   const user = "Smith";
-  
+
   useEffect(() => setMounted(true), []);
   if (!mounted) return <div className="loading-skeleton">Loading...</div>;
 
