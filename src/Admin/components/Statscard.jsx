@@ -3,7 +3,7 @@ export default function StatsCard({ icon, title, value, variant = "active" }) {
       <div className={`status-card ${variant === "active" ? "active-card" : "pending-card"}`}>
         <div className="status-content">
           <div className="status-icon-container">
-            <span className="status-icon">{icon}</span>
+            <span className="admin-status-icon">{icon}</span>
           </div>
           <div className="status-info">
             <p className="status-title">{value}</p>

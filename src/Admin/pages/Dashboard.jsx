@@ -3,6 +3,7 @@ import { orders } from "../data/orders";
 import { users } from "../data/users";
 import { logs } from "../data/activity";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
+import { CheckCircle, Clock, Users } from "lucide-react";
 
 const trend = Array.from({ length: 7 }).map((_, i) => ({
   day: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i],
@@ -20,9 +21,9 @@ export default function Dashboard() {
     <div className="admin-dashboard-content">
       {/* Status */}
       <div className="status-container">
-        <StatsCard icon="✅" title="Active Applications" value={orders.length} variant="active" />
-        <StatsCard icon="🕒" title="Pending Review" value={orders.filter(o=>o.status==="In Review").length} variant="pending" />
-        <StatsCard icon="👥" title="Total Users" value={users.length} variant="active" />
+        <StatsCard icon={<CheckCircle />} title="Active Applications" value={orders.length} variant="active" />
+        <StatsCard icon={<Clock />} title="Pending Review" value={orders.filter(o => o.status === "In Review").length} variant="pending" />
+        <StatsCard icon={<Users />} title="Total Users" value={users.length} variant="active" />
       </div>
 
       {/* Charts */}

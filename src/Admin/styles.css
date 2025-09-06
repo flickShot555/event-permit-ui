@@ -83,6 +83,7 @@ body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; ba
 .pending-card{background:linear-gradient(135deg,rgba(245,158,11,.1) 0,rgba(217,119,6,.05) 100%);border-left:4px solid #f59e0b}
 .status-content{display:flex;align-items:center;gap:20px;position:relative;z-index:2}
 .status-icon-container{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);animation:float 3s ease-in-out infinite}
+.admin-status-icon {color: #96BBBB}
 .status-title{font-size:36px;font-weight:800;margin:0 0 6px}
 
 /* Charts */
