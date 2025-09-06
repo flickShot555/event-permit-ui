@@ -52,7 +52,7 @@ export default function UsersFromAdmin() {
   return (
     <div className="dashboard-content">
       <div className="actions-row">
-        <input className="input search" placeholder="Search users..." value={query} onChange={(e)=>setQuery(e.target.value)} />
+        <input className="input-search" placeholder="Search users..." value={query} onChange={(e)=>setQuery(e.target.value)} />
         <form className="user-form" onSubmit={handleSave}>
           <input className="input" placeholder="Name" value={form.name} onChange={(e)=>setForm({...form, name:e.target.value})} required />
           <input className="input" placeholder="Email" value={form.email} onChange={(e)=>setForm({...form, email:e.target.value})} required />

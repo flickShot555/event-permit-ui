@@ -119,22 +119,24 @@ body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; ba
   }
 
 /* Settings & utility */
-.actions-row{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
-.input{padding:10px 12px;border:2px solid rgba(102,126,234,.2);border-radius:12px;background:#fff;outline:none}
+.actions-row{display:flex;gap:12px;margin:16px 0; width: 100%;}
+.input-search {padding:10px 12px;border:2px solid #96bbbb73;border-radius:12px;background:#fff;outline:none; width: 20%}
+.user-form { display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; width: 80%}
+.input{padding:10px 12px;border:2px solid #96bbbb73;border-radius:12px;background:#fff;outline:none}
 .input:focus{border-color:#667eea;box-shadow:0 0 0 4px rgba(102,126,234,.1)}
-.btn{padding:10px 16px;border:none;border-radius:12px;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#fff;font-weight:700;cursor:pointer;transition:.25s;box-shadow:0 4px 15px rgba(102,126,234,.35)}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(102,126,234,.55)}
+.btn{padding:10px 16px;border:none;border-radius:12px;background:#96BBBB;color:#fff;font-weight:700;cursor:pointer;transition:.25s;box-shadow:0 4px 15px rgba(102,126,234,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(62, 62, 65, 0.55)}
 .btn-secondary{background:#e5e7eb;color:#111827}
 .btn-danger{background:#ef4444}
-.btn-small{padding:6px 10px;border-radius:8px}
+.btn-small{padding:6px 20px;border-radius:8px}
 .role-select{min-width:110px}
 
 /* Table */
-.table-wrap{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.06);overflow:auto}
+.table-wrap{width:100%;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.06);overflow:auto}
 .table{width:100%;border-collapse:separate;border-spacing:0}
 .table th,.table td{padding:12px 14px;border-bottom:1px solid #f2f2f2;text-align:left}
-.table th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:#6b7280;background:#fafafa;position:sticky;top:0}
-.table-actions{white-space:nowrap;display:flex;gap:8px}
+.table th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:#6b7280;background:#fafafa;position:sticky;top:5}
+.table-actions{justify-content: space-around;display:flex;gap:2px; margin-top: 14px;}
 
 /* Settings grid */
 .settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
