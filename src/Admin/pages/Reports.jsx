@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { orders } from "../data/orders";
+import LPHeader from "../components/MiniHeader";
 
 export default function ReportsFromAdmin() {
   const [status, setStatus] = useState("All");
@@ -19,7 +20,9 @@ export default function ReportsFromAdmin() {
   };
 
   return (
-    <div className="dashboard-content">
+    <div>
+      <LPHeader />
+      <div className="reports-content">
       <div className="actions-row">
         <select className="input" value={status} onChange={(e)=>setStatus(e.target.value)}>
           <option>All</option><option>Approved</option><option>In Review</option><option>Rejected</option>
@@ -41,6 +44,7 @@ export default function ReportsFromAdmin() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import Table from "../components/Table";
 import ConfirmModal from "../components/ConfirmModal";
 import { users as seed, ROLES } from "../data/users";
+import LPHeader from "../components/MiniHeader";
 
 export default function UsersFromAdmin() {
   const [data, setData] = useState(seed);
@@ -50,7 +51,9 @@ export default function UsersFromAdmin() {
   };
 
   return (
-    <div className="dashboard-content">
+   <div>
+    <LPHeader />
+     <div className="dashboard-content">
       <div className="actions-row">
         <input className="input-search" placeholder="Search users..." value={query} onChange={(e)=>setQuery(e.target.value)} />
         <form className="user-form" onSubmit={handleSave}>
@@ -73,5 +76,6 @@ export default function UsersFromAdmin() {
         onCancel={() => setConfirm({ open: false, row: null })}
       />
     </div>
+   </div>
   );
 }

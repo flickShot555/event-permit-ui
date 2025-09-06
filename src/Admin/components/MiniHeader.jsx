@@ -48,7 +48,7 @@ export default function LPHeader({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
+  gap: 12px;
 }
 
 /* actions container (right side) */
@@ -116,7 +116,7 @@ export default function LPHeader({
   return (
     <header className={`lp-nav ${className}`}>
       <div className="lp-nav-container">
-        <div style={{ display: "flex", alignItems: "center", gap: "50px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap:"10px" }}>
           {showBack && (
             <button
               onClick={handleBack}
