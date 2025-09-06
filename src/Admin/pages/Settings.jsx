@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Settings() {
+export default function SettingsFromAdmin() {
   const [maintenance, setMaintenance] = useState(false);
   const [apiKey, setApiKey] = useState("sk-**********");
   const [brand, setBrand] = useState("PermitPro");

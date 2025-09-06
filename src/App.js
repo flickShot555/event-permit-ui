@@ -15,6 +15,11 @@ import LearnMoreAboutTheO from './components/LearnMoreAboutTheo';
 import HowTheoWorksDetailed from './components/HowItWorks-Detailed';
 //import AdminRoot from "./admin/AdminRoot";
 import AdminAppFromIndex from './Admin/index';
+import UsersFromAdmin from './Admin/pages/Users';
+import ReportsFromAdmin from './Admin/pages/Reports';
+import NotificationsFromAdmin from './Admin/pages/Notifications';
+import SettingsFromAdmin from './Admin/pages/Settings';
+import ActivityLogsFromAdmin from './Admin/pages/ActivityLogs';
 
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -67,7 +72,46 @@ export default function App() {
               </Suspense>
             }
         />
-
+        <Route
+          path='/users'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <UsersFromAdmin />
+              </Suspense>
+            }
+        />
+        <Route
+          path='/reports'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <ReportsFromAdmin />
+              </Suspense>
+            }
+        />
+        <Route
+          path='/notifications'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <NotificationsFromAdmin />
+              </Suspense>
+            }
+        />
+        <Route
+          path='/settings'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <SettingsFromAdmin />
+              </Suspense>
+            }
+        />
+        <Route
+          path='/logs'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <ActivityLogsFromAdmin />
+              </Suspense>
+            }
+        />
         {/* admin mounted at /admin/* 
         <Route path="/admin/*" element={<AdminRoot />} />*/}
       </Routes>

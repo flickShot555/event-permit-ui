@@ -2,11 +2,11 @@ import { Routes, Route, Navigate, Link } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
-import Users from "./pages/Users";
-import Reports from "./pages/Reports";
-import Settings from "./pages/Settings";
-import Notifications from "./pages/Notifications";
-import ActivityLogs from "./pages/ActivityLogs";
+import UsersFromAdmin from './pages/Users';
+import ReportsFromAdmin from './pages/Reports';
+import NotificationsFromAdmin from './pages/Notifications';
+import SettingsFromAdmin from './pages/Settings';
+import ActivityLogsFromAdmin from './pages/ActivityLogs';
 
 export default function AdminApp() {
   return (
@@ -17,11 +17,11 @@ export default function AdminApp() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/logs" element={<ActivityLogs />} />
+            <Route path="/users" element={<UsersFromAdmin />} />
+            <Route path="/reports" element={<ReportsFromAdmin />} />
+            <Route path="/settings" element={<SettingsFromAdmin />} />
+            <Route path="/notifications" element={<NotificationsFromAdmin />} />
+            <Route path="/logs" element={<ActivityLogsFromAdmin />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
@@ -29,7 +29,7 @@ export default function AdminApp() {
       <footer className="dashboard-footer">
         <div className="footer-content">
             <div className="footer-logo-container">
-              <div className="footer-logo-icon">P</div>
+              {/*<div className="footer-logo-icon">P</div>*/}
               <span className="footer-brand">TheO</span>
             </div>
             <span className="footer-tagline">– Smarter Permitting for Ireland</span>

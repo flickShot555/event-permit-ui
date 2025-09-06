@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Notifications() {
+export default function NotificationsFromAdmin() {
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState([]);
 

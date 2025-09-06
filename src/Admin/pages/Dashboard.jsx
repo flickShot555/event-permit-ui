@@ -28,25 +28,25 @@ export default function Dashboard() {
       {/* Charts */}
       <div className="charts-grid">
         <div className="chart-card">
-          <h3 className="section-title">Applications per Day</h3>
+          <h3 className="card-section-title">Applications per Day</h3>
           <ResponsiveContainer width="100%" height={260}>
             <AreaChart data={trend} margin={{ left: -20, right: 10 }}>
               <defs>
                 <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#667eea" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="#764ba2" stopOpacity={0}/>
+                  <stop offset="10%" stopColor="#607979" stopOpacity={0.8}/>
+                  <stop offset="90%" stopColor="#96BBBB" stopOpacity={0.2}/>
                 </linearGradient>
               </defs>
               <XAxis dataKey="day" />
               <YAxis />
               <Tooltip />
-              <Area type="monotone" dataKey="apps" stroke="#667eea" fillOpacity={1} fill="url(#g1)" />
+              <Area type="monotone" dataKey="apps" stroke="#96BBBB" fillOpacity={1} fill="url(#g1)" />
             </AreaChart>
           </ResponsiveContainer>
         </div>
 
         <div className="chart-card">
-          <h3 className="section-title">Status Breakdown</h3>
+          <h3 className="card-section-title">Status Breakdown</h3>
           <ResponsiveContainer width="100%" height={260}>
             <PieChart>
               <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={100} label>
@@ -60,7 +60,7 @@ export default function Dashboard() {
 
       {/* Recent Applications */}
       <div className="events-section">
-        <h2 className="section-title">Your Events & Applications</h2>
+        <h2 className="events-section-title">Your Events & Applications</h2>
         <div className="events-container">
           {orders.slice(0,4).map((o) => (
             <div className="event-row" key={o.id}>
@@ -71,8 +71,8 @@ export default function Dashboard() {
                 </span>
                 <p className="event-updated">Updated {o.updatedAt}</p>
               </div>
-              <div className="event-action">
-                <button className="event-button primary">View Details</button>
+              <div className="admin-event-action">
+                <button className="admin-event-button primary">View Details</button>
               </div>
             </div>
           ))}

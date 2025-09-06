@@ -1,6 +1,6 @@
 import { logs } from "../data/activity";
 
-export default function ActivityLogs() {
+export default function ActivityLogsFromAdmin() {
   return (
     <div className="dashboard-content">
       <h2 className="section-title">Activity Logs</h2>

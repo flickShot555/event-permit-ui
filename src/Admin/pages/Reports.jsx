@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { orders } from "../data/orders";
 
-export default function Reports() {
+export default function ReportsFromAdmin() {
   const [status, setStatus] = useState("All");
   const rows = useMemo(
     () => orders.filter(o => status === "All" ? true : o.status === status),

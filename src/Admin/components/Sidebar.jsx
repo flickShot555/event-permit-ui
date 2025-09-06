@@ -6,7 +6,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <nav className="nav">
-        <NavLink to="/" end className="nav-link"><BarChart3 className="navIcon" /> Overview</NavLink>
+        <NavLink to="/Admin-Dashboard" end className="nav-link"><BarChart3 className="navIcon" /> Overview</NavLink>
         <NavLink to="/users" className="nav-link"><Users className="navIcon" /> Users</NavLink>
         <NavLink to="/reports" className="nav-link"><FileText className="navIcon" /> Reports</NavLink>
         <NavLink to="/notifications" className="nav-link"><Bell className="navIcon" /> Notifications</NavLink>

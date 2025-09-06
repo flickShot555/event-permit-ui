@@ -3,7 +3,7 @@ import Table from "../components/Table";
 import ConfirmModal from "../components/ConfirmModal";
 import { users as seed, ROLES } from "../data/users";
 
-export default function Users() {
+export default function UsersFromAdmin() {
   const [data, setData] = useState(seed);
   const [query, setQuery] = useState("");
   const [confirm, setConfirm] = useState({ open: false, row: null });
