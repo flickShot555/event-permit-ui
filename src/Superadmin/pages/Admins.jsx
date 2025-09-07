@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import Modal from '../components/Modal';
-import { downloadCSV } from '../utils/csv';
+import SAModal from '../components/Modal';
+import { SAdownloadCSV } from '../utils/csv';
 
-export default function Admins({ admins, setAdmins, search }) {
+export default function SAAdmins({ admins, setAdmins, search }) {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({ name:'', email:'', role:'Admin' });
 
@@ -22,7 +22,7 @@ export default function Admins({ admins, setAdmins, search }) {
     <div>
       <div className="actions-row">
         <button className="btn" onClick={() => setOpen(true)}>➕ Add Admin</button>
-        <button className="btn-secondary btn" onClick={() => downloadCSV(filtered, 'admins.csv')}>⬇️ Export CSV</button>
+        <button className="btn-secondary btn" onClick={() => SAdownloadCSV(filtered, 'admins.csv')}>⬇️ Export CSV</button>
       </div>
 
       <div className="table-wrap">
@@ -37,7 +37,7 @@ export default function Admins({ admins, setAdmins, search }) {
       </div>
 
       {open && (
-        <Modal title="Add Admin" onClose={() => setOpen(false)} actions={
+        <SAModal title="Add Admin" onClose={() => setOpen(false)} actions={
           <>
             <button className="btn-secondary btn" onClick={() => setOpen(false)}>Cancel</button>
             <button className="btn" onClick={addAdmin}>Save</button>
@@ -48,7 +48,7 @@ export default function Admins({ admins, setAdmins, search }) {
             <input className="input" placeholder="Email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
             <select className="input" value={form.role} onChange={e => setForm({ ...form, role: e.target.value })}><option>Admin</option><option>Super Admin</option></select>
           </div>
-        </Modal>
+        </SAModal>
       )}
     </div>
   );

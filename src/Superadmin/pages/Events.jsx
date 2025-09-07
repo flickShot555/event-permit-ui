@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-export default function Events({ events, search }) {
+export default function SAEvents({ events, search }) {
   const filtered = useMemo(() => {
     const q = (search || '').toLowerCase();
     return events.filter(e => [e.id, e.event, e.status, e.owner].some(x => String(x).toLowerCase().includes(q)));

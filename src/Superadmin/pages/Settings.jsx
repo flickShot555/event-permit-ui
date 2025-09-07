@@ -1,7 +1,7 @@
 import React from 'react';
-import { downloadCSV } from '../utils/csv';
+import { SAdownloadCSV } from '../utils/csv';
 
-export default function Settings({ settings, setSettings }) {
+export default function SASettings({ settings, setSettings }) {
   return (
     <div>
       <h2 className="section-title">Platform Settings</h2>
@@ -41,7 +41,7 @@ export default function Settings({ settings, setSettings }) {
 
       <div className="actions-row" style={{ marginTop: 16 }}>
         <button className="btn" onClick={() => alert('Settings saved (mocked)')}>💾 Save Settings</button>
-        <button className="btn-secondary btn" onClick={() => downloadCSV([settings], 'settings_backup.csv')}>⬇️ Export Settings</button>
+        <button className="btn-secondary btn" onClick={() => SAdownloadCSV([settings], 'settings_backup.csv')}>⬇️ Export Settings</button>
       </div>
     </div>
   );

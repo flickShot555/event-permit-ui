@@ -1,4 +1,4 @@
-export function downloadCSV(rows, filename = 'export.csv') {
+export function SAdownloadCSV(rows, filename = 'export.csv') {
     if (!rows || rows.length === 0) {
       alert('No rows to export');
       return;

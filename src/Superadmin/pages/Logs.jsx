@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { downloadCSV } from '../utils/csv';
+import { SAdownloadCSV } from '../utils/csv';
 
-export default function Logs({ logs, search }) {
+export default function SALogs({ logs, search }) {
   const filtered = useMemo(() => {
     const q = (search || '').toLowerCase();
     return logs.filter(l => [l.actor, l.action, l.target, l.at].some(x => String(x).toLowerCase().includes(q)));
@@ -10,7 +10,7 @@ export default function Logs({ logs, search }) {
   return (
     <div>
       <div className="actions-row">
-        <button className="btn-secondary btn" onClick={() => downloadCSV(filtered, 'audit_logs.csv')}>⬇️ Export CSV</button>
+        <button className="btn-secondary btn" onClick={() => SAdownloadCSV(filtered, 'audit_logs.csv')}>⬇️ Export CSV</button>
       </div>
 
       <div className="table-wrap">

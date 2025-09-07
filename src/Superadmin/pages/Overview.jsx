@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-import StatCard from '../components/StatCard';
+import SAStatCard from '../components/Statcard';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 
-export default function Overview({ users, events }) {
+export default function SAOverview({ users, events }) {
   const metrics = useMemo(() => ({
     totalUsers: users.length,
     activeUsers: users.filter(u => u.status === 'Active').length,
@@ -27,11 +27,11 @@ export default function Overview({ users, events }) {
   return (
     <div>
       <div className="status-container">
-        <StatCard emoji="👥" title="Total Users" value={metrics.totalUsers} variant="active" />
-        <StatCard emoji="✅" title="Active Users" value={metrics.activeUsers} variant="active" />
-        <StatCard emoji="🗓️" title="Total Events" value={metrics.totalEvents} variant="pending" />
-        <StatCard emoji="🟡" title="Pending Events" value={metrics.pendingEvents} variant="pending" />
-        <StatCard emoji="⛔" title="Rejected Events" value={metrics.rejectedEvents} variant="danger" />
+        <SAStatCard emoji="👥" title="Total Users" value={metrics.totalUsers} variant="active" />
+        <SAStatCard emoji="✅" title="Active Users" value={metrics.activeUsers} variant="active" />
+        <SAStatCard emoji="🗓️" title="Total Events" value={metrics.totalEvents} variant="pending" />
+        <SAStatCard emoji="🟡" title="Pending Events" value={metrics.pendingEvents} variant="pending" />
+        <SAStatCard emoji="⛔" title="Rejected Events" value={metrics.rejectedEvents} variant="danger" />
       </div>
 
       <div className="charts-grid">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Modal({ title, children, onClose, actions }) {
+export default function SAModal({ title, children, onClose, actions }) {
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>

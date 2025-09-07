@@ -21,6 +21,9 @@ import NotificationsFromAdmin from './Admin/pages/Notifications';
 import SettingsFromAdmin from './Admin/pages/Settings';
 import ActivityLogsFromAdmin from './Admin/pages/ActivityLogs';
 
+//super admin
+import SuperAdminApp from './Superadmin/App';
+
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
 
@@ -109,6 +112,14 @@ export default function App() {
             element={
               <Suspense fallback={<div>Loading...</div>}>
                 <ActivityLogsFromAdmin />
+              </Suspense>
+            }
+        />
+        <Route
+          path='/Super-Admin'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <SuperAdminApp />
               </Suspense>
             }
         />

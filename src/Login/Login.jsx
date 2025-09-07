@@ -187,11 +187,24 @@ export default function Login() {
     try {
       await new Promise((r) => setTimeout(r, 400));
       // demo credentials (change if you want)
+      if (adminUser === "superadmin@theo.com" && adminPass === "superadmin1234") {
+        setAdminMsg({ type: "success", text: "Admin authenticated." });
+        // do admin navigation or show admin dashboard, etc.
+        // e.g. navigate('/admin-dashboard');
+        // small delay so user sees message (adjust if you want immediate redirect)
+        setTimeout(() => {
+          // navigate to dashboard
+          navigate("/Super-Admin");
+        }, 400);
+      } else {
+        setAdminMsg({ type: "error", text: "Invalid admin credentials." });
+      }
+      // demo credentials (change if you want)
       if (adminUser === "admin@theo.com" && adminPass === "admin1234") {
         setAdminMsg({ type: "success", text: "Admin authenticated." });
         // do admin navigation or show admin dashboard, etc.
         // e.g. navigate('/admin-dashboard');
-              // small delay so user sees message (adjust if you want immediate redirect)
+        // small delay so user sees message (adjust if you want immediate redirect)
         setTimeout(() => {
           // navigate to dashboard
           navigate("/Admin-Dashboard");

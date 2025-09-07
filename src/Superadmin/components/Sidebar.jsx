@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-export default function Sidebar({ tab, setTab }) {
+export default function SASidebar({ tab, setTab }) {
   const links = [
     ['overview', '📊 Overview'],
     ['users', '👥 Users'],

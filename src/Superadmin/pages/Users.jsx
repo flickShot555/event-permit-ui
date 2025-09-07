@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import Modal from '../components/Modal';
-import { downloadCSV } from '../utils/csv';
+import SAModal from '../components/Modal';
+import { SAdownloadCSV } from '../utils/csv';
 
-export default function Users({ users, setUsers, logs, setLogs, search }) {
+export default function SAUsers({ users, setUsers, logs, setLogs, search }) {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({ name:'', email:'', role:'User' });
 
@@ -34,7 +34,7 @@ export default function Users({ users, setUsers, logs, setLogs, search }) {
     <div>
       <div className="actions-row">
         <button className="btn" onClick={() => setShow(true)}>➕ Add User</button>
-        <button className="btn-secondary btn" onClick={() => downloadCSV(filtered, 'users.csv')}>⬇️ Export CSV</button>
+        <button className="btn-secondary btn" onClick={() => SAdownloadCSV(filtered, 'users.csv')}>⬇️ Export CSV</button>
       </div>
 
       <div className="table-wrap">
@@ -71,7 +71,7 @@ export default function Users({ users, setUsers, logs, setLogs, search }) {
       </div>
 
       {show && (
-        <Modal title="Add New User" onClose={() => setShow(false)} actions={
+        <SAModal title="Add New User" onClose={() => setShow(false)} actions={
           <>
             <button className="btn-secondary btn" onClick={() => setShow(false)}>Cancel</button>
             <button className="btn" onClick={addUser}>Save</button>
@@ -84,7 +84,7 @@ export default function Users({ users, setUsers, logs, setLogs, search }) {
               <option>User</option><option>Moderator</option><option>Admin</option>
             </select>
           </div>
-        </Modal>
+        </SAModal>
       )}
     </div>
   );
