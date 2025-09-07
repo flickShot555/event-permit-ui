@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 // A tiny, dependency-free React component that shows a centered logout prompt
 // Usage: <LogoutModal isOpen={open} onClose={() => setOpen(false)} redirectTo="/" />
 
-export default function LogoutModal({ isOpen = false, onClose = () => {}, redirectTo = "/" }) {
+export default function LogoutModal({ isOpen = false, onClose = () => {}, redirectTo = "/login" }) {
   const [visible, setVisible] = useState(isOpen);
   const [text, setText] = useState("Are you sure you want to log out?");
 
