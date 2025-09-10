@@ -971,7 +971,8 @@ html {
 }
 
 .btn-outline {
-  border: 1px solid #fff;
+  text-decoration: none;
+  border: 1px solid #96BBBB;
   color: #96bbbb;
   padding: 6px 16px;
   border-radius: 4px;
@@ -980,8 +981,8 @@ html {
 }
 
 .btn-outline:hover {
-  background-color: #fff;
-  color: #2c3e50;
+  background-color: #96BBBB;
+  color: #fff;
 }
 
 .btn-solid {
@@ -1233,6 +1234,7 @@ html {
 
 .lp-works-grid {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
   margin-top: 40px;
@@ -1565,6 +1567,7 @@ html {
 /* ─── WHY THEO WORKS BETTER ───────────────────────────────────────────── */
 .lp-works-grid {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 40px;
