@@ -1,8 +1,8 @@
 /* ===== Base & layout ===== */
-* { box-sizing: border-box; }
+* { box-sizing: border-box; padding: 0;}
 body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:#fff; color:#2d3748; }
 .dashboard { min-height:100vh; display:flex; flex-direction:column; }
-.app-body { display:flex; gap:24px; padding:24px 32px; }
+.app-body { display:flex; gap:24px;  }
 
 /* Header */
 .dashboard-header{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.2);box-shadow:0 8px 32px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
@@ -16,6 +16,9 @@ body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; ba
 .search-bar{padding:10px 14px;border:2px solid rgba(102,126,234,.15);border-radius:24px;font-size:14px;width:280px;background:rgba(255,255,255,.9)}
 .icon{font-size:20px;padding:8px;border-radius:10px;display:flex;align-items:center;justify-content:center}
 .notification-badge{position:absolute;top:6px;right:6px;width:10px;height:10px;background:#ff4757;border-radius:50%}
+.sa-profile-avatar {background:'transparent';color:'#96BBBB';box-shadow:'0 4px 15px rgba(102,126,234,.4)'; padding:'9px'; border-radius:'15px'; cursor:'pointer'}
+.sa-profile-avatar:hover {transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);}
 
 /* Sidebar */
 .sidebar{width:220px;position:sticky;top:92px;align-self:flex-start;height:calc(100vh - 92px);padding:16px 12px;border-right:1px solid rgba(0,0,0,.05)}

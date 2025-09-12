@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Home, Bell, Sun, Moon, User} from 'lucide-react';
+//import '../styles/App.css';
 
 export default function SAHeader({ onSearch, onToggleTheme, themeDark }) {
   const [open, setOpen] = useState(false);
@@ -17,10 +18,10 @@ export default function SAHeader({ onSearch, onToggleTheme, themeDark }) {
 
       <div className="header-right">
         <input className="search-bar" placeholder="Search users, events, logs..." onChange={(e) => onSearch(e.target.value)} />
-        <div className="icon notification-container" title="Notifications"><Bell /><span className="notification-badge" /></div>
-        <div className="icon" title="Toggle Theme" onClick={onToggleTheme}>{themeDark ? <Sun size={24} /> : <Moon size={24} />}</div>
+        <div className="icon notification-container" title="Notifications"><Bell style={{color: '#96BBBB'}} /><span className="notification-badge" /></div>
+        <div className="icon" title="Toggle Theme" onClick={onToggleTheme}>{themeDark ? <Sun style={{color: '#96BBBB'}} size={24} /> : <Moon style={{color: '#96BBBB'}} size={24} />}</div>
         <div className="profile" onClick={() => setOpen(v => !v)}>
-          <div className="profile-avatar"><User /></div>
+          <div className='sa-profile-avatar' ><User /></div>
           {open && (
             <div className="dropdown-menu">
               <div className="dropdown-item">Profile</div>
