@@ -55,7 +55,7 @@ const FloatingMenu = () => {
       {/* Internal Styles */}
       <style>{`
         .fob-button {
-          z-index: 9999;
+          z-index: 9998;
           position: fixed;
           left: 0;
           top: 50%;
@@ -88,7 +88,7 @@ const FloatingMenu = () => {
           z-index: 9997;
         }
         .fob-tray {
-          z-index: 9998;
+          z-index: 9997;
           position: fixed;
           top: 0;
           left: 0;
@@ -135,6 +135,7 @@ const FloatingMenu = () => {
           text-decoration: none;
           color: #96BBBB;
           font-weight: 500;
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
         .fob-tray-item a:hover {
           background: #96BBBB;
