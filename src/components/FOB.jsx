@@ -130,18 +130,26 @@ const FloatingMenu = () => {
         }
 
         .fob-tray-item a {
-            
-            padding: 10px 40px;
-          text-decoration: none;
-          color: #96BBBB;
-          font-weight: 500;
-          transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .fob-tray-item a:hover {
-          background: #96BBBB;
-          color: white;
-          border-radius: 15px;
-        }
+  display: block;              /* make the anchor a block element */
+  width: 100%;                 /* so the whole row is clickable */
+  padding: 10px 40px;
+  text-decoration: none;
+  color: #96BBBB;
+  font-weight: 500;
+  text-align: center;          /* keep text centered */
+  border-radius: 15px;
+  /* smooth transitions */
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease, 
+    transform 0.3s ease;
+}
+
+.fob-tray-item a:hover {
+  background: #96BBBB;
+  color: white;
+  transform: scale(1.1); /* now it grows */
+}
         .fob-tray-item.show {
           opacity: 1;
         }
