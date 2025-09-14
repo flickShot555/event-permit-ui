@@ -576,7 +576,7 @@ export default function PricingPage() {
   const currentData = pricingData[selectedUserType]
 
   return (
-    <div className="pricing-page">
+    <div className="pricing-page" id="pricing">
       {/* Header */}
       <div className="header">
         <div className="container">

@@ -12,6 +12,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton"
 import HowLink from "./components/HowLink";
 import PricingPage from "./components/PricingPage";
 import FeatureHighlights from "./components/FeatureHighlights";
+import FloatingMenu from "./components/FOB"
 
 //import PlatformHighlightsSection from "./components/PlatformHighlightsSection";
 import { MessageCircle, CreditCard, PhoneIncoming, Globe2, Building, Megaphone, ShieldCheck, TrendingUp, Rocket, Landmark } from "lucide-react"
@@ -97,10 +98,11 @@ export default function LandingPage() {
 
   return (
     <div className="lp">
+      <FloatingMenu />
       <ScrollToTopButton />
 
       {/* NAV */}
-      <header className="lp-nav">
+      <header className="lp-nav" id="header">
         <div className="lp-nav-container">
           <img src="/images/logo-3.png" alt="TheO Logo" className="lp-logo logo-entrance" />
           <div className="lp-nav-actions">

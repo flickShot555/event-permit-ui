@@ -6,6 +6,11 @@ body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; ba
 .dashboard {  display:flex; flex-direction:column; }
 .app-body { display:flex; gap:24px; padding:1.5% 2%; }
 
+/*for the superadmin file*/
+.sa-profile-avatar {background:'transparent';color:'#96BBBB';box-shadow:'0 4px 15px rgba(102,126,234,.4)'; padding:'9px'; border-radius:'15px'; cursor:'pointer'}
+.sa-profile-avatar:hover {transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);}
+
 /* Loading */
 .loading-skeleton{display:flex;align-items:center;justify-content:center;height:60vh;font-size:24px;font-weight:700;background:linear-gradient(135deg,#f5f7fa 0,#c3cfe2 100%);color:#4a5568}
 /*calc(100vh - 92px)*/

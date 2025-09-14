@@ -9,6 +9,8 @@ import SAEvents from './pages/Events';
 import SALogs from './pages/Logs';
 import SASettings from './pages/Settings';
 
+//import './styles/App.css'
+
 import { seedUsers, seedAdmins, seedEvents, seedLogs } from './data/mock';
 
 export default function SuperAdminApp() {
