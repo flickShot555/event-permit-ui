@@ -71,6 +71,7 @@ body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; ba
     background: #96BBBB;
     color: white;
     transform: translateX(4px);
+    cursor: pointer;
   }
   
   .nav-link.active .navIcon,
@@ -86,6 +87,7 @@ body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; ba
 .status-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 30px 60px rgba(0,0,0,.12)}
 .active-card{background:linear-gradient(135deg,rgba(16,185,129,.1) 0,rgba(5,150,105,.05) 100%);border-left:4px solid #10b981}
 .pending-card{background:linear-gradient(135deg,rgba(245,158,11,.1) 0,rgba(217,119,6,.05) 100%);border-left:4px solid #f59e0b}
+.danger-card{background:linear-gradient(135deg,rgba(185, 78, 16, 0.1) 0,rgba(150, 58, 5, 0.05) 100%);border-left:4px solid #b91010}
 .status-content{display:flex;align-items:center;gap:20px;position:relative;z-index:2}
 .status-icon-container{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);animation:float 3s ease-in-out infinite}
 .admin-status-icon {color: #96BBBB}

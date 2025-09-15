@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import SAStatCard from '../components/Statcard';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
+import { Users, CheckCircle, CalendarDays, Clock, XCircle } from "lucide-react";
 
 export default function SAOverview({ users, events }) {
   const metrics = useMemo(() => ({
@@ -27,30 +28,35 @@ export default function SAOverview({ users, events }) {
   return (
     <div>
       <div className="status-container">
-        <SAStatCard emoji="👥" title="Total Users" value={metrics.totalUsers} variant="active" />
-        <SAStatCard emoji="✅" title="Active Users" value={metrics.activeUsers} variant="active" />
-        <SAStatCard emoji="🗓️" title="Total Events" value={metrics.totalEvents} variant="pending" />
-        <SAStatCard emoji="🟡" title="Pending Events" value={metrics.pendingEvents} variant="pending" />
-        <SAStatCard emoji="⛔" title="Rejected Events" value={metrics.rejectedEvents} variant="danger" />
+        <SAStatCard icon={<Users style={{color:"#96BBBB"}} />} title={metrics.totalUsers} value="Total Users" variant="active" />
+        <SAStatCard icon={<CheckCircle style={{color:"#96BBBB"}} />} title={metrics.activeUsers} value="Active Users" variant="active" />
+        <SAStatCard icon={<CalendarDays style={{color:"#96BBBB"}} />} title={metrics.totalEvents} value="Total Events" variant="pending" />
+        <SAStatCard icon={<Clock style={{color:"#96BBBB"}} />} title={metrics.pendingEvents} value="Pending Events" variant="pending" />
+        <SAStatCard icon={<XCircle style={{color:"#96BBBB"}} />} title={metrics.rejectedEvents} value="Rejected Events" variant="danger" />
       </div>
 
       <div className="charts-grid">
         <div className="chart-card">
-          <h3 className="section-title">Applications per Day</h3>
+          <h3   style={{
+    fontSize: "1.5rem",
+    fontWeight: 600,
+    color: "#2d2d2d",
+    marginBottom: "16px",
+  }} >Applications per Day</h3>
           <div style={{ width: '100%', height: 260 }}>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={trend} margin={{ left: -20, right: 10 }}>
                 <defs>
                   <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#667eea" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#764ba2" stopOpacity={0}/>
+                    <stop offset="10%" stopColor="#607979" stopOpacity={0.8}/>
+                    <stop offset="90%" stopColor="#96BBBB" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="day" />
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="apps" stroke="#667eea" fillOpacity={1} fill="url(#g1)" />
+                <Area type="monotone" dataKey="apps" stroke="#96BBBB" fillOpacity={1} fill="url(#g1)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>

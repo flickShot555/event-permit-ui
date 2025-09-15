@@ -1,14 +1,22 @@
 import React from 'react';
 import classnames from 'classnames';
+import {
+  BarChart3,
+  Users,
+  Shield,
+  CalendarDays,
+  FileText,
+  Settings,
+} from "lucide-react";
 
 export default function SASidebar({ tab, setTab }) {
   const links = [
-    ['overview', '📊 Overview'],
-    ['users', '👥 Users'],
-    ['admins', '🛡️ Admins'],
-    ['events', '🗓️ Events'],
-    ['logs', '🧾 Audit Logs'],
-    ['settings', '⚙️ Settings'],
+    ['overview', <><BarChart3 className="navIcon"  /> Overview</>],
+    ['users', <><Users className="navIcon" /> Users</>],
+    ['admins', <><Shield className="navIcon" /> Admins</>],
+    ['events', <><CalendarDays className="navIcon" /> Events</>],
+    ['logs', <><FileText className="navIcon" /> Audit Logs</>],
+    ['settings', <><Settings className="navIcon" /> Settings</>],
   ];
   return (
     <aside className="sidebar">

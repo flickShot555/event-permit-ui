@@ -43,7 +43,7 @@ body { margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; ba
 /* Charts */
 .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
 .chart-card{background:#fff;border-radius:12px;padding:12px;box-shadow:0 8px 20px rgba(0,0,0,.06)}
-.section-title{font-size:18px;font-weight:700;margin-bottom:12px;color:transparent;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);-webkit-background-clip:text}
+.section-title{font-size:18px;font-weight:700;margin-bottom:12px;color:#96BBBB;background:transparent;-webkit-background-clip:text}
 
 /* Events list */
 .events-section{margin:24px 0}
