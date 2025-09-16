@@ -40,7 +40,7 @@ export default function LandingPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % sliderImages.length)
-    }, 4000)
+    }, 2000)
     return () => clearInterval(interval)
   }, []);
 
@@ -166,7 +166,7 @@ export default function LandingPage() {
         id="who"
         className={`lp-section--padded ${visibleSections.has("who") ? "section-visible" : ""}`}
       >
-        <h1 className="lp-section-title title-spectacular">One system. Multiple users. Real impact.</h1>
+        <h1 className="lp-section-title-who title-spectacular">One system. Multiple users. Real impact.</h1>
         <h3>TheO supports the full ecosystem of permitting — making life easier for councils, organisers, agencies, businesses, and citizens alike. Click below to see how each stakeholder benefits:</h3>
         <div className="lp-who-grid">
           {[
@@ -495,22 +495,46 @@ export default function LandingPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section ref={ctaRef} className={`lp-cta ${visibleSections.has("cta") ? "section-visible" : ""}`}>
-        <h2 className="lp-cta-title cta-title-spectacular">
-        Connecting People, Permits & Public Services.
-        </h2>
-        <div className="lp-cta-footer cta-footer-spectacular">
-          <button className="btn-demo cta-button-spectacular">Book Your Demo</button>
-          <div className="lp-cta-links">
-            <span className="lp-cta-link-wrapper cta-link-spectacular" style={{ "--delay": "0.1s" }}>
-              <a href="#contact">Contact Integration Team</a>
-            </span>
-            <span className="lp-cta-link-wrapper cta-link-spectacular" style={{ "--delay": "0.2s" }}>
-              <a href="#faqs">Explore FAQs</a>
-            </span>
+      <section
+        ref={ctaRef}
+        className={`lp-cta ${visibleSections.has("cta") ? "section-visible" : ""}`}
+      >
+        <div className="lp-cta-inner">
+          <img
+            src="/images/logo-1.png"    // ← replace this with your real image path
+            alt="Illustration: connecting people and services"
+            className="cta-image"
+            width="180"
+            height="160"
+          />
+
+          <div className="cta-content">
+            <h2 className="lp-cta-title cta-title-spectacular">
+              Connecting People, Permits & Public Services.
+            </h2>
+
+            <div className="lp-cta-footer cta-footer-spectacular">
+              <button className="btn-demo cta-button-spectacular">Book Your Demo</button>
+
+              <div className="lp-cta-links">
+                <span
+                  className="lp-cta-link-wrapper cta-link-spectacular"
+                  style={{ "--delay": "0.1s" }}
+                >
+                  <a href="#contact">Contact Integration Team</a>
+                </span>
+                <span
+                  className="lp-cta-link-wrapper cta-link-spectacular"
+                  style={{ "--delay": "0.2s" }}
+                >
+                  <a href="#faqs">Explore FAQs</a>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* FOOTER */}
       <footer className="lp-footer footer-spectacular">

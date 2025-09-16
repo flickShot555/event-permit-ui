@@ -1003,7 +1003,7 @@ html {
   position: relative;
   text-align: center;
   color: white;
-  padding: 80px 20px;
+  padding: 60px 20px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1095,7 +1095,7 @@ html {
   flex-wrap: wrap;
   gap: 40px;
   align-items: center;
-  padding: 100px 4%;
+  padding: 600px 4%;
 }
 
 .lp-content {
@@ -1227,9 +1227,10 @@ html {
 }
 
 /* ─── SECTION TITLES ───────────────────────────────────────────────────── */
-.lp-section-title {
+.lp-section-title-who {
+  font-weight: normal;
   font-size: 2rem;
-  margin: 40px 0 20px;
+  margin: 0 20px;
 }
 
 .lp-works-grid {
@@ -1262,7 +1263,7 @@ html {
 
 /* ─── WHO IT'S MADE FOR ──────────────────────── */
 .lp-section--padded {
-  padding: 0 4%;
+  padding: 60px 4%;
 }
 
 #who .lp-who-grid {
@@ -1459,7 +1460,7 @@ html {
 }
 /* Fix spacing above card grid */
 .lp-works-section {
-  padding: 100px 4%;
+  padding: 60px 4%;
   display: block;
 }
 
@@ -1476,6 +1477,7 @@ html {
 
 /* Adjust title above cards */
 .lp-section-title {
+  margin-top: 0 !important;
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: left;
@@ -1650,6 +1652,7 @@ html {
 
 .lp-section-title {
   font-size: 2rem;
+  margin-top: 0 !important;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -2091,7 +2094,7 @@ html {
 /* ─── ABOUT TheO ───────────────────────────────────────────────────────── */
 #about {
   text-align: left;
-  padding: 80px 4%;
+  padding: 60px 4%;
   background-color: white;
 }
 
@@ -2112,7 +2115,7 @@ html {
 
 .lp-about-text h2 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 400;
   color: #2d3748;
   margin-bottom: 16px;
 }
@@ -2183,25 +2186,63 @@ html {
 
 /* ─── CTA SECTION ─────────────────────────────────────────────────────── */
 .lp-cta {
-  padding: 100px 4%;
+  padding: 60px 4%;
   text-align: left;
   background-color: white;
 }
+
+/* Layout wrapper */
+.lp-cta-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;              /* space between image and content */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Image on the left */
+.cta-image {
+  flex: 0 0 160px;        /* fixed width */
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;    /* optional */
+}
+
+/* Content (text + footer) takes the remaining space */
+.cta-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* centers the H2 horizontally */
+}
+
+/* Keep your existing H2 styles but ensure center alignment 
+.lp-cta-title {
+  margin: 0 0 12px;
+  text-align: center;     /* centers the h2 within the content block 
+}
+*/
 
 .lp-cta-title {
   font-size: 2rem;
   font-weight: 700;
   color: #2d3748;
+  margin-top: 0 !important;
   margin-bottom: 24px;
+  text-align: center;     /* centers the h2 within the content block */
 }
 
 .lp-cta-footer {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 32px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
+
 
 .btn-demo {
   position: relative;
@@ -2285,6 +2326,23 @@ html {
 .lp-cta-link-wrapper:hover a {
   color: white;
   transform: scale(1.05);
+}
+/* Responsive: stack image above content on narrow screens */
+@media (max-width: 768px) {
+  .lp-cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-image {
+    order: -1;            /* show image first on mobile */
+    width: 140px;
+    margin-bottom: 12px;
+  }
+
+  .cta-content {
+    align-items: center;
+  }
 }
 
 /* ─── FOOTER ────────────────────────────────── */

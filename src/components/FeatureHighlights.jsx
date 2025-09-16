@@ -4,24 +4,9 @@ import { MessageSquare, Users, ShieldCheck, Lightbulb, Layers, Cloud, CheckCircl
 
 const HIGHLIGHTS = [
   {
-    title: "Real-Time Communication",
-    desc: "No more phone calls and email chains. TheO supports direct comments, tagging, and instant updates between departments and stakeholders.",
-    Icon: MessageSquare
-  },
-  {
-    title: "Stakeholder-Centric Design",
-    desc: "TheO was built in collaboration with local authorities, statutory bodies, businesses, and event organisers. Every feature supports real-world workflows and reduces friction.",
-    Icon: Users
-  },
-  {
-    title: "Built-In Safety and Compliance",
-    desc: "Risk assessments, insurance uploads, inspection checklists, conditional approvals—all integrated, version-controlled, and time-stamped.",
-    Icon: ShieldCheck
-  },
-  {
-    title: "Smart Guidance, Not Just Submission",
-    desc: "Applicants receive tailored prompts, permit suggestions, and automated documentation like Event Management Plans (EMPs) based on their inputs.",
-    Icon: Lightbulb
+    title: "Digital End-to-End",
+    desc: "From application to payment to permit issuance, everything is digital, secure, and audit-ready.",
+    Icon: Cloud
   },
   {
     title: "All-in-One Platform",
@@ -29,11 +14,27 @@ const HIGHLIGHTS = [
     Icon: Layers
   },
   {
-    title: "Digital End-to-End",
-    desc: "From application to payment to permit issuance, everything is digital, secure, and audit-ready.",
-    Icon: Cloud
+    title: "Smart Guidance, Not Just Submission",
+    desc: "Applicants receive tailored prompts, permit suggestions, and automated documentation like Event Management Plans (EMPs) based on their inputs.",
+    Icon: Lightbulb
+  },
+  {
+    title: "Built-In Safety and Compliance",
+    desc: "Risk assessments, insurance uploads, inspection checklists, conditional approvals—all integrated, version-controlled, and time-stamped.",
+    Icon: ShieldCheck
+  },
+  {
+    title: "Stakeholder-Centric Design",
+    desc: "TheO was built in collaboration with local authorities, statutory bodies, businesses, and event organisers. Every feature supports real-world workflows and reduces friction.",
+    Icon: Users
+  },
+  {
+    title: "Real-Time Communication",
+    desc: "No more phone calls and email chains. TheO supports direct comments, tagging, and instant updates between departments and stakeholders.",
+    Icon: MessageSquare
   },
 ];
+
 
 const iconMap = {
   "Real-Time Communication": MessageSquare,
