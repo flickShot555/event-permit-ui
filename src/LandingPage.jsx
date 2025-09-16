@@ -24,7 +24,7 @@ export default function LandingPage() {
   const navigationType = useNavigationType(); // returns 'POP' | 'PUSH' | 'REPLACE'
   const navigate = useNavigate();
 
-  const sliderImages = ["/images/hero2.png", "/images/3.jpeg", "/images/music.jpg", "/images/performance.jpg"]
+  const sliderImages = ["/images/hero2.png", "/images/3.jpeg", "/images/music.jpg", "/images/Performance.jpg"]
 
   // Refs for intersection observer
   const heroRef = useRef(null)
