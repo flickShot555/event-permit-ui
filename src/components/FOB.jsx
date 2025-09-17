@@ -67,7 +67,7 @@ const FloatingMenu = () => {
           padding: 16px 8px;
           border-radius: 0 8px 8px 0;
           border: none;
-          background-color: #96BBBB;
+          background-color: #324858;
           color: white;
           font-weight: bold;
           box-shadow: 0 4px 6px rgba(0,0,0,0.2);

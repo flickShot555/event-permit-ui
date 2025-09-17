@@ -25,13 +25,17 @@ export default function HowTheoWorksDetailed() {
   const mainRef = useRef(null);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
     const initialScroll =
       (location.state && location.state.scrollY) ||
       Number(sessionStorage.getItem("howitworks:lastScrollY")) ||
       0;
 
     // allow layout to settle
-    window.setTimeout(() => window.scrollTo(0, initialScroll), 40);
+    window.setTimeout(() => window.scrollTo(0, 0), 40);
 
     const saveScrollBeforeLeave = () => {
       sessionStorage.setItem("howitworks:lastScrollY", String(window.scrollY || 0));

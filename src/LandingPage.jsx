@@ -355,7 +355,7 @@ export default function LandingPage() {
           <h3>Cut Processing Time</h3>
           <p>Reduces overall application time by 80%.</p>
         </div>
-
+{/*
         <div className="lp-card">
           <div className="lp-card-row">
             <Landmark className="lp-card-icon" />
@@ -364,14 +364,14 @@ export default function LandingPage() {
           <h3>Trusted Locally</h3>
           <p>Already adopted by Fingal County Council.</p>
         </div>
-
+*/}
         <div className="lp-card">
           <div className="lp-card-row">
             <TrendingUp className="lp-card-icon" />
             <span className="lp-icon-title">Scalable</span>
           </div>
           <h3>National Scalability</h3>
-          <p>Built to scale across all 31 councils in Ireland.</p>
+          <p>Built to scale: locally, regionally & nationally</p>
         </div>
       </div>
 
@@ -381,11 +381,11 @@ export default function LandingPage() {
             so they visually match the first group's cards. */}
 
 
-
+{/** 
       <div className="lp-feature-ctas--bottom" style={{ marginTop: 20 }}>
         <button className="btn-primary">See Real Results</button>
         <button className="btn-secondary-outline">Compare with Paper Process</button>
-      </div>
+      </div>*/}
     </section>
 
 
@@ -448,7 +448,7 @@ export default function LandingPage() {
       */}
 
       {/*new section under the features and benefits section */}
-      <PricingPage />
+      {/*<PricingPage />*/}
 
       {/* ABOUT SECTION */}
       <section
@@ -575,7 +575,7 @@ export default function LandingPage() {
           </nav>
           <div className="lp-footer-col footer-contact footer-contact-spectacular">
             <p><Mail size={16} color="#ffff" style={{ marginRight: 5}} /> hello@theo-platform.com</p>
-            <p><PhoneCall size={16} color="#ffff" style={{ marginRight: 5}} /> +353 1 234 5678</p>
+            {/*<p><PhoneCall size={16} color="#ffff" style={{ marginRight: 5}} /> +353 1 234 5678</p>*/}
             <p><MessageSquare size={16} color="#ffff" style={{ marginRight: 5}} /> Live Chat</p>
             <div className="lp-social">
               <a href="#" className="social-spectacular" style={{ "--delay": "0.1s" }}>

@@ -3,6 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Mail, PhoneCall, MessageSquare, Linkedin, Twitter } from 'lucide-react';
 import ScrollToTopButton from "./ScrollToTopButton";
+import LPFooter from "./MiniFooter";
 
 /**
  * HowItWorksDetaled
@@ -338,6 +339,8 @@ export default function HowItWorksDetailed({
           }
         `}</style>
       </section>
+      <LPFooter />
+      {/** 
       <footer className="lp-footer footer-spectacular">
         <div className="lp-footer-container">
           <img
@@ -356,7 +359,7 @@ export default function HowItWorksDetailed({
                 {item}
               </a>
             ))}
-          </nav>*/}
+          </nav>*/}{/*
           <nav className="lp-nav-links">
             <a href="#home" className="nav-link-entrance" style={{ "--delay": "0.1s" }}>
               Home
@@ -474,7 +477,7 @@ export default function HowItWorksDetailed({
           display: block;
         }
         `}</style>
-      </footer>
+      </footer>*/}
     </div>
   );
 }

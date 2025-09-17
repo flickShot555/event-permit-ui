@@ -2,6 +2,8 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import ScrollToTop from "./components/ScrollToTop";
+
 import LandingPage from './LandingPage';
 //import EventPermitLoginPage from '../backup/EventPermitLoginPage';
 //import SignUpPage from './SignUpPage';
@@ -36,6 +38,8 @@ export default function App() {
     <BrowserRouter>
     {/* Overlay Loader on top for 4 seconds */}
     {showLoader && <Loader />}
+     {/* Scrolls to top when route changes */}
+      <ScrollToTop />
       {/* Mount all routes immediately */}
       <Routes>
         <Route path="/" element={<LandingPage />} />

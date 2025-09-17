@@ -1,6 +1,7 @@
 // src/components/LPFooter.jsx
 import React, { useEffect } from "react";
 import { Mail, PhoneCall, MessageSquare, Linkedin, Twitter } from "lucide-react";
+import { HashLink } from "react-router-hash-link";
 
 /**
  * LPFooter
@@ -25,9 +26,9 @@ export default function LPFooter({
   ],
   contact = {
     email: "hello@theo-platform.com",
-    phone: "+353 1 234 5678",
     liveChatLabel: "Live Chat",
   },
+  //phone: "+353 1 234 5678",
   socialLinks = [
     { href: "#", type: "linkedin", delay: "0.1s" },
     { href: "#", type: "twitter", delay: "0.2s" },
@@ -222,14 +223,15 @@ export default function LPFooter({
 
         <nav className="comp-nav-links footer-nav" aria-label="Footer navigation">
           {navLinks.map((nl, i) => (
-            <a
+            <HashLink
+              smooth
               key={nl.label + i}
-              href={nl.href}
+              to={`/#${nl.href.replace("#", "")}`}   // ensures navigation to home + section
               className="comp-nav-link-entrance"
               style={{ ["--delay"]: nl.delay || `${(i + 1) * 0.1}s` }}
             >
               {nl.label}
-            </a>
+            </HashLink>
           ))}
         </nav>
 

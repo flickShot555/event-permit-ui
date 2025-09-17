@@ -67,7 +67,7 @@ export default function LPHeader({
 
 /* back button */
 .how-back-btn {
-  color: #96BBBB;               /* default text + icon color */
+  color: white;               /* default text + icon color */
   display: inline-flex;
   align-items: center;
   background-color: transparent;
@@ -77,7 +77,7 @@ export default function LPHeader({
   border-radius: 8px;
 }
 
-.how-back-btn:hover { color: white; cursor: pointer; transform: translateY(-1px); }
+.how-back-btn:hover { color: #96BBBB; cursor: pointer; transform: translateY(-1px); }
 
 /* icon inside back button */
 .icon-back {
