@@ -898,6 +898,7 @@ html {
 }
 
 .text-fade-spectacular {
+  text-align: left;
   opacity: 0;
 }
 
@@ -2194,28 +2195,30 @@ html {
 /* Layout wrapper */
 .lp-cta-inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 24px;              /* space between image and content */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  max-width: 100%;
+  margin: 0 0;
+  padding: 60px 4%;
 }
 
 /* Image on the left */
 .cta-image {
   flex: 0 0 160px;        /* fixed width */
-  width: 160px;
+  width: 180px;
   height: auto;
   object-fit: contain;
-  border-radius: 12px;    /* optional */
+  /*border-radius: 12px;     optional */
 }
 
 /* Content (text + footer) takes the remaining space */
 .cta-content {
-  flex: 1 1 auto;
+  width:100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;    /* centers the H2 horizontally */
+  /*justify-content: space-between;*/
 }
 
 /* Keep your existing H2 styles but ensure center alignment 
@@ -2224,6 +2227,13 @@ html {
   text-align: center;     /* centers the h2 within the content block 
 }
 */
+
+.cta-title-holder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .lp-cta-title {
   font-size: 2rem;
@@ -2237,10 +2247,10 @@ html {
 .lp-cta-footer {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   gap: 32px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 
@@ -2254,7 +2264,7 @@ html {
   background-color: #96bbbb;
   color: white;
   font-weight: 600;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
 }

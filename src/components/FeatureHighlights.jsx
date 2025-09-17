@@ -1,5 +1,6 @@
-import React from "react";
+import React , {useState} from "react";
 import "./FeatureHighlights.css";
+import ContactUs from "./ContactUs";
 import { MessageSquare, Users, ShieldCheck, Lightbulb, Layers, Cloud, CheckCircle } from 'lucide-react';
 
 const HIGHLIGHTS = [
@@ -36,6 +37,7 @@ const HIGHLIGHTS = [
 ];
 
 
+
 const iconMap = {
   "Real-Time Communication": MessageSquare,
   "Stakeholder-Centric Design": Users,
@@ -46,6 +48,8 @@ const iconMap = {
 };
 
 const FeatureHighlights = React.forwardRef(function FeatureHighlights({ visible = false }, ref) {
+  const [showContact, setShowContact] = useState(false);
+
   return (
     <div
       ref={ref}
@@ -97,9 +101,10 @@ const FeatureHighlights = React.forwardRef(function FeatureHighlights({ visible 
       </div>
 
       <div className="fh-cta">
-        <button className="fh-btn" type="button">
+        <button className="fh-btn" type="button" onClick={() => setShowContact(true)}>
           Learn More
         </button>
+        <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
       </div>
     </div>
   );

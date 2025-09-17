@@ -13,12 +13,14 @@ import HowLink from "./components/HowLink";
 import PricingPage from "./components/PricingPage";
 import FeatureHighlights from "./components/FeatureHighlights";
 import FloatingMenu from "./components/FOB"
+import ContactUs from "./components/ContactUs";
 
 //import PlatformHighlightsSection from "./components/PlatformHighlightsSection";
 import { MessageCircle, CreditCard, PhoneIncoming, Globe2, Building, Megaphone, ShieldCheck, TrendingUp, Rocket, Landmark } from "lucide-react"
 
 export default function LandingPage() {
   const [showMore, setShowMore] = useState(false)
+  const [showContact, setShowContact] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0)
   const [visibleSections, setVisibleSections] = useState(new Set())
   const navigationType = useNavigationType(); // returns 'POP' | 'PUSH' | 'REPLACE'
@@ -234,7 +236,8 @@ export default function LandingPage() {
         </p>
         <div className="lp-feature-ctas--bottom">
           <button className="btn-primary">Book a demo</button>
-          <button className="btn-secondary-outline">Contact the team</button>
+          <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the team</button>
+          <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
         </div>
       </section>
 
@@ -499,39 +502,36 @@ export default function LandingPage() {
         ref={ctaRef}
         className={`lp-cta ${visibleSections.has("cta") ? "section-visible" : ""}`}
       >
-        <div className="lp-cta-inner">
-          <img
-            src="/images/logo-1.png"    // ← replace this with your real image path
-            alt="Illustration: connecting people and services"
-            className="cta-image"
-            width="180"
-            height="160"
-          />
-
           <div className="cta-content">
+            <img
+              src="/images/logo-1.png"    // ← replace this with your real image path
+              alt="Illustration: connecting people and services"
+              className="cta-image"
+              width="180"
+              height="160"
+            />
+            <div className="cta-title-holder">
             <h2 className="lp-cta-title cta-title-spectacular">
               Connecting People, Permits & Public Services.
             </h2>
-
-            <div className="lp-cta-footer cta-footer-spectacular">
-              <button className="btn-demo cta-button-spectacular">Book Your Demo</button>
-
-              <div className="lp-cta-links">
-                <span
-                  className="lp-cta-link-wrapper cta-link-spectacular"
-                  style={{ "--delay": "0.1s" }}
-                >
-                  <a href="#contact">Contact Integration Team</a>
-                </span>
-                <span
-                  className="lp-cta-link-wrapper cta-link-spectacular"
-                  style={{ "--delay": "0.2s" }}
-                >
-                  <a href="#faqs">Explore FAQs</a>
-                </span>
-              </div>
             </div>
-          </div>
+            
+        </div>
+        <div className="lp-cta-footer cta-footer-spectacular">
+          <button className="btn-demo cta-button-spectacular">Book Your Demo</button>
+          <span
+              className="lp-cta-link-wrapper cta-link-spectacular"
+              style={{ "--delay": "0.1s" }}
+            >
+              <a href="#contact">Contact Integration Team</a>
+            </span>
+            <span
+              className="lp-cta-link-wrapper cta-link-spectacular"
+              style={{ "--delay": "0.2s" }}
+            >
+              <a href="#faqs">Explore FAQs</a>
+            </span>
+
         </div>
       </section>
 
