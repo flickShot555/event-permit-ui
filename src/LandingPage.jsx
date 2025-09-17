@@ -98,6 +98,9 @@ export default function LandingPage() {
     }
   }, [navigationType]);
 
+  const moveToWhy = () => {
+    navigate("/Why-TheO-Works");
+  }
   return (
     <div className="lp">
       <FloatingMenu />
@@ -381,11 +384,14 @@ export default function LandingPage() {
             so they visually match the first group's cards. */}
 
 
-{/** 
+ 
       <div className="lp-feature-ctas--bottom" style={{ marginTop: 20 }}>
-        <button className="btn-primary">See Real Results</button>
-        <button className="btn-secondary-outline">Compare with Paper Process</button>
-      </div>*/}
+        <button className="btn-primary" onClick={moveToWhy}>More Information</button>
+        <button className="btn-secondary-outline">How it works</button>
+        <button className="btn-primary">Book a Demo</button>
+        <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the Team</button>
+        <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
+      </div>
     </section>
 
 
@@ -519,12 +525,8 @@ export default function LandingPage() {
         </div>
         <div className="lp-cta-footer cta-footer-spectacular">
           <button className="btn-demo cta-button-spectacular">Book Your Demo</button>
-          <span
-              className="lp-cta-link-wrapper cta-link-spectacular"
-              style={{ "--delay": "0.1s" }}
-            >
-              <a href="#contact">Contact Integration Team</a>
-            </span>
+          <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the Team</button>
+          <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
             <span
               className="lp-cta-link-wrapper cta-link-spectacular"
               style={{ "--delay": "0.2s" }}

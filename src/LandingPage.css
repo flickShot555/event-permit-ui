@@ -2296,6 +2296,7 @@ html {
 }
 
 .lp-cta-link-wrapper {
+  border: 1px solid #96BBBB;
   display: inline-block;
   position: relative;
   overflow: hidden;

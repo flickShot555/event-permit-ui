@@ -15,6 +15,8 @@ import './index.css'
 import HowItWorksDetailed from './components/HowItWorksDetailed';
 import LearnMoreAboutTheO from './components/LearnMoreAboutTheo';
 import HowTheoWorksDetailed from './components/HowItWorks-Detailed';
+import WhyTheoWorksPage from './components/WhyTheoWorksPage';
+
 //import AdminRoot from "./admin/AdminRoot";
 import AdminAppFromIndex from './Admin/index';
 import UsersFromAdmin from './Admin/pages/Users';
@@ -22,6 +24,7 @@ import ReportsFromAdmin from './Admin/pages/Reports';
 import NotificationsFromAdmin from './Admin/pages/Notifications';
 import SettingsFromAdmin from './Admin/pages/Settings';
 import ActivityLogsFromAdmin from './Admin/pages/ActivityLogs';
+
 
 //super admin
 import SuperAdminApp from './Superadmin/App';
@@ -52,6 +55,14 @@ export default function App() {
           element={
             <Suspense fallback={<div>Loading…</div>}>
               <HowItWorksDetailed />
+            </Suspense>
+          }
+        />
+        <Route
+        path="/Why-Theo-works"
+          element={
+            <Suspense fallback={<div>Loading…</div>}>
+              <WhyTheoWorksPage />
             </Suspense>
           }
         />
