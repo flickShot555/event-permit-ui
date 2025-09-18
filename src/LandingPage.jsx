@@ -601,10 +601,10 @@ export default function LandingPage() {
   style={{ position: "relative", overflow: "visible" }}
 >
   <h1 className="lp-section-title-who title-spectacular">One system. Multiple users. Real impact.</h1>
-  <h3>
+  <p>
     TheO supports the full ecosystem of permitting — making life easier for councils, organisers, agencies, businesses,
     and citizens alike. Click below to see how each stakeholder benefits:
-  </h3>
+  </p>
 
   <div
     className="lp-who-grid"
@@ -886,7 +886,7 @@ export default function LandingPage() {
         <div className="lp-about">
           <div className="lp-about-text about-text-spectacular">
             <h2>About Us</h2>
-            <h4 style={{marginBottom: 20}}>
+            <p style={{marginBottom: 20}}>
               TheO is transforming how local governments, organisers, and the public manage shared spaces.
               Born from real-world industry experience and built in collaboration with councils and agencies, 
               TheO is Ireland’s first unified platform for multi-permit management—streamlining everything from 
@@ -894,7 +894,7 @@ export default function LandingPage() {
 
               Our mission is simple: make permitting easier, safer, and smarter for everyone.
 
-            </h4>
+            </p>
             {/*<ul>
               <li className="about-item-spectacular" style={{ "--delay": "0.1s" }}>
                 Phase 1: National rollout across Ireland

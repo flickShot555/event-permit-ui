@@ -34,27 +34,73 @@
     line-height: 1.45;
     font-size: 0.95rem;
   }
-  
-  .fh-cards {
+
+  .fh-cards-skiipped {
     display: grid;
-    grid-template-columns: repeat(3, minmax(320px, 1fr)); /* 3 columns */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* auto-fit behaves like wrap */
     grid-auto-rows: auto;
     gap: var(--fh-gap);
-    justify-content: center; /* center grid when there is extra width */
+  
+    justify-content: center; /* keeps grid centered when fewer columns fit */
+    align-items: start; /* usually better than center for cards of different heights */
+  
+    padding: 0 2rem 1rem; /* cleaner shorthand for padding */
+    margin-left: 3%;
+  
+    /* remove forced horizontal scroll since wrapping is now handled */
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  .fh-cards {
+    display: grid;
+    /* Always aim for 3 columns */
+    grid-template-columns: repeat(3, 1fr);
+  
+    /* gap shrinks automatically between 1px and 2rem depending on viewport */
+    gap: clamp(1px, 2vw, var(--fh-gap));
+  
+    /* padding also shrinks dynamically */
+    padding: clamp(0.25rem, 2vw, 2rem);
+  
+    justify-content: center;
+    align-items: start;
+  }
+  
+  /* when the screen is too narrow to even fit 3 cols at minimum size, drop to 2 cols */
+  @media (max-width: 960px) {
+    .fh-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* if it gets even smaller, fall back to 1 col */
+  @media (max-width: 640px) {
+    .fh-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /*.fh-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr)); /* 3 columns 
+    grid-auto-rows: auto;
+    gap: var(--fh-gap);
+    justify-content: center; /* center grid when there is extra width 
     align-items: center;
     padding-bottom: 1rem;
     padding-left:2rem;
     margin-left: 3%;
-    /* allow horizontal scrolling if viewport < total grid width (preserves fixed 3x2) */
+    /* allow horizontal scrolling if viewport < total grid width (preserves fixed 3x2) 
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   
-    /* keep vertical overflow visible so scaled/animated cards aren't clipped */
+    /* keep vertical overflow visible so scaled/animated cards aren't clipped 
     overflow-y: visible;
   
-    /* disable flex-specific properties previously used */
+    /* disable flex-specific properties previously used 
     scroll-snap-type: none;
-  }
+  }*/
   
   /* card: base */
   /* Each card: remove the old flex-basis/min-width rules and keep card internals as flex */

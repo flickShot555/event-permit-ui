@@ -1231,7 +1231,7 @@ html {
 .lp-section-title-who {
   font-weight: normal;
   font-size: 2rem;
-  margin: 0 20px;
+  margin: 10px 0 !important;
 }
 
 .lp-works-grid {
