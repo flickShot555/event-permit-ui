@@ -14,7 +14,7 @@ import {
   Clock,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import LPFooter from "./MiniFooter";
+import UpdatedFooter from "./UpdatedFooter";
 import LPHeader from "./MiniHeader";
 
 /**
@@ -251,7 +251,7 @@ export default function WhyTheoWorksPage({
       </main>
 
       {/* optional footer passed in by the caller (keeps its own styles) */}
-      <LPFooter />
+      <UpdatedFooter />
 
       {/* ===== Internal CSS (scoped by unique class names) ===== */}
       <style>{`

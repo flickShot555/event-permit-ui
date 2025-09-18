@@ -3,6 +3,9 @@
 import { useState } from "react"
 import "./PricingPage.css"
 
+import LPHeader from "./MiniHeader"
+import UpdatedFooter from "./UpdatedFooter"
+
 const userTypes = ["Local Authorities", "Businesses", "Event Organisers", "Construction", "Stakeholders", "Vendors"]
 
 const pricingData = {
@@ -578,6 +581,7 @@ export default function PricingPage() {
   return (
     <div className="pricing-page" id="pricing">
       {/* Header */}
+      <LPHeader />
       <div className="header">
         <div className="container">
           <h1 className="main-title">Flexible Plans. Scalable Value.</h1>
@@ -742,6 +746,9 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
+
+      {/**Footer */}
+      <UpdatedFooter />
     </div>
   )
 }

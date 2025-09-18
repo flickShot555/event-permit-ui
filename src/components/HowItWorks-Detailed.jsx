@@ -2,7 +2,7 @@
 //rendered from the hero section
 import React, { useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import LPFooter from "./MiniFooter";      // as requested
+import UpdatedFooter from "./UpdatedFooter";      // as requested
 import LPHeader from "./MiniHeader";      // as requested
 import ScrollToTopButton from "./ScrollToTopButton";
 import {
@@ -264,8 +264,8 @@ export default function HowTheoWorksDetailed() {
         </div>
       </main>
 
-      
-      <LPFooter />
+      <UpdatedFooter />
+
       
     </div>
   );

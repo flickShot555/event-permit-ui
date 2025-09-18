@@ -1,7 +1,8 @@
 // src/components/LearnMoreAboutTheO.jsx
 import React, { useEffect } from "react";
 import LPHeader from "./MiniHeader";
-import LPFooter from "./MiniFooter";
+//import UpdatedFooter from "./UpdatedFooter";
+import UpdatedFooter from "./UpdatedFooter";
 
 /**
  * LearnMoreAboutTheO
@@ -181,7 +182,7 @@ export default function LearnMoreAboutTheO({
         </section>
       </main>
 
-      {showHeaderFooter && <LPFooter />}
+      {showHeaderFooter && <UpdatedFooter />}
     </div>
   );
 }

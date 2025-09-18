@@ -1,0 +1,211 @@
+/* Theme variables (override to match your palette) */
+:root {
+    --footer-bg: #294951;      /* dark teal like your screenshot */
+    --footer-ink: #ffffff;
+    --footer-muted: rgba(255,255,255,0.75);
+    --footer-accent: #9cc5c7;
+    --footer-padding: 28px;
+    --footer-radius: 6px;
+  }
+  
+  /* Main footer */
+  .footer-spectacular {
+    background: var(--footer-bg);
+    color: var(--footer-ink);
+    padding: var(--footer-padding) 20px 0 20px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  
+  /* container layout */
+  .lp-footer-container {
+    
+    gap: 28px;
+    /*align-items: flex-start;*/
+    justify-content: space-between;
+    max-width: 100%;
+    /*margin: 0 auto;*/
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* keep logos responsive */
+  .footer-logo-spectacular {
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* primary nav */
+  .lp-nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+  .lp-nav-links a {
+    color: var(--footer-ink);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+  .lp-nav-links a:hover,
+  .lp-nav-links a:focus {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    outline: none;
+  }
+  
+  /* contact column */
+  .footer-contact p {
+    margin: 6px 0;
+    color: var(--footer-muted);
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  /* social icons */
+  .lp-social {
+    margin-top: 8px;
+    display: flex;
+    padding: 0 !important;
+    gap: 8px;
+  }
+  .social-spectacular {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    text-decoration: none;
+  }
+  
+  /* legal links row */
+  .lp-footer-legal {
+    border-top: 3px solid rgba(255,255,255,0.06);
+    margin-top: 18px;
+    padding: 12px 0 0 0;
+  }
+  .lp-legal-links {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+  }
+  .lp-legal-links a {
+    color: var(--footer-muted);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 8px;
+    border-radius: 4px;
+  }
+  .lp-legal-links a:hover,
+  .lp-legal-links a:focus {
+    color: var(--footer-ink);
+    background: rgba(255,255,255,0.03);
+  }
+  
+  /* cookie settings button looks like a link but accessible */
+  .cookie-settings-button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.04);
+    color: var(--footer-muted);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .cookie-settings-button:hover,
+  .cookie-settings-button:focus {
+    color: var(--footer-ink);
+    outline: none;
+  }
+  
+  /* bottom small print */
+  .lp-footer-bottom {
+    margin-top: 12px;
+    padding: 10px 0 22px;
+  }
+  .lp-footer-bottom-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--footer-muted);
+    padding: 0 20px;
+    font-size: 13px;
+  }
+  
+  /* DPO/email link */
+  .lp-footer-bottom-inner .dpo a {
+    color: var(--footer-ink);
+    text-decoration: underline;
+  }
+
+  /* Right-align the contact column (desktop) and keep it responsive */
+.lp-footer-col.footer-contact.footer-contact-spectacular {
+    display: flex;
+    flex-direction: column;    /* stack items vertically */
+    align-items: flex-end;     /* right-align children horizontally */
+    text-align: right;         /* ensure inline content like <p> is right-aligned */
+    gap: 8px;
+    min-width: 220px;          /* optional: prevents collapsing on narrow layouts */
+    box-sizing: border-box;
+    padding-left: 8px;         /* small spacing from center area */
+  }
+  
+  /* Make sure paragraph/content respects the alignment */
+  .lp-footer-col.footer-contact.footer-contact-spectacular p {
+    margin: 6px 0;
+    color: var(--footer-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end; /* keeps icon + text aligned to the right */
+  }
+  
+  /* Social icons aligned to the right as well */
+  .lp-footer-col.footer-contact.footer-contact-spectacular .lp-social {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+  
+  /* Small-screen: stack and left-align for readability */
+  @media (max-width: 780px) {
+    .lp-footer-col.footer-contact.footer-contact-spectacular {
+      align-items: flex-start;
+      text-align: left;
+      padding-left: 0;
+      width: 100%;
+    }
+    .lp-footer-col.footer-contact.footer-contact-spectacular p,
+    .lp-footer-col.footer-contact.footer-contact-spectacular .lp-social {
+      justify-content: flex-start;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 780px) {
+    .lp-footer-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .lp-nav-links {
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+    .lp-footer-bottom-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+  }
+  

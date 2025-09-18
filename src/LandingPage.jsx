@@ -14,6 +14,7 @@ import PricingPage from "./components/PricingPage";
 import FeatureHighlights from "./components/FeatureHighlights";
 import FloatingMenu from "./components/FOB"
 import ContactUs from "./components/ContactUs";
+import UpdatedFooter from "./components/UpdatedFooter";
 
 //import PlatformHighlightsSection from "./components/PlatformHighlightsSection";
 import { MessageCircle, CreditCard, PhoneIncoming, Globe2, Building, Megaphone, ShieldCheck, TrendingUp, Rocket, Landmark } from "lucide-react"
@@ -539,6 +540,8 @@ export default function LandingPage() {
 
 
       {/* FOOTER */}
+      <UpdatedFooter />
+      {/**
       <footer className="lp-footer footer-spectacular">
         <div className="lp-footer-container">
           <img
@@ -557,7 +560,7 @@ export default function LandingPage() {
                 {item}
               </a>
             ))}
-          </nav>*/}
+          </nav>*/}{/** 
           <nav className="lp-nav-links">
             <a href="#home" className="nav-link-entrance" style={{ "--delay": "0.1s" }}>
               Home
@@ -577,7 +580,7 @@ export default function LandingPage() {
           </nav>
           <div className="lp-footer-col footer-contact footer-contact-spectacular">
             <p><Mail size={16} color="#ffff" style={{ marginRight: 5}} /> hello@theo-platform.com</p>
-            {/*<p><PhoneCall size={16} color="#ffff" style={{ marginRight: 5}} /> +353 1 234 5678</p>*/}
+            {/*<p><PhoneCall size={16} color="#ffff" style={{ marginRight: 5}} /> +353 1 234 5678</p>*/}{/*
             <p><MessageSquare size={16} color="#ffff" style={{ marginRight: 5}} /> Live Chat</p>
             <div className="lp-social">
               <a href="#" className="social-spectacular" style={{ "--delay": "0.1s" }}>
@@ -589,7 +592,7 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }

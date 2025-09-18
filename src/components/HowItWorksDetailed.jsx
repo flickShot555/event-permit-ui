@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Mail, PhoneCall, MessageSquare, Linkedin, Twitter } from 'lucide-react';
 import ScrollToTopButton from "./ScrollToTopButton";
-import LPFooter from "./MiniFooter";
+import UpdatedFooter from "./UpdatedFooter";
 
 /**
  * HowItWorksDetaled
@@ -339,7 +339,8 @@ export default function HowItWorksDetailed({
           }
         `}</style>
       </section>
-      <LPFooter />
+      <UpdatedFooter />
+
       {/** 
       <footer className="lp-footer footer-spectacular">
         <div className="lp-footer-container">
