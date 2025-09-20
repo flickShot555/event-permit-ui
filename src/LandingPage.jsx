@@ -638,7 +638,7 @@ export default function LandingPage() {
   </p>
 
   <div className="lp-feature-ctas--bottom">
-    <button className="btn-primary">Book a demo</button>
+    {/*<button className="btn-primary">Book a demo</button>*/}
     <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the team</button>
     <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
   </div>
@@ -709,10 +709,10 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
-        
+        {/** 
         <a href="#live-demo" className="lp-live-demo demo-link-spectacular">
           → See a Live Demo
-        </a>
+        </a>*/}
         <HowLink>How it works</HowLink>
       </section>
       {/*<HowItWorks howRef={{howRef}} visibleSections={{visibleSections}} />*/}
@@ -809,7 +809,7 @@ export default function LandingPage() {
       <div className="lp-feature-ctas--bottom" style={{ marginTop: 20 }}>
         <button className="btn-primary" onClick={moveToWhy}>More Information</button>
         <button className="btn-secondary-outline">How it works</button>
-        <button className="btn-primary">Book a Demo</button>
+        {/*<button className="btn-primary">Book a Demo</button>*/}
         <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the Team</button>
         <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
       </div>
@@ -945,7 +945,7 @@ export default function LandingPage() {
             
         </div>
         <div className="lp-cta-footer cta-footer-spectacular">
-          <button className="btn-demo cta-button-spectacular">Book Your Demo</button>
+          {/*<button className="btn-demo cta-button-spectacular">Book Your Demo</button>*/}
           <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the Team</button>
           <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
             <span

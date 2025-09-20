@@ -1,0 +1,215 @@
+/* DetailedFeatures.css */
+/* Theme variables for quick tuning */
+:root {
+    --container-padding: 48px;
+    --max-width: 100%;
+    --accent: #96bbbb; /* stronger teal for contrast */
+    --muted: #6b7280;
+    --text: #1f2937;
+    --card-bg: #ffffff;
+    --card-radius: 12px;
+    --card-shadow: 0 8px 20px rgba(16, 24, 40, 0.06);
+    --card-shadow-hover: 0 12px 28px rgba(16, 24, 40, 0.10);
+    --gap: 20px;
+    --icon-size: 32px;
+  }
+  
+  /* Page wrapper */
+  .df-page-wrapper {
+    padding: 0 var(--container-padding);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: var(--text);
+    box-sizing: border-box;
+  }
+  
+  /* Section spacing */
+  .df-section {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+  
+  /* Headings */
+  .df-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--text);
+    line-height: 1.15;
+  }
+  
+  /* Grid for cards */
+  .df-grid {
+    display: grid;
+    gap: var(--gap);
+  }
+  
+  /* specific layout choices */
+  .df-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .df-benefits {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Cards (used for both features & benefits) */
+  .df-card {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    padding: 18px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    outline: none;
+    border: 1px solid rgba(16, 24, 40, 0.03); /* very subtle border to lift */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* hover + keyboard focus */
+  .df-card:hover,
+  .df-card:focus {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow-hover);
+  }
+  
+  .df-card:focus-visible {
+    box-shadow: 0 0 0 4px rgba(11, 114, 133, 0.12);
+  }
+  
+  /* Subheading with inline icon */
+  .df-subheading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+  }
+  
+  /* Icon styling (inline in subheading) */
+  .df-icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex: 0 0 var(--icon-size);
+    transition: transform 0.18s ease;
+  }
+  
+  /* make sure SVGs fill the space */
+  .df-icon > svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* animate icon slightly when parent card is hovered/focused */
+  .df-card:hover .df-icon,
+  .df-card:focus .df-icon {
+    transform: translateY(-3px) scale(1.05);
+  }
+  
+  /* paragraph / text */
+  .df-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: var(--muted);
+  }
+  
+  /* links / explore */
+  .df-explore {
+    text-align: center;
+  }
+  
+  .df-links {
+    margin-top: 20px;
+    display: inline-flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  
+  .df-link {
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: white;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.18s ease, transform 0.12s ease;
+    display: inline-block;
+  }
+  
+  /* hover + focus */
+  .df-link:hover,
+  .df-link:focus {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  
+  .df-link:focus-visible {
+    outline: 3px solid rgba(11, 114, 133, 0.14);
+    outline-offset: 2px;
+  }
+  
+  /* list spacing */
+  .df-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  
+  /* responsive breakpoints */
+  /* desktop -> default sized above */
+  /* medium screens (tablets): fewer columns */
+  @media (max-width: 1100px) {
+    .df-features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .df-benefits {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* small screens (phones): single column and reduce padding */
+  @media (max-width: 700px) {
+    :root {
+      --container-padding: 20px;
+    }
+  
+    .df-page-wrapper {
+      padding-left: var(--container-padding);
+      padding-right: var(--container-padding);
+    }
+  
+    .df-features,
+    .df-benefits {
+      grid-template-columns: 1fr;
+    }
+  
+    .df-heading {
+      font-size: 1.5rem;
+    }
+  
+    .df-card {
+      padding: 14px;
+    }
+  }
+  
+  /* utility: ensure good contrast for text inside cards when background changes */
+  .df-card,
+  .df-link {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  

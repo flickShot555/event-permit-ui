@@ -389,7 +389,7 @@ ${formData.query}
 >
   <optgroup label="Europe">
     {europe.map((c) => (
-      <option key={`${c.iso}-${c.dial_code}`} value={c.dial_code} label={`${c.name} (${c.dial_code})`}>
+      <option key={`${c.iso}-${c.dial_code}`} value={c.dial_code} label={`(${c.dial_code})                ${c.name} `}>
         {c.dial_code}
       </option>
     ))}
@@ -397,7 +397,7 @@ ${formData.query}
 
   <optgroup label="Rest of the World">
     {rest.map((c) => (
-      <option key={`${c.iso}-${c.dial_code}`} value={c.dial_code} label={`${c.name} (${c.dial_code})`}>
+      <option key={`${c.iso}-${c.dial_code}`} value={c.dial_code} label={`(${c.dial_code})                ${c.name} `}>
         {c.dial_code}
       </option>
     ))}
@@ -424,8 +424,8 @@ ${formData.query}
             </div>
 
             <div className="form-group">
-              <label>* Organisation / Company Website
-                <input name="website" type="url" value={formData.website} onChange={handleChange} required />
+              <label>Organisation / Company Website
+                <input name="website" type="url" value={formData.website} onChange={handleChange} />
               </label>
             </div>
 

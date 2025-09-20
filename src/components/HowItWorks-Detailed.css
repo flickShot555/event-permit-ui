@@ -14,6 +14,12 @@
     --transition: 220ms cubic-bezier(.2,.9,.3,1);
     --shadow: 0 8px 20px rgba(16,24,40,0.06);
     --shadow-hover: 0 20px 40px rgba(0,0,0,0.12);
+
+    --hiw-icon: #96bbbb;
+    --hiw-card-radius: 12px;
+    --hiw-gap: 18px;
+    --hiw-shadow-sm: 0 8px 20px rgba(16,24,40,0.04);
+    --hiw-shadow-md: 0 18px 40px rgba(16,24,40,0.08);
   }
   
   /* Page shell */
@@ -559,6 +565,154 @@
     transform: translateY(-2px);
   }
   
+  /* overall spacing */
+.hiw-permits { margin-top: 28px; }
+.hiw-section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: var(--text, #0f172a);
+}
+
+/* ordered list is used for semantics but we style as cards */
+.hiw-permits-list {
+  counter-reset: hiw-groups;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--hiw-gap);
+  grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+}
+
+/* group card */
+.hiw-permit-group {
+  counter-increment: hiw-groups;
+  background: linear-gradient(180deg, #ffffff, #fbfeff);
+  border-radius: var(--hiw-card-radius);
+  padding: 14px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: var(--hiw-shadow-sm);
+  border: 1px solid rgba(15,23,42,0.04);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+/* focus for keyboard users */
+.hiw-permit-group:focus {
+  box-shadow: 0 0 0 4px rgba(150,187,187,0.12), var(--hiw-shadow-sm);
+}
+.hiw-permit-group:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--hiw-shadow-md);
+}
+
+/* circular icon box */
+.hiw-permit-icon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(150,187,187,0.12), rgba(150,187,187,0.06));
+  color: var(--hiw-icon);
+  flex-shrink: 0;
+}
+
+/* icon size */
+.hiw-permit-icon > svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* body: title + items */
+.hiw-permit-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0; /* important so text wraps and doesn't overflow */
+}
+
+/* group title */
+.hiw-permit-group-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text, #0f172a);
+  line-height: 1.15;
+}
+
+/* small numbered badge in top-right (visual only) */
+.hiw-permit-group::after {
+  content: counter(hiw-groups);
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--hiw-icon);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 16px rgba(11,114,133,0.08);
+}
+
+/* items list */
+.hiw-permit-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted, #506070);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* small dot for each item */
+.hiw-permit-items li {
+  position: relative;
+  margin: 6px 0;
+  padding-left: 14px;
+}
+
+/* small dot marker */
+.hiw-permit-items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 7px;
+  height: 7px;
+  background: var(--hiw-icon);
+  border-radius: 50%;
+  display: inline-block;
+  transform: translateY(-2px);
+}
+
+/* ensure long words/urls break and don't expand card */
+.hiw-permit-items li,
+.hiw-permit-group-title {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* responsive: stack cards single column on small screens */
+@media (max-width: 720px) {
+  .hiw-permits-list { grid-template-columns: 1fr; }
+  .hiw-permit-icon { width:48px; height:48px; min-width:48px; }
+  .hiw-permit-icon > svg { width:24px; height:24px; }
+  .hiw-permit-group::after { top:10px; right:10px; width:24px; height:24px; font-size:0.8rem; }
+}
+
   /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
     .hiw-demo-btn,

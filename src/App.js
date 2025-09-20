@@ -16,6 +16,7 @@ import HowItWorksDetailed from './components/HowItWorksDetailed';
 import LearnMoreAboutTheO from './components/LearnMoreAboutTheo';
 import HowTheoWorksDetailed from './components/HowItWorks-Detailed';
 import WhyTheoWorksPage from './components/WhyTheoWorksPage';
+import DetailedFeatures from './components/DetailedFeatures'
 
 //import AdminRoot from "./admin/AdminRoot";
 import AdminAppFromIndex from './Admin/index';
@@ -135,6 +136,14 @@ export default function App() {
             element={
               <Suspense fallback={<div>Loading...</div>}>
                 <SuperAdminApp />
+              </Suspense>
+            }
+        />
+        <Route
+          path='/Detailed-Features'
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <DetailedFeatures />
               </Suspense>
             }
         />

@@ -1,0 +1,86 @@
+.df-page-wrapper {
+    padding: 0 60px;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .df-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .df-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2d2d2d;
+  }
+  
+  .df-feature-block,
+  .df-benefit-block {
+    margin-bottom: 25px;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fafafa;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .df-feature-block:hover,
+  .df-benefit-block:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .df-subheading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1a1a1a;
+  }
+  
+  .df-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #96BBBB; /* blue accent */
+    margin-bottom: 6px;
+  }
+  
+  .df-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: #444;
+  }
+  
+  .df-explore {
+    text-align: center;
+  }
+  
+  .df-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .df-link {
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: white;
+    color: #96BBBB;
+    border: 2px solid #96BBBB;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .df-link:hover {
+    background: white;
+    color: #96BBBB;
+  }
+  

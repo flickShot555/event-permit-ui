@@ -1,4 +1,5 @@
 import React , {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import "./FeatureHighlights.css";
 import ContactUs from "./ContactUs";
 import { MessageSquare, Users, ShieldCheck, Lightbulb, Layers, Cloud, CheckCircle } from 'lucide-react';
@@ -47,7 +48,13 @@ const iconMap = {
   "Digital End-to-End": Cloud,
 };
 
+
 const FeatureHighlights = React.forwardRef(function FeatureHighlights({ visible = false }, ref) {
+  const navigate = useNavigate();
+
+  const movetoDetailedFeatures = () => {
+    navigate("/Detailed-Features");
+  }
   const [showContact, setShowContact] = useState(false);
 
   return (
@@ -101,10 +108,10 @@ const FeatureHighlights = React.forwardRef(function FeatureHighlights({ visible 
       </div>
 
       <div className="fh-cta">
-        <button className="fh-btn" type="button" onClick={() => setShowContact(true)}>
+        <button className="fh-btn" type="button" onClick={movetoDetailedFeatures}>
           Learn More
         </button>
-        <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
+        {/*<ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />*/}
       </div>
     </div>
   );

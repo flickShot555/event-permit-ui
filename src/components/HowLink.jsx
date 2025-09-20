@@ -37,8 +37,10 @@ export default function HowLink({
   display: inline-block;
   overflow: hidden;
   padding: 5px 12px;
+  margin-top : 10px;
   border-radius: 6px;
   color: #96bbbb;
+  border : 2px solid #96BBBB;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
