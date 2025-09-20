@@ -1,27 +1,44 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Compass, Search, FileText, Mail, PhoneCall, MessageSquare } from "lucide-react"
-import { Pencil, CheckCircle, Users } from "lucide-react";
+import React from "react";
+import { 
+  Compass, 
+  Search, 
+  FileText,
+  Building,
+  Megaphone,
+  ShieldCheck,
+  Users,
+  CreditCard,
+  PhoneIncoming,
+  Globe2,
+  Tool,
+  Check,
+  X, } from "lucide-react"
+import { Pencil, CheckCircle } from "lucide-react";
 import { useNavigationType, useNavigate } from "react-router-dom";
 //import HowItWorks from "./components/HowItWorks";
 import { Link } from "react-router-dom"
-import { Linkedin, Twitter } from "lucide-react"
+//import { Linkedin, Twitter } from "lucide-react"
 import "./LandingPage.css"
 import ScrollToTopButton from "./components/ScrollToTopButton"
 import HowLink from "./components/HowLink";
-import PricingPage from "./components/PricingPage";
+//import PricingPage from "./components/PricingPage";
 import FeatureHighlights from "./components/FeatureHighlights";
 import FloatingMenu from "./components/FOB"
 import ContactUs from "./components/ContactUs";
 import UpdatedFooter from "./components/UpdatedFooter";
 
 //import PlatformHighlightsSection from "./components/PlatformHighlightsSection";
-import { MessageCircle, CreditCard, PhoneIncoming, Globe2, Building, Megaphone, ShieldCheck, TrendingUp, Rocket, ToolCase, Check } from "lucide-react";
+import { MessageCircle, TrendingUp, Rocket, ToolCase } from "lucide-react";
 
 
 export default function LandingPage() {
-  const [activeTitle, setActiveTitle] = useState(null);
+  const [activeTitle, setActiveTitle] = useState(null); // hovered/focused card
+  const [modalTitle, setModalTitle] = useState(null); // title shown in modal (null = closed)
+  const prevFocusRef = useRef(null);
+  const modalRef = useRef(null);
   const [showMore, setShowMore] = useState(false)
   const [showContact, setShowContact] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -441,6 +458,126 @@ export default function LandingPage() {
       </>
     ),
   };
+
+  const personaSummaries = {
+    "Local Authorities": [
+      "Fast onboarding: discovery → config → go-live",
+      "Provide list of permit types, workflows & stakeholders",
+      "Decide integrations (CRM, GIS) and data protection needs",
+    ],
+    "Event Organisers & Businesses": [
+      "Find events/works nearby and apply for permits",
+      "Upload docs, track progress, and receive instant updates",
+      "Access vendor marketplace and demo account",
+    ],
+    "Statutory Agencies": [
+      "Receive real-time alerts for permit reviews",
+      "Centralised access to applications, maps and docs",
+      "Add conditions, comments and audit trails",
+    ],
+    "State Agencies": [
+      "Live visibility of events impacting transport/network",
+      "Hotspot mapping and early notifications",
+      "Role-specific alerts and exportable dashboards",
+    ],
+    "Voluntary Services": [
+      "Advance notice for events needing support",
+      "Access site maps, risk assessments and schedules",
+      "Confirm availability and provide feedback",
+    ],
+    "Vendors": [
+      "Dedicated marketplace & verified vendor profiles",
+      "Upload insurance/certificates and get booked",
+      "Reuse documents across permits to save time",
+    ],
+    "Emergency Services": [
+      "Immediate notifications for safety-impacting permits",
+      "Access event details, maps and emergency plans",
+      "Coordinate directly with organisers and councils",
+    ],
+    "Public": [
+      "See approved events, closures and local alerts",
+      "Submit observations or comments on proposals",
+      "No sign-up required to view public information",
+    ],
+  };
+
+  function openModalFor(title) {
+    // store current focused element to restore focus when modal closes
+    prevFocusRef.current = document.activeElement;
+    setModalTitle(title);
+    // optional: close hover summary to avoid visual duplication
+    // setActiveTitle(null);
+    // after modal opens focus handled in effect below
+  }
+
+  function closeModal() {
+    setModalTitle(null);
+    // return focus to previous element
+    if (prevFocusRef.current && typeof prevFocusRef.current.focus === "function") {
+      prevFocusRef.current.focus();
+    }
+  }
+
+  // handle Escape and focus-trap/tab-cycling when modal open
+  useEffect(() => {
+    if (!modalTitle) return;
+
+    const KEY_TAB = 9;
+    function onKey(e) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeModal();
+      } else if (e.keyCode === KEY_TAB) {
+        // basic focus trap: keep focus inside modal
+        const focusable = modalRef.current?.querySelectorAll(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusable || focusable.length === 0) {
+          e.preventDefault();
+          return;
+        }
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        } else if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      }
+    }
+    // after modal opens, focus the modal container or its first focusable
+    setTimeout(() => {
+      if (modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable && focusable.length) {
+          focusable[0].focus();
+        } else {
+          modalRef.current.focus();
+        }
+      }
+    }, 0);
+    window.addEventListener("keydown", onKey);
+    // prevent background scroll
+    const originalOverflow = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.documentElement.style.overflow = originalOverflow || "";
+    };
+
+  }, [modalTitle]);
+
+    // small helper to generate slug (if needed elsewhere)
+    function slugFromTitle(title = "") {
+      return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    }
+
+
   const personas = [
     { icon: Building, title: "Local Authorities", desc: "Internal workflows, audits, inter-department sync.", delay: "0.1s" },
     { icon: Megaphone, title: "Event Organisers & Businesses", desc: "All permits in one place + vendor access.", delay: "0.2s" },
@@ -595,75 +732,180 @@ export default function LandingPage() {
         </div>
       </section>*/}
       <section
-  ref={whoRef}
-  id="who"
-  className={`lp-section--padded ${visibleSections.has("who") ? "section-visible" : ""}`}
-  style={{ position: "relative", overflow: "visible" }}
->
-  <h1 className="lp-section-title-who title-spectacular">One system. Multiple users. Real impact.</h1>
-  <p>
-    TheO supports the full ecosystem of permitting — making life easier for councils, organisers, agencies, businesses,
-    and citizens alike. Click below to see how each stakeholder benefits:
-  </p>
+        ref={whoRef}
+        id="who"
+        className={`lp-section--padded ${visibleSections.has("who") ? "section-visible" : ""}`}
+        style={{ position: "relative", overflow: "visible" }}
+      >
+        <h1 className="lp-section-title-who title-spectacular">One system. Multiple users. Real impact.</h1>
+        <p>
+          TheO supports the full ecosystem of permitting — making life easier for councils, organisers, agencies, businesses,
+          and citizens alike. Click below to see how each stakeholder benefits:
+        </p>
 
-  <div
-    className="lp-who-grid"
-    onMouseLeave={() => setActiveTitle(null)}
-  >
-    {personas.map((item, index) => {
-      const Icon = item.icon;
-      return (
-        <div
-          key={index}
-          className="persona-card persona-spectacular"
-          style={{ "--delay": item.delay }}
-          onMouseEnter={() => setActiveTitle(item.title)}
-          onFocus={() => setActiveTitle(item.title)}
-          onBlur={() => setActiveTitle(null)}
-          tabIndex={0}
-        >
-          <Icon className="persona-icon icon-spectacular" />
-          <div className="persona-content">
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
+
+      <div
+        className="lp-who-grid"
+        onMouseLeave={() => setActiveTitle(null)}
+      >
+        {personas.map((item) => {
+          const Icon = item.icon;
+          const isActive = activeTitle === item.title;
+          return (
+            <div
+              key={item.title}
+              className={`persona-card persona-spectacular ${isActive ? "active" : ""}`}
+              style={{ ["--delay"]: item.delay }}
+              onMouseEnter={() => setActiveTitle(item.title)}
+              onFocus={() => setActiveTitle(item.title)}
+              onBlur={() => setActiveTitle(null)}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActiveTitle((prev) => (prev === item.title ? null : item.title));
+                }
+              }}
+              aria-pressed={isActive}
+              aria-label={item.title}
+            >
+              <Icon className="persona-icon icon-spectacular" />
+              <div className="persona-content">
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Hover panel (kept as your existing class; shows summaries) */}
+        {activeTitle && (
+          <aside
+            className="persona-hover-panel"
+            role="dialog"
+            aria-labelledby="persona-hover-title"
+            onMouseEnter={() => {}}
+            onMouseLeave={() => setActiveTitle(null)}
+          >
+            <div className="panel-header">
+              <Compass size={18} style={{ marginRight: 10 }} />
+              <h4 id="persona-hover-title">{activeTitle}</h4>
+            </div>
+
+            <ul className="panel-list" aria-live="polite">
+              {(personaSummaries[activeTitle] || []).map((b, i) => (
+                <li key={i}>{b}</li>
+              ))}
+            </ul>
+
+            <div className="panel-actions">
+              {/* KEEP btn-readmore class (you said no change needed for this button) */}
+              <button
+                className="btn-readmore"
+                onClick={() => openModalFor(activeTitle)}
+                aria-label={`Read more about ${activeTitle}`}
+              >
+                Read more
+              </button>
+            </div>
+
+            <div className="panel-footer">Quick summary — for full details click <strong>Read more</strong>.</div>
+          </aside>
+        )}
+      </div>
+
+      {/* ---------- Modal (renders when modalTitle is set) ---------- */}
+      {modalTitle && (
+        <div className="pxh-modal-backdrop" role="presentation" onMouseDown={(e) => {
+          // close when clicking outside the modal content
+          if (e.target.classList && e.target.classList.contains("pxh-modal-backdrop")) {
+            closeModal();
+          }
+        }}>
+          <div
+            className="pxh-modal-wrap"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="pxh-modal-title"
+            ref={modalRef}
+            tabIndex={-1}
+          >
+            <header className="pxh-modal-header">
+              <div className="pxh-modal-title-row">
+                <Compass size={20} style={{ marginRight: 10 }} />
+                <h2 id="pxh-modal-title">{modalTitle}</h2>
+              </div>
+              <button
+                className="pxh-close-btn"
+                onClick={closeModal}
+                aria-label="Close details modal"
+              >
+                <X size={18} />
+              </button>
+            </header>
+
+            <div className="pxh-modal-body">
+              {/* content area: long content is scrollable */}
+              <div className="pxh-modal-content">
+                {detailsByTitle[modalTitle] || <p>No details available.</p>}
+              </div>
+            </div>
+
+            <div className="pxh-modal-footer">
+              <div className="pxh-footer-actions">
+                <button className="pxh-btn-secondary" onClick={() => {
+                  // example: close modal and maybe open a contact or trial flow
+                  closeModal();
+                }}>Close</button>
+
+                <a
+                  className="pxh-btn-primary"
+                  
+                  onClick={(e) => {
+                     setShowContact(true)
+                  }}
+                >
+                  Contact us about {modalTitle}
+                </a>
+                <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
+              </div>
+            </div>
           </div>
         </div>
-      );
-    })}
-  </div>
+      )}{/**href={`/personas/${slugFromTitle(modalTitle)}#contact`} */}
 
-  <p style={{ marginTop: 20 }}>
-    TheO Adapts to You - With role-based access and workflow controls, TheO delivers a tailored experience for each user type —
-    while maintaining transparency, consistency, and compliance across the board.
-  </p>
+        <p style={{ marginTop: 20 }}>
+          TheO Adapts to You - With role-based access and workflow controls, TheO delivers a tailored experience for each user type —
+          while maintaining transparency, consistency, and compliance across the board.
+        </p>
 
-  <div className="lp-feature-ctas--bottom">
-    {/*<button className="btn-primary">Book a demo</button>*/}
-    <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the team</button>
-    <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
-  </div>
+        <div className="lp-feature-ctas--bottom">
+          {/*<button className="btn-primary">Book a demo</button>*/}
+          <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the team</button>
+          <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
+        </div>
 
-  {/* Child detail panel that slides up from beneath the parent section */}
-  <div className={`persona-detail-panel ${activeTitle ? "visible" : ""}`} aria-hidden={!activeTitle}>
-    <div className="persona-detail-panel-inner">
-      <div className="persona-detail-header">
-        <h4>{activeTitle || ""}</h4>
-        <button
-          className="persona-detail-close"
-          type="button"
-          onClick={() => setActiveTitle(null)}
-          aria-label="Close details"
-        >
-          ×
-        </button>
-      </div>
+        {/* Child detail panel that slides up from beneath the parent section 
+        <div className={`persona-detail-panel ${activeTitle ? "visible" : ""}`} aria-hidden={!activeTitle}>
+          <div className="persona-detail-panel-inner">
+            <div className="persona-detail-header">
+              <h4>{activeTitle || ""}</h4>
+              <button
+                className="persona-detail-close"
+                type="button"
+                onClick={() => setActiveTitle(null)}
+                aria-label="Close details"
+              >
+                ×
+              </button>
+            </div>
 
-      <div className="persona-detail-body">
-        {activeTitle ? detailsByTitle[activeTitle] : null}
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="persona-detail-body">
+              {activeTitle ? detailsByTitle[activeTitle] : null}
+            </div>
+          </div>
+        </div>*/}
+      </section>
 
 
       {/* HOW IT WORKS */}
