@@ -234,67 +234,67 @@ export default function HowTheoWorksDetailed() {
         </section>
 
         <section className="hiw-permits" aria-labelledby="hiw-permits-title">
-  <h2 id="hiw-permits-title" className="hiw-section-title">
-    Permits &amp; Licences Handled by TheO
-  </h2>
+          <h2 id="hiw-permits-title" className="hiw-section-title">
+            Permits &amp; Licences Handled by TheO
+          </h2>
 
-  <ol className="hiw-permits-list" aria-label="Permits and licences handled by TheO">
-    <li className="hiw-permit-group" >
-      <div className="hiw-permit-icon" aria-hidden="true"><Calendar /></div>
-      <div className="hiw-permit-body">
-        <h3 className="hiw-permit-group-title">Event-Specific Permits</h3>
-        <ul className="hiw-permit-items">
-          <li>Public Event Licences (small, medium, and large events)</li>
-          <li>Indoor &amp; Outdoor Event Licences</li>
-          <li>Temporary Road Closures &amp; Traffic Management Orders</li>
-          <li>Use of Public Spaces (parks, squares, footpaths)</li>
-          <li>Temporary Structure Approvals (stages, marquees, grandstands)</li>
-          <li>Fireworks &amp; Pyrotechnics Display Permits</li>
-          <li>Noise Management Plans &amp; Notifications</li>
-        </ul>
-      </div>
-    </li>
+          <ol className="hiw-permits-list" aria-label="Permits and licences handled by TheO">
+            <li className="hiw-permit-group" >
+              <div className="hiw-permit-icon" aria-hidden="true"><Calendar /></div>
+              <div className="hiw-permit-body">
+                <h3 className="hiw-permit-group-title">Event-Specific Permits</h3>
+                <ul className="hiw-permit-items">
+                  <li>Public Event Licences (small, medium, and large events)</li>
+                  <li>Indoor &amp; Outdoor Event Licences</li>
+                  <li>Temporary Road Closures &amp; Traffic Management Orders</li>
+                  <li>Use of Public Spaces (parks, squares, footpaths)</li>
+                  <li>Temporary Structure Approvals (stages, marquees, grandstands)</li>
+                  <li>Fireworks &amp; Pyrotechnics Display Permits</li>
+                  <li>Noise Management Plans &amp; Notifications</li>
+                </ul>
+              </div>
+            </li>
 
-    <li className="hiw-permit-group" tabIndex={0}>
-      <div className="hiw-permit-icon" aria-hidden="true"><Store /></div>
-      <div className="hiw-permit-body">
-        <h3 className="hiw-permit-group-title">Commercial &amp; Trading Permissions</h3>
-        <ul className="hiw-permit-items">
-          <li>Casual Trading Licences (food stalls, vendors, markets)</li>
-          <li>Food Preparation &amp; Sales Permits (HSE approvals)</li>
-          <li>Alcohol Licences (occasional liquor permits, by-law relaxations)</li>
-          <li>Sampling, Promotions &amp; Merchandising Permits</li>
-          <li>Film &amp; Photography Permits in public spaces</li>
-        </ul>
-      </div>
-    </li>
+            <li className="hiw-permit-group" tabIndex={0}>
+              <div className="hiw-permit-icon" aria-hidden="true"><Store /></div>
+              <div className="hiw-permit-body">
+                <h3 className="hiw-permit-group-title">Commercial &amp; Trading Permissions</h3>
+                <ul className="hiw-permit-items">
+                  <li>Casual Trading Licences (food stalls, vendors, markets)</li>
+                  <li>Food Preparation &amp; Sales Permits (HSE approvals)</li>
+                  <li>Alcohol Licences (occasional liquor permits, by-law relaxations)</li>
+                  <li>Sampling, Promotions &amp; Merchandising Permits</li>
+                  <li>Film &amp; Photography Permits in public spaces</li>
+                </ul>
+              </div>
+            </li>
 
-    <li className="hiw-permit-group" tabIndex={0}>
-      <div className="hiw-permit-icon" aria-hidden="true"><Truck /></div>
-      <div className="hiw-permit-body">
-        <h3 className="hiw-permit-group-title">Transport &amp; Infrastructure Permissions</h3>
-        <ul className="hiw-permit-items">
-          <li>Parking Bay Suspensions</li>
-          <li>Heavy Goods Vehicle (HGV) &amp; Abnormal Load Permits</li>
-          <li>Crane, Hoist &amp; Equipment Placement Permits</li>
-          <li>Scaffolding &amp; Hoarding Permits</li>
-        </ul>
-      </div>
-    </li>
+            <li className="hiw-permit-group" tabIndex={0}>
+              <div className="hiw-permit-icon" aria-hidden="true"><Truck /></div>
+              <div className="hiw-permit-body">
+                <h3 className="hiw-permit-group-title">Transport &amp; Infrastructure Permissions</h3>
+                <ul className="hiw-permit-items">
+                  <li>Parking Bay Suspensions</li>
+                  <li>Heavy Goods Vehicle (HGV) &amp; Abnormal Load Permits</li>
+                  <li>Crane, Hoist &amp; Equipment Placement Permits</li>
+                  <li>Scaffolding &amp; Hoarding Permits</li>
+                </ul>
+              </div>
+            </li>
 
-    <li className="hiw-permit-group" tabIndex={0}>
-      <div className="hiw-permit-icon" aria-hidden="true"><Users /></div>
-      <div className="hiw-permit-body">
-        <h3 className="hiw-permit-group-title">Community &amp; Civic Notifications</h3>
-        <ul className="hiw-permit-items">
-          <li>Protest / Demonstration Notifications</li>
-          <li>Risk Registers &amp; Safety Submissions</li>
-          <li>Public Advertising &amp; Signage Approvals</li>
-        </ul>
-      </div>
-    </li>
-  </ol>
-</section>
+            <li className="hiw-permit-group" tabIndex={0}>
+              <div className="hiw-permit-icon" aria-hidden="true"><Users /></div>
+              <div className="hiw-permit-body">
+                <h3 className="hiw-permit-group-title">Community &amp; Civic Notifications</h3>
+                <ul className="hiw-permit-items">
+                  <li>Protest / Demonstration Notifications</li>
+                  <li>Risk Registers &amp; Safety Submissions</li>
+                  <li>Public Advertising &amp; Signage Approvals</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </section>
 
         <div className="hiw-demo-cta">
           <button

@@ -30,7 +30,7 @@ export default function UpdatedFooter() {
           <a href="#start" className="nav-link-entrance" style={{ "--delay": "0.5s" }}>
             Get Started
           </a>
-        </nav>*/}
+        </nav>
         <nav className="lp-nav-links">
             <HashLink smooth to="/#home" className="nav-link-entrance" style={{ "--delay": "0.1s" }}>
                 Home
@@ -50,11 +50,35 @@ export default function UpdatedFooter() {
             <HashLink smooth to="/#cta" className="nav-link-entrance" style={{ "--delay": "0.6s" }}>
                 CTA
             </HashLink>
-        </nav>
+        </nav>*/}
+              {/* Legal / EU links row */}
+              <div className="lp-footer-legal">
+              <nav className="lp-legal-links" aria-label="Legal and privacy links">
+                  <a href="/disclaimer" target="_blank" rel="noopener noreferrer">Disclaimer</a>
+                  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                  <a href="/cookies" target="_blank" rel="noopener noreferrer">Cookies</a>
+                  <a href="/privacy-policy#gdpr" target="_blank" rel="noopener noreferrer">GDPR</a>
+                  <a href="/data-processing" target="_blank" rel="noopener noreferrer">Data Processing Addendum</a>
+                  <a href="/terms" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+                  <a href="/accessibility" target="_blank" rel="noopener noreferrer">Accessibility</a>
+                  <a href="/sitemap" target="_blank" rel="noopener noreferrer">Sitemap</a>
+                  <button
+                    className="cookie-settings-button"
+                    onClick={() => {
+                      // example - replace with your cookie manager trigger
+                      if (window && window.showCookieSettings) window.showCookieSettings();
+                    }}
+                    aria-label="Open cookie settings"
+                    type="button"
+                  >
+                    Cookie settings
+                  </button>
+                </nav>
+              </div>
 
         <div className="lp-footer-col footer-contact footer-contact-spectacular">
           <p>
-            <Mail size={16} color="#ffff" style={{ marginRight: 5 }} /> hello@theo-platform.com
+            <Mail size={16} color="#ffff" style={{ marginRight: 5 }} /> hello@the-O.io
           </p>
           <p>
             <MessageSquare size={16} color="#ffff" style={{ marginRight: 5 }} /> Live Chat
@@ -71,30 +95,8 @@ export default function UpdatedFooter() {
         </div>
       </div>
 
-      {/* Legal / EU links row */}
-      <div className="lp-footer-legal">
-        <nav className="lp-legal-links" aria-label="Legal and privacy links">
-          <a href="/disclaimer" target="_blank" rel="noopener noreferrer">Disclaimer</a>
-          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-          <a href="/cookies" target="_blank" rel="noopener noreferrer">Cookies</a>
-          <a href="/privacy-policy#gdpr" target="_blank" rel="noopener noreferrer">GDPR</a>
-          <a href="/data-processing" target="_blank" rel="noopener noreferrer">Data Processing Addendum</a>
-          <a href="/terms" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
-          <a href="/accessibility" target="_blank" rel="noopener noreferrer">Accessibility</a>
-          <a href="/sitemap" target="_blank" rel="noopener noreferrer">Sitemap</a>
-          <button
-            className="cookie-settings-button"
-            onClick={() => {
-              // example - replace with your cookie manager trigger
-              if (window && window.showCookieSettings) window.showCookieSettings();
-            }}
-            aria-label="Open cookie settings"
-            type="button"
-          >
-            Cookie settings
-          </button>
-        </nav>
-      </div>
+      {/**a simple grey line */}
+      <div className="empty-div"></div>
 
       {/* Bottom small-print row */}
       <div className="lp-footer-bottom">

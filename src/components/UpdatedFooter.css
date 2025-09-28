@@ -82,8 +82,8 @@
   
   /* legal links row */
   .lp-footer-legal {
-    border-top: 3px solid rgba(255,255,255,0.06);
-    margin-top: 18px;
+    
+    
     padding: 12px 0 0 0;
   }
   .lp-legal-links {
@@ -125,8 +125,13 @@
     outline: none;
   }
   
+  .empty-div {
+    border-top: 3px solid rgba(255,255,255,0.06);
+    margin: 0 50px !important;
+  }
   /* bottom small print */
   .lp-footer-bottom {
+    
     margin-top: 12px;
     padding: 10px 0 22px;
   }

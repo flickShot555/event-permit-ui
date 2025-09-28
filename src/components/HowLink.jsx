@@ -40,10 +40,10 @@ export default function HowLink({
   margin-top : 10px;
   border-radius: 6px;
   color: #96bbbb;
-  border : 2px solid #96BBBB;
+  border : 1px solid #96BBBB;
   text-decoration: none;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 400;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 

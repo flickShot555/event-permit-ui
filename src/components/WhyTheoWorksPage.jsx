@@ -16,6 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import UpdatedFooter from "./UpdatedFooter";
 import LPHeader from "./MiniHeader";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 /**
  * HowTheoWorksPage
@@ -36,6 +37,7 @@ export default function WhyTheoWorksPage({
   return (
     <div className="theo-page-root">
       {/* optional header passed in by the caller (keeps its own styles) */}
+      <ScrollToTopButton />
       <LPHeader />
 
       <main className="theo-page__container" role="main">
@@ -241,9 +243,9 @@ export default function WhyTheoWorksPage({
               <Link to={howItWorksHref} className="btn-demo page-cta">
                 <Check className="btn-icon" /> See How It Works
               </Link>
-
-              <Link to={demoHref} className="btn-demo page-cta outline">
-                <Clock className="btn-icon" /> Try our Demo
+{/**  || lp-about-href about-link-spectacular */}
+              <Link to={demoHref} className="btn-demo-try-demo">
+                <span><Clock className="btn-icon" /> Try our Demo</span>
               </Link>
             </div>
           </section>
@@ -392,7 +394,62 @@ export default function WhyTheoWorksPage({
           color: var(--accent);
           border: 2px solid rgba(50,72,88,0.06);
         }
+        .btn-demo-try-demo {
+          position: relative;
+          overflow: hidden;
+          display: inline-flex;           /* keep icon+text aligned */
+          align-items: center;
+          gap: 10px;                      /* spacing between icon and text */
+          padding: 10px 16px;
+          border: none;
+          border-radius: 10px;
+          background-color: #fff;         /* white initially */
+          color: #96bbbb;                 /* accent text initially */
+          font-weight: 600;
+          text-decoration: none;
+          cursor: pointer;
+          z-index: 0;
+        }
 
+        .btn-demo-try-demo::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background-color: #96bbbb;      /* accent background on hover */
+          z-index: -1;                    /* behind text */
+          transition: left 0.5s ease;
+        }
+
+        .btn-demo-try-demo:hover::before {
+          left: 0;                        /* slide accent in from left */
+        }
+
+        /* inner wrapper for content scaling */
+        .btn-demo-try-demo span {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          transition: transform 0.3s ease;
+        }
+
+        .btn-demo-try-demo:hover span {
+          transform: scale(1.05) !important;         /* only contents scale */
+        }
+
+        .btn-demo-try-demo:hover {
+          color: #fff;                    /* text & icon turn white */
+        }
+
+        .btn-demo-try-demo .btn-icon {
+          transition: color 0.3s ease;
+        }
+
+        .btn-demo-try-demo:hover .btn-icon {
+          color: #fff;                    /* icon turns white on hover */
+        }
         .btn-icon { width: 18px; height: 18px; }
 
         /* responsive */

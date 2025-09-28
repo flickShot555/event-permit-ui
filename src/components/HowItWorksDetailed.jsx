@@ -295,17 +295,17 @@ export default function HowItWorksDetailed({
         <style>{`
           .howitworks-detailed { padding: 20px 18px; background: #fff; color: #1f2937; position: relative;}
           .howitworks-inner { max-width: 90%; margin: 0 auto; }
-          .howitworks-header { text-align: left; margin-bottom: 20px; }
+          .howitworks-header { text-align: left; padding:1.5% 0}
           .howitworks-title { font-size: 1.5rem; margin: 0 0 12px; color: #0f172a; }
           .howitworks-intro { font-size: 1rem; margin: 0 0 6px; line-height: 1.5; color: #374151; }
           .howitworks-intro--muted { color: #6b7280; margin-top: 6px; }
 
-          .process-visual { margin: 20px 0 12px; }
-          .process-steps { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; list-style: none; padding: 0; margin: 0; font-weight: 600; color: #374151; }
+          .process-visual {  padding:1.5% 0  }
+          .process-steps { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; list-style: none; padding: 0; margin: 0; font-weight: 600; color: #374151; }
           .pv-step { background: #f3f4f6; padding: 8px 12px; border-radius: 999px; font-size: 0.9rem; }
           .pv-arrow { color: #9ca3af; font-weight: 700; }
 
-          .steps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 12px; }
+          .steps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 1.5% 0 }
           .step-card { background: #ffffff; border: 1px solid #e6e7ea; padding: 16px; border-radius: 10px; box-shadow: 0 1px 2px rgba(15,23,42,0.03); }
           .step-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
           .step-number { width: 36px; height: 36px; border-radius: 8px; background: #ecfeff; color: #056b6b; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
