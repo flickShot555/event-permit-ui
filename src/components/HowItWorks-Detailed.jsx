@@ -1,9 +1,10 @@
 // HowItWorks-detailed.jsx
 //rendered from the hero section
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import UpdatedFooter from "./UpdatedFooter";      // as requested
 import LPHeader from "./MiniHeader";      // as requested
+import ContactUs from "./ContactUs";
 import ScrollToTopButton from "./ScrollToTopButton";
 import {
   Send,
@@ -21,6 +22,7 @@ import { Calendar, Store, Truck } from "lucide-react";
 import "./HowItWorks-Detailed.css";
 
 export default function HowTheoWorksDetailed() {
+  const [showContact, setShowContact] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const mainRef = useRef(null);
@@ -237,7 +239,7 @@ export default function HowTheoWorksDetailed() {
   </h2>
 
   <ol className="hiw-permits-list" aria-label="Permits and licences handled by TheO">
-    <li className="hiw-permit-group" tabIndex={0}>
+    <li className="hiw-permit-group" >
       <div className="hiw-permit-icon" aria-hidden="true"><Calendar /></div>
       <div className="hiw-permit-body">
         <h3 className="hiw-permit-group-title">Event-Specific Permits</h3>
@@ -300,16 +302,17 @@ export default function HowTheoWorksDetailed() {
             onClick={() => navigate("/demo")}
             aria-label="Try our demo"
           >
-            <PlayCircle className="buttonIcon" size={16} /> Try our Demo
+            <PlayCircle  size={14} /> Try our Demo
           </button>
 
           <button
             className="hiw-contact-btn"
-            onClick={() => navigate("/contact")}
+            onClick={() => setShowContact(true)}
             aria-label="Contact our team"
           >
             <Mail size={16} /> Contact Our Team
           </button>
+          <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
         </div>
       </main>
 
@@ -326,13 +329,13 @@ export default function HowTheoWorksDetailed() {
  */
 function CheckMarkIcon() {
   return <svg className="hiw-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
-    <path d="M20 6L9 17l-5-5" stroke="#2d3748" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M20 6L9 17l-5-5" stroke="#96BBBB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>;
 }
 function EyeIconPlaceholder() {
   // simple eye-shaped placeholder (non-emoji) — visually consistent
   return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
     <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" stroke="#2d3748" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="12" cy="12" r="2.2" fill="#2d3748"/>
+    <circle cx="12" cy="12" r="2.2" fill="#96BBBB"/>
   </svg>;
 }

@@ -1,6 +1,6 @@
 // src/components/LPHeader.jsx
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 /**
@@ -127,8 +127,10 @@ export default function LPHeader({
               <ArrowLeft className="icon-back" aria-hidden="true" />
             </button>
           )}
-
+          <Link to="/">
           <img src={logoSrc} alt={logoAlt} className="lp-logo" />
+          </Link>
+          
         </div>
 
         {/* right side actions (optional) */}

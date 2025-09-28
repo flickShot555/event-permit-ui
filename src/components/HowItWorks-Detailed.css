@@ -467,7 +467,7 @@
   
   /* CTA row */
   .hiw-demo-cta {
-    display: flex;
+    display: inline-flex;
     gap: 12px;
     margin-top: 22px;
     align-items: center;
@@ -479,7 +479,7 @@
     align-items: center;
     padding: 10px 14px;
     border-radius: 10px;
-    border: none;
+    border: 3px solid #96bbbb;
     cursor: pointer;
     font-weight: 600;
     transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
@@ -515,7 +515,8 @@
 .hiw-demo-btn {
     position: relative;
     overflow: hidden;
-    display: inline-block;
+    display: inline-flex;
+    gap: 5px;
     padding: 8px 24px;
     border: none;
     border-radius: 6px;
@@ -556,7 +557,7 @@
     transition: stroke 0.3s ease, transform 0.3s ease;
   }
 
-  .buttonIcon{
+  .DELETEDbuttonIcon{
     margin-top:5px;
   }
   
@@ -649,7 +650,7 @@
 }
 
 /* small numbered badge in top-right (visual only) */
-.hiw-permit-group::after {
+.DELETEDhiw-permit-group::after {
   content: counter(hiw-groups);
   position: absolute;
   top: 12px;

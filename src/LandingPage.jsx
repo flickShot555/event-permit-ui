@@ -597,7 +597,8 @@ export default function LandingPage() {
       {/* NAV */}
       <header className="lp-nav" id="header">
         <div className="lp-nav-container">
-          <img src="/images/logo-3.png" alt="TheO Logo" className="lp-logo logo-entrance" />
+        <Link to="/">
+          <img src="/images/logo-3.png" alt="TheO Logo" className="lp-logo logo-entrance" /></Link>
           <div className="lp-nav-actions">
             <Link to="/login" className="btn-outline btn-entrance" style={{ "--delay": "0.6s" }}>
               Login
@@ -646,7 +647,7 @@ export default function LandingPage() {
                 Explore how it works
               </a>
           </div>
-          <p>TheO is a multi-permit platform for businesses, events, works, and trading—designed to streamline workflows, reduce risk, and ensure smarter governance.</p>
+          <p>TheO is a multi-permit platform for businesses, events, works, and trading -designed to streamline workflows, reduce risk, and ensure smarter governance.</p>
         </div>
         <div className="lp-transforming-image image-slide-spectacular">
           <img src="/images/4.jpeg" alt="Illustration of seamless event planning" />
@@ -809,7 +810,7 @@ export default function LandingPage() {
               </button>
             </div>
 
-            <div className="panel-footer">Quick summary — for full details click <strong>Read more</strong>.</div>
+            {/**<div className="panel-footer">Quick summary — for full details click <strong>Read more</strong>.</div> */}
           </aside>
         )}
       </div>

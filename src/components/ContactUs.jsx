@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./ContactUs.css";
+import Autocomplete from "./Autocomplete";
 //import countryCodes from "../perfectCountryCodes.json"; // <- renamed import to match usage
 
 const stakeholderOptions = [
@@ -18,7 +19,7 @@ const initialFormData = {
   firstName: "",
   surname: "",
   email: "",
-  countryCode: "+92",
+  countryCode: "",
   contactNumber: "",
   organisation: "",
   website: "",
@@ -225,11 +226,15 @@ const Countries = [
   { name: "Zimbabwe", dial_code: "+263", iso: "ZW", region: "Africa" }
 ];
 
+// sort once (handles accents & numeric parts)
+const collator = new Intl.Collator(undefined, { sensitivity: "base", numeric: true });
+const sortedCountries = Countries.slice().sort((a, b) => collator.compare(a.name, b.name));
+
 
 export default function ContactUs({ isOpen, onClose }) {
   // Use countryCodes imported above (guard in case file is empty)
-  const europe = (Countries || []).filter((c) => c.region === "Europe");
-  const rest = (Countries || []).filter((c) => c.region !== "Europe");
+  //const europe = (Countries || []).filter((c) => c.region === "Europe");
+  //const rest = (Countries || []).filter((c) => c.region !== "Europe");
 
   const [formData, setFormData] = useState({ ...initialFormData });
   const [error, setError] = useState("");
@@ -277,7 +282,7 @@ export default function ContactUs({ isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
-
+//!formData.website.trim() ||
     // Basic validation: required fields
     if (
       !formData.firstName.trim() ||
@@ -285,7 +290,6 @@ export default function ContactUs({ isOpen, onClose }) {
       !formData.email.trim() ||
       !formData.contactNumber.trim() ||
       !formData.organisation.trim() ||
-      !formData.website.trim() ||
       !formData.location.trim() ||
       !formData.query.trim()
     ) {
@@ -302,7 +306,7 @@ export default function ContactUs({ isOpen, onClose }) {
     }
 
     // compose mailto
-    const subject = "Contact Form Submission";
+    const subject = "Website query: Contact Us";
     const body = `
 First Name: ${formData.firstName}
 Surname: ${formData.surname}
@@ -317,20 +321,13 @@ Query:
 ${formData.query}
     `;
 
-    const mailto = `mailto:info@the-o.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:hello@the-O.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     try {
       // Attempt to open user's email client (this usually succeeds)
       window.location.href = mailto;
 
-      // mimic success
-      showStatus("success", "Mail sent successfully.");
-      resetForm();
 
-      // optionally close modal after a short delay so user can see the message
-      setTimeout(() => {
-        onClose?.();
-      }, 900);
     } catch (err) {
       // mimic an error
       console.error("mailto error:", err);
@@ -379,42 +376,58 @@ ${formData.query}
 
             {/* Row 2 */}
             <div className="form-group">
-  <label>* Contact Number
-    <div className="phone-input">
-    <select
-  name="countryCode"
-  id="countryCode"
-  value={formData.countryCode}
-  onChange={handleChange}
->
-  <optgroup label="Europe">
-    {europe.map((c) => (
-      <option key={`${c.iso}-${c.dial_code}`} value={c.dial_code} label={`(${c.dial_code})                ${c.name} `}>
-        {c.dial_code}
-      </option>
-    ))}
-  </optgroup>
+              <label>* Contact Number
+{/**                <div className="phone-input">
+                <select
+                  name="countryCode"
+                  id="countryCode"
+                  value={formData.countryCode}
+                  onChange={handleChange}
+                >
+                  
+                  <option value="" disabled>
+                     
+                  </option>
+                  {sortedCountries.map((c) => (
+                    <option key={`${c.iso}-${c.dial_code}`} value={c.dial_code} label={`(${c.dial_code})                ${c.name} `}>
+                    {c.dial_code}
+                    </option>
+                  ))}
+                </select>
 
-  <optgroup label="Rest of the World">
-    {rest.map((c) => (
-      <option key={`${c.iso}-${c.dial_code}`} value={c.dial_code} label={`(${c.dial_code})                ${c.name} `}>
-        {c.dial_code}
-      </option>
-    ))}
-  </optgroup>
-</select>
+                <input
+                  name="contactNumber"
+                  type="tel"
+                  value={formData.contactNumber}
+                  onChange={handleChange}
+                  placeholder="Phone number"
+                  required
+                />
+                </div> */}
+              </label>
+              <div className="phone-input" style={{ display: "flex", gap: 8, alignItems: "center" }}>
+             
 
-      <input
-        name="contactNumber"
-        type="tel"
-        value={formData.contactNumber}
-        onChange={handleChange}
-        placeholder="Phone number"
-        required
-      />
-    </div>
-  </label>
-</div>
+                <div style={{ flex: 1 }}>
+                  <Autocomplete
+                    items={sortedCountries}
+                    getLabel={(c) => `${c.name} (${c.dial_code})`}
+                    placeholder="Search country or code..."
+                    onSelect={(c) => setFormData(prev => ({ ...prev, countryCode: c.dial_code }))}
+                  />
+                </div>
+
+                <input
+                  name="contactNumber"
+                  type="tel"
+                  value={formData.contactNumber}
+                  onChange={handleChange}
+                  placeholder="Phone number"
+                  required
+                  style={{ width: 200, padding: "8px", borderRadius: 6 }}
+                />
+              </div>
+            </div>
 
 
             <div className="form-group">
@@ -431,7 +444,7 @@ ${formData.query}
 
             {/* Row 3 */}
             <div className="form-group">
-              <label>* Location (Country)
+{/**              <label>* Location (Country)
                 <select name="location" value={formData.location} onChange={handleChange} required>
                   <option value="">Select country</option>
                   <option>Pakistan</option>
@@ -440,6 +453,16 @@ ${formData.query}
                   <option>United Arab Emirates</option>
                   <option>Australia</option>
                 </select>
+              </label> */}
+
+              <label>* Location (Country)
+              <Autocomplete
+                items={sortedCountries}
+                getLabel={(c) => c.name}
+                placeholder="Start typing a country..."
+                initialQuery={formData.location || ""}
+                onSelect={(c) => setFormData(prev => ({ ...prev, location: c.name }))}
+              />
               </label>
             </div>
 

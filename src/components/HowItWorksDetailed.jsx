@@ -1,6 +1,6 @@
 // HowItWorksDetaled.jsx
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, Mail, PhoneCall, MessageSquare, Linkedin, Twitter } from 'lucide-react';
 import ScrollToTopButton from "./ScrollToTopButton";
 import UpdatedFooter from "./UpdatedFooter";
@@ -128,7 +128,8 @@ export default function HowItWorksDetailed({
             >
               <ArrowLeft className="icon-back"  aria-hidden="true" />
             </button>
-            <img src="/images/logo-3.png" alt="TheO Logo" className="lp-logo" />
+            <Link to="/"><img src="/images/logo-3.png" alt="TheO Logo" className="lp-logo" /></Link>
+            
           </div>
           <style>{`        
           .lp-nav {
