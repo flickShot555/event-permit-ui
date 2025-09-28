@@ -3,6 +3,29 @@ import React, { useEffect } from "react";
 import LPHeader from "./MiniHeader";
 //import UpdatedFooter from "./UpdatedFooter";
 import UpdatedFooter from "./UpdatedFooter";
+// top of file — add these imports
+import {
+  Building,
+  Megaphone,
+  ShieldCheck,
+  FileText,
+  Users,
+  CreditCard,
+  PhoneIncoming,
+  Globe2,
+} from "lucide-react";
+
+
+const personas = [
+  { icon: Building, title: "Local Authorities", desc: "Internal workflows, audits, inter-department sync.", delay: "0.1s" },
+  { icon: Megaphone, title: "Event Organisers & Businesses", desc: "All permits in one place + vendor access.", delay: "0.2s" },
+  { icon: ShieldCheck, title: "Statutory Agencies", desc: "Real-time alerts, inspection logging, permit conditions.", delay: "0.3s" },
+  { icon: FileText, title: "State Agencies", desc: "Regional oversight, policy monitoring, national visibility.", delay: "0.4s" },
+  { icon: Users, title: "Voluntary Services", desc: "Stay informed and collaborate with agencies in real time.", delay: "0.5s" },
+  { icon: CreditCard, title: "Vendors", desc: "Apply, manage, and track temporary permissions.", delay: "0.6s" },
+  { icon: PhoneIncoming, title: "Emergency Services", desc: "Coordinate response plans and access event details instantly.", delay: "0.7s" },
+  { icon: Globe2, title: "Public", desc: "View verified events, closures, and comment on local plans.", delay: "0.8s" },
+];
 
 /**
  * LearnMoreAboutTheO
@@ -204,28 +227,130 @@ export default function LearnMoreAboutTheO({
     
     /* WHO IT'S FOR grid - fluid layout */
     .lm-grid {
-      display: grid;
-      gap: var(--gap);
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      margin-top: 12px;
-    }
-    
-    /* individual card inside grid */
-    .lm-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.98));
-      padding: 14px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(15,23,42,0.04);
-      box-shadow: 0 6px 16px rgba(15,23,42,0.04);
-      color: var(--text);
-      font-weight: 600;
-      font-size: 0.98rem;
-      transition: transform 180ms ease, box-shadow 180ms ease;
       display: flex;
-      align-items: center;
-      gap: 10px;
+      flex-direction: row;
     }
-    
+    /* Persona card styling (matches the screenshot layout) */
+.lm-grid .lm-card {
+  /* card surface */
+  display: flex;
+  flex-direction: column;
+  align-items: center;           /* center icon + content */
+  text-align: center;            /* center text inside */
+  gap: 12px;
+
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.995));
+  border-radius: 12px;
+  padding: 22px 18px;
+  min-height: var(--lm-equal-height, 160px); /* keep uniform height if you want */
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+  border: 1px solid rgba(16,24,40,0.03);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  color: var(--text);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Lift the whole card on hover / focus */
+.lm-grid .lm-card:hover,
+.lm-grid .lm-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(16,24,40,0.08);
+  border-color: rgba(16,24,40,0.06);
+}
+
+/* keyboard focus-visible */
+.lm-grid .lm-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(11,114,133,0.10);
+}
+
+/* Icon container — keep simple so you can style icon however you like */
+.lm-card-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;           /* subtle rounded background for icon */
+  background: rgba(150,187,187,0.06); /* faint accent halo */
+  color: var(--primary);         /* makes SVG icon use currentColor */
+  flex: 0 0 48px;
+}
+
+/* ensure SVGs fill the icon box */
+.lm-card-icon svg {
+  width: 60%;
+  height: 60%;
+  display: block;
+  stroke-width: 1.6;
+}
+
+/* Title styling */
+.lm-card-title {
+  font-size: 0.86rem;            /* a little compact like screenshot */
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 6px 0 2px;
+  line-height: 1.05;
+  position: relative;
+  padding-bottom: 8px;           /* room for the yellow line */
+}
+
+/* small yellow line centered under the title */
+.lm-card-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 40px;                   /* initial short line like screenshot */
+  height: 2px;                   /* tweak to taste */
+  background: #FDD835;           /* yellow */
+  border-radius: 2px;
+  transition: width 220ms ease;
+  will-change: width;
+}
+
+/* description / supporting text */
+.lm-card-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0;
+  max-width: 18rem;              /* keep lines short and centered */
+  word-wrap: break-word;
+}
+
+/* Expand underline slightly on card hover/focus for subtle interaction */
+.lm-grid .lm-card:hover .lm-card-title::after,
+.lm-grid .lm-card:focus-within .lm-card-title::after {
+  width: 60px;
+}
+
+/* small responsive tweak: reduce padding on small screens */
+@media (max-width: 700px) {
+  .lm-grid .lm-card {
+    padding: 16px;
+    min-height: auto;
+  }
+  .lm-card-desc { max-width: 100%; }
+  .lm-card-title::after { width: 36px; }
+  .lm-grid .lm-card:hover .lm-card-title::after { width: 50px; }
+}
+
+/* Respect reduced motion user preference */
+@media (prefers-reduced-motion: reduce) {
+  .lm-grid .lm-card,
+  .lm-grid .lm-card:hover,
+  .lm-grid .lm-card:focus,
+  .lm-card-title::after {
+    transition: none !important;
+  }
+}
+
     /* lift + stronger shadow on hover/focus */
     .lm-card:hover,
     .lm-card:focus {
@@ -369,14 +494,33 @@ export default function LearnMoreAboutTheO({
 
         <section className="lm-section" aria-labelledby="who-heading">
           <h3 id="who-heading">Who It’s For</h3>
-          <div className="lm-grid" role="list">
-            <div className="lm-card" role="listitem">Local Authorities: Streamline approvals, reduce admin, and unlock planning insights</div>
-            <div className="lm-card" role="listitem">Statutory Agencies: Plan earlier and respond more effectively to risk</div>
-            <div className="lm-card" role="listitem">Businesses & Vendors: Access opportunities and plan around disruptions</div>
-            <div className="lm-card" role="listitem">Event & Construction Organisers: Apply once for all relevant permits</div>
-            <div className="lm-card" role="listitem">Transport & Emergency Services: Monitor hotspots, assign resources, and ensure continuity</div>
-            <div className="lm-card" role="listitem">General Public: Stay informed, submit observations, and build trust in local decisions</div>
+          <div className="lm-grid" role="list" aria-label="Personas list">
+    {personas.map((p) => {
+      const Icon = p.icon;
+      return (
+        <div
+          className="lm-card"
+          role="listitem"
+          aria-label={p.title}
+          key={p.title}
+          style={{
+            /* keep a hook for stagger animations later */
+            animationDelay: p.delay,
+            // you can also set CSS custom prop: "--delay": p.delay
+          }}
+        >
+          <span className="lm-card-icon" aria-hidden="true">
+            <Icon styles={{color: "#96bbbb"}}/>
+          </span>
+
+          <div className="lm-card-body">
+            <div className="lm-card-title">{p.title}</div>
+            <div className="lm-card-desc">{p.desc}</div>
           </div>
+        </div>
+      );
+    })}
+  </div>
         </section>
 
         <div className="lm-div">

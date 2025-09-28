@@ -2511,7 +2511,7 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center;    /* centers the H2 horizontally */
-  /*justify-content: space-between;*/
+  justify-content: space-evenly;
 }
 
 /* Keep your existing H2 styles but ensure center alignment 
@@ -2531,9 +2531,7 @@ html {
 .lp-cta-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #2d3748;
-  margin-top: 0 !important;
-  margin-bottom: 24px;
+  color: #2d3748;  
   text-align: center;     /* centers the h2 within the content block */
 }
 

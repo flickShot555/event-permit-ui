@@ -1180,15 +1180,14 @@ export default function LandingPage() {
               width="180"
               height="160"
             />
-            <div className="cta-title-holder">
             <h2 className="lp-cta-title cta-title-spectacular">
               Connecting People, Permits & Public Services.
             </h2>
-            </div>
+
             
         </div>
-        <div className="lp-cta-footer cta-footer-spectacular">
-          {/*<button className="btn-demo cta-button-spectacular">Book Your Demo</button>*/}
+        {/**<div className="lp-cta-footer cta-footer-spectacular">
+          {/*<button className="btn-demo cta-button-spectacular">Book Your Demo</button>
           <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the Team</button>
           <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
             <span
@@ -1198,7 +1197,7 @@ export default function LandingPage() {
               <a href="#faqs">Explore FAQs</a>
             </span>
 
-        </div>
+        </div> */}
       </section>
 
 
