@@ -1051,7 +1051,7 @@ export default function LandingPage() {
  
       <div className="lp-feature-ctas--bottom" style={{ marginTop: 20 }}>
         <button className="btn-primary" onClick={moveToWhy}>More Information</button>
-        <button className="btn-secondary-outline">How it works</button>
+        <Link to="/how-it-works" className="btn-secondary-outline">How it works</Link>
         {/*<button className="btn-primary">Book a Demo</button>*/}
         <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the Team</button>
         <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />

@@ -244,7 +244,7 @@ const DetailedFeatures = () => {
         </p>
       </section>
 
-      {/* Explore Section */}
+      {/* Explore Section */}{/**
       <section className="df-section df-explore" aria-labelledby="explore-heading">
         <h2 id="explore-heading" className="df-heading">
           Explore TheO
@@ -253,11 +253,11 @@ const DetailedFeatures = () => {
           <a href="#how" className="df-link" aria-label="See How It Works">
             See How It Works
           </a>
-          {/**<a href="#demo" className="df-link" aria-label="Try our Demo">
+          <a href="#demo" className="df-link" aria-label="Try our Demo">
             Try our Demo
-          </a> */}
+          </a> 
         </div>
-      </section>
+      </section>*/}
 
       <UpdatedFooter />
     </div>

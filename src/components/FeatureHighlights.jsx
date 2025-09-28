@@ -7,16 +7,16 @@ import { MessageSquare, Users, ShieldCheck, Lightbulb, Layers, Cloud, CheckCircl
 const HIGHLIGHTS = [
   {
     title: "Digital End-to-End",
-    desc: "From application to payment to permit issuance, everything is digital, secure, and audit-ready.",
+    desc: "From application to payment to permit issuance, everything is digital, secure, audit-ready, and accessible anytime from any device.",
     Icon: Cloud
   },
   {
     title: "All-in-One Platform",
-    desc: "Apply once and manage every permit type from one place. No duplication, no confusion.",
+    desc: "Apply once and manage every permit type from one central platform. No duplication, no confusion—just streamlined coordination.",
     Icon: Layers
   },
   {
-    title: "Smart Guidance, Not Just Submission",
+    title: "Smart Guidance",
     desc: "Applicants receive tailored prompts, permit suggestions, and automated documentation like Event Management Plans (EMPs) based on their inputs.",
     Icon: Lightbulb
   },

@@ -68,6 +68,7 @@
     flex-direction: column;
     gap: 10px;
   }
+
   
   /* hover + keyboard focus */
   .df-card:hover,
@@ -81,7 +82,7 @@
   }
   
   /* Subheading with inline icon */
-  .df-subheading {
+  .df-card .df-subheading {
     font-size: 1.125rem;
     font-weight: 600;
     margin: 0;
@@ -89,6 +90,30 @@
     align-items: center;
     gap: 12px;
     color: var(--text);
+  }
+
+  .df-benefits .df-subheading {
+    position: relative;
+    padding-bottom: 6px; /* space for the 1px line */
+  }
+  
+  /* default thin yellow line (1px) under subheadings in benefits */
+  .df-benefits .df-subheading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;                   /* start at 90% */
+    height: 1px;                  /* thin line */
+    background-color: #FDD835;    /* yellow */
+    transition: width 260ms ease;
+    will-change: width;
+  }
+  
+  /* on hover or keyboard focus of the card, grow to 140% */
+  .df-benefits .df-card:hover .df-subheading::after,
+  .df-benefits .df-card:focus-within .df-subheading::after {
+    width: 90%;
   }
   
   /* Icon styling (inline in subheading) */

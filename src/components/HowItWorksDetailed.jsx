@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, Mail, PhoneCall, MessageSquare, Linkedin, Twitter } from 'lucide-react';
 import ScrollToTopButton from "./ScrollToTopButton";
 import UpdatedFooter from "./UpdatedFooter";
+import LPHeader from "./MiniHeader";
 
 /**
  * HowItWorksDetaled
@@ -116,7 +117,8 @@ export default function HowItWorksDetailed({
   return (
     <div >
     <ScrollToTopButton />
-      <header className="lp-nav">
+    <LPHeader />
+{/**      <header className="lp-nav">
           <div className="lp-nav-container">
           <button
               onClick={() => {
@@ -155,7 +157,7 @@ export default function HowItWorksDetailed({
           }
           .btn.ghost { background: transparent; color: #374151; border: 1px solid #e6e7ea; }
           .how-back-btn {
-            color: #96BBBB;               /* default text + icon color */
+            color: #96BBBB;              
             display: inline-flex;
             align-items: center;
             background-color: transparent;
@@ -164,17 +166,17 @@ export default function HowItWorksDetailed({
             margin:10px;
 
           }
-          .how-back-btn:hover { color: white; cursor: pointer } /* icon will become white on parent hover */
+          .how-back-btn:hover { color: white; cursor: pointer } /* icon will become white on parent hover 
 
-          .icon-back { /* ensures icon follows text color */
+          .icon-back { 
             color: inherit;
-            width: 2rem;    /* controls size if you prefer CSS sizing */
+            width: 2rem;    
             height: 2rem;
           }
 
           .lp-logo {padding-right: 20px;}
           `}</style>
-      </header>
+      </header> */}
       <section
         className="howitworks-detailed"
         aria-labelledby="howitworks-heading"
