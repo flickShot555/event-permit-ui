@@ -235,7 +235,7 @@ const DetailedFeatures = () => {
           Why It Matters
         </h2>
         <p className="df-text">
-          Permitting is about more than permission—it’s about transparency, safety, and trust.
+          Permitting is about more than permission, it’s about transparency, safety, and trust.
           Poor processes lead to delays, confusion, public frustration, and avoidable risk.
         </p>
         <p className="df-text">

@@ -610,7 +610,7 @@ export default function LandingPage() {
         </div> 
       </header>
 
-      {/* HERO */}
+      {/* HERO 
       <section
         ref={heroRef}
         className={`lp-hero ${visibleSections.has("hero") ? "section-visible" : ""}`}
@@ -622,7 +622,47 @@ export default function LandingPage() {
           <p className="hero-subtitle-spectacular">Access permit information and apply online - all from here</p>
           <input type="text" placeholder="Search…" className="lp-search-bar search-spectacular" />
         </div>
-      </section>
+      </section>*/}
+      <div
+      id="heroCarousel"
+      className="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+      data-bs-interval="2000" // 2 seconds per slide
+    >
+      <div className="carousel-inner">
+        {sliderImages.map((img, index) => (
+          <div
+            key={img}
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
+            style={{
+              backgroundImage: `url(${img})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              minHeight: "400px", // adjust to your hero height
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            {/* Your original hero content */}
+            <div className="lp-hero-content d-flex flex-column justify-content-center align-items-center">
+              <h1 className="hero-title">
+                What permit(s) can we help you with?
+              </h1>
+              <p className="hero-subtitle">
+                Access permit information and apply online - all from here
+              </p>
+              <input
+                type="text"
+                placeholder="Search…"
+                className="lp-search-bar"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
 
       {/* TRANSFORMING EVENT PLANNING FRAME */}
       <section
@@ -647,7 +687,7 @@ export default function LandingPage() {
                 Explore how it works
               </a>
           </div>
-          <p>TheO is a multi-permit platform for businesses, events, works, and trading -designed to streamline workflows, reduce risk, and ensure smarter governance.</p>
+          <p>TheO is a multi-permit platform for businesses, events, works, and trading, designed to streamline workflows, reduce risk, and ensure smarter governance.</p>
         </div>
         <div className="lp-transforming-image image-slide-spectacular">
           <img src="/images/4.jpeg" alt="Illustration of seamless event planning" />
@@ -1050,7 +1090,7 @@ export default function LandingPage() {
 
  
       <div className="lp-feature-ctas--bottom" style={{ marginTop: 20 }}>
-        <button className="btn-primary" onClick={moveToWhy}>More Information</button>
+        <button className="btn-secondary-outline" onClick={moveToWhy}>More Information</button>
         <Link to="/how-it-works" className="btn-secondary-outline">How it works</Link>
         {/*<button className="btn-primary">Book a Demo</button>*/}
         <button className="btn-secondary-outline" onClick={() => setShowContact(true)}>Contact the Team</button>
