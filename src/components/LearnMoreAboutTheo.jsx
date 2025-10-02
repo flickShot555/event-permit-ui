@@ -4,6 +4,7 @@ import LPHeader from "./MiniHeader";
 //import UpdatedFooter from "./UpdatedFooter";
 import UpdatedFooter from "./UpdatedFooter";
 import ContactUs from "./ContactUs";
+import DemoContact from "./DemoContact";
 // top of file — add these imports
 import {
   Building,
@@ -44,6 +45,7 @@ export default function LearnMoreAboutTheO({
 }) {
   // inject minimal CSS once
   const [showContact, setShowContact] = useState(false);
+  const [showDemo, setDemo]  = useState(false);
   useEffect(() => {
     if (typeof document === "undefined") return;
     if (document.getElementById("learnmore-styles")) return;
@@ -657,7 +659,8 @@ export default function LearnMoreAboutTheO({
           </p>
 
           <div className="lm-cta">
-            <button className="btn-demo page-cta" onClick={onTryDemo} aria-label="Try our demo"><Clock className="btn-icon" /> Try our Demo</button>
+            <button className="btn-demo page-cta" onClick={() => setDemo(true)} aria-label="Try our demo"><Clock className="btn-icon" /> Try our Demo</button>
+            <DemoContact isOpen={showDemo} onClose={() => setDemo(false)} />
             <button className="btn-demo-try-demo" onClick={() => setShowContact(true)} aria-label="Contact our team">Contact Our Team</button>
             <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
           </div>

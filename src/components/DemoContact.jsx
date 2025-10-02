@@ -231,7 +231,7 @@ const collator = new Intl.Collator(undefined, { sensitivity: "base", numeric: tr
 const sortedCountries = Countries.slice().sort((a, b) => collator.compare(a.name, b.name));
 
 
-export default function ContactUs({ isOpen, onClose }) {
+export default function DemoContact({ isOpen, onClose }) {
   // Use countryCodes imported above (guard in case file is empty)
   //const europe = (Countries || []).filter((c) => c.region === "Europe");
   //const rest = (Countries || []).filter((c) => c.region !== "Europe");
@@ -344,7 +344,7 @@ ${formData.query}
           ✕
         </button>
 
-        <h2 className="contact-title">Contact Us</h2>
+        <h2 className="contact-title">Book a Demo</h2>
 
         {/* status message */}
         {status.type && (

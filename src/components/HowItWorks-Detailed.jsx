@@ -6,6 +6,8 @@ import UpdatedFooter from "./UpdatedFooter";      // as requested
 import LPHeader from "./MiniHeader";      // as requested
 import ContactUs from "./ContactUs";
 import ScrollToTopButton from "./ScrollToTopButton";
+import DemoContact from "./DemoContact";
+
 import {
   Send,
   Zap,
@@ -16,12 +18,14 @@ import {
   ArrowRight,
   PlayCircle,
   Mail,
-  FileText
+  FileText,
+  Clock
 } from "lucide-react";
 import { Calendar, Store, Truck } from "lucide-react";
 import "./HowItWorks-Detailed.css";
 
 export default function HowTheoWorksDetailed() {
+  const [showDemo, setDemo] = useState(false);
   const [showContact, setShowContact] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -296,15 +300,24 @@ export default function HowTheoWorksDetailed() {
           </ol>
         </section>
 
+
         <div className="hiw-demo-cta">
+          
+          {/**
           <button
             className="hiw-demo-btn"
-            onClick={() => navigate("/demo")}
+            onClick={() => setDemo(true)}
             aria-label="Try our demo"
           >
             <PlayCircle  size={14} /> Try our Demo
           </button>
+          
+          */}
 
+          <button className="btn-demo page-cta" onClick={() => setDemo(true)} aria-label="Try our demo"><Clock className="btn-icon" /> Try our Demo</button>
+          <DemoContact isOpen={showDemo} onClose={() => setDemo(false)} />
+
+          {/**
           <button
             className="hiw-contact-btn"
             onClick={() => setShowContact(true)}
@@ -312,6 +325,9 @@ export default function HowTheoWorksDetailed() {
           >
             <Mail size={16} /> Contact Our Team
           </button>
+           */}
+
+          <button className="btn-demo-try-demo" onClick={() => setShowContact(true)} aria-label="Contact our team"> <Mail /> Contact Our Team</button>
           <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
         </div>
       </main>
@@ -322,6 +338,7 @@ export default function HowTheoWorksDetailed() {
     </div>
   );
 }
+
 
 /**
  * Lightweight inline icon components so we avoid failing imports for uncommon icons.

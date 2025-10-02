@@ -1,5 +1,5 @@
 // HowTheoWorksPage.jsx
-import React from "react";
+import React, {useState} from "react";
 import {
   Check,
   Layers,
@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import UpdatedFooter from "./UpdatedFooter";
 import LPHeader from "./MiniHeader";
 import ScrollToTopButton from "./ScrollToTopButton";
+import DemoContact from "./DemoContact";
 
 /**
  * HowTheoWorksPage
@@ -34,6 +35,7 @@ export default function WhyTheoWorksPage({
   demoHref = "/demo",
   howItWorksHref = "/Why-TheO-Works",
 }) {
+  const [showDemo, setDemo] = useState(false);
   return (
     <div className="theo-page-root">
       {/* optional header passed in by the caller (keeps its own styles) */}
@@ -243,10 +245,14 @@ export default function WhyTheoWorksPage({
               <Link to={howItWorksHref} className="btn-demo page-cta">
                 <Check className="btn-icon" /> See How It Works
               </Link>
-{/**  || lp-about-href about-link-spectacular */}
+              <button className="btn-demo page-cta" onClick={() => setDemo(true)} aria-label="Try our demo">
+                <Clock className="btn-icon" /> Try our Demo
+              </button>
+              <DemoContact isOpen={showDemo} onClose={() => setDemo(false)} />
+{/**  || lp-about-href about-link-spectacular 
               <Link to={demoHref} className="btn-demo-try-demo">
                 <span><Clock className="btn-icon" /> Try our Demo</span>
-              </Link>
+              </Link>*/}
             </div>
           </section>
         </article>

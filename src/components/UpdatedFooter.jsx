@@ -85,10 +85,10 @@ export default function UpdatedFooter() {
           </p>
 
           <div className="lp-social">
-            <a href="#" className="social-spectacular" style={{ "--delay": "0.1s" }}>
+            <a href="http://www.linkedin.com/company/theo-technology" className="social-spectacular" style={{ "--delay": "0.1s" }}>
               <Linkedin color="#ffff" />
             </a>
-            <a href="#" className="social-spectacular" style={{ "--delay": "0.2s" }}>
+            <a href="http://X.com/TheOTechies" className="social-spectacular" style={{ "--delay": "0.2s" }}>
               <Twitter color="#ffff" />
             </a>
           </div>

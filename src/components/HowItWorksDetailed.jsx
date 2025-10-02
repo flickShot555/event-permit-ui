@@ -1,11 +1,12 @@
 // HowItWorksDetaled.jsx
-import React from "react";
+import React , {useState} from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, Mail, PhoneCall, MessageSquare, Linkedin, Twitter } from 'lucide-react';
 import ScrollToTopButton from "./ScrollToTopButton";
 import UpdatedFooter from "./UpdatedFooter";
 import LPHeader from "./MiniHeader";
-
+import DemoContact from "./DemoContact";
+import ContactUs from "./ContactUs";
 /**
  * HowItWorksDetaled
  *
@@ -26,6 +27,8 @@ export default function HowItWorksDetailed({
   onTryDemo = () => console.log("Try demo clicked"),
   onContact = () => console.log("Contact clicked"),
 }) {
+  const [showDemo, setDemo] = useState(false);
+  const [showContact, setShowContact] = useState(false);
   const navigate = useNavigate();
   const defaultSteps = [
     {
@@ -278,18 +281,20 @@ export default function HowItWorksDetailed({
           <div className="howitworks-cta">
             <button
               className="btn primary"
-              onClick={onTryDemo}
+              onClick={() => setDemo(true)}
               aria-label="Try our demo"
             >
               Try our Demo
             </button>
+            <DemoContact isOpen={showDemo} onClose={() => setDemo(false)} />
             <button
               className="btn ghost"
-              onClick={onContact}
+              onClick={() => setShowContact(true)}
               aria-label="Contact our team"
             >
               Contact Our Team
             </button>
+            <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
           </div>
         </div>
 

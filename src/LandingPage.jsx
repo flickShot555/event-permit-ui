@@ -1214,7 +1214,7 @@ export default function LandingPage() {
       >
           <div className="cta-content">
             <img
-              src="/images/logo-1.png"    // ← replace this with your real image path
+              src="/images/blue.png"    // ← replace this with your real image path
               alt="Illustration: connecting people and services"
               className="cta-image"
               width="180"
