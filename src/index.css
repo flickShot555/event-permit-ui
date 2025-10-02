@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme variables */
+.app.theme-dark {
+  --bg: #0b0b0b;
+  --text: #fff;
+}
+
+.app.theme-light {
+  --bg: #fff;
+  --text: #111;
+}
+
+/* Optional: actually apply these variables to body/text */
+.app {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
 /* ─── RESPONSIVE OVERRIDES ───────────────────────────────────────────────── */
 /* 1) Make all images/videos/iframes scale down */
 img,
