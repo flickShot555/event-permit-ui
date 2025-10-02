@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./ContactUs.css";
+import "./DemoContact.css";
 import Autocomplete from "./Autocomplete";
 //import countryCodes from "../perfectCountryCodes.json"; // <- renamed import to match usage
 
@@ -306,7 +306,7 @@ export default function ContactUs({ isOpen, onClose }) {
     }
 
     // compose mailto
-    const subject = "Website query: Contact Us";
+    const subject = "Website query: Demo Request";
     const body = `
 First Name: ${formData.firstName}
 Surname: ${formData.surname}

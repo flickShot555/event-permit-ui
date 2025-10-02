@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column;
     /* keep overall sizing in check */
-    max-height: 95vh;
+    max-height: 120vh;
   }
   
   /* Close button */
@@ -60,9 +60,9 @@
   .contact-body {
     border-radius: calc(var(--modal-radius) - 4px);
     padding-right: 6px; /* small inset so scrollbar doesn't overlay text too tightly */
-    overflow-y: auto;
+    overflow-y: hidden;
     /* height: calculated to leave room for header/title/padding and submit button */
-    max-height: calc(95vh - 120px);
+    max-height: calc(100vh - 120px);
   }
   
   /* Firefox scrollbar */
@@ -123,6 +123,7 @@
     font-size: 0.95rem;
     box-sizing: border-box;
     background: #fff;
+    margin-top: 10px;
   }
   .contact-form input:focus,
   .contact-form select:focus,
@@ -138,10 +139,9 @@
     gap: 8px;
   }
   .phone-input select {
-    width: 110px;
-    border-radius: 10px 6px 6px 10px;
+    width: 100px;
+    border-radius: 10px ;
     padding: 10px 8px;
-    border-right: none;
   }
   .phone-input input {
     border-radius: 6px 10px 10px 6px;
@@ -221,4 +221,85 @@
     .phone-input select { width: 95px; }
     .contact-body { max-height: calc(100vh - 160px); }
   }
+  
+
+/* status message (top of modal) */
+.form-status {
+    margin: 6px auto 12px;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    width: calc(100% - 28px);
+    max-width: calc(1250px - 28px);
+  }
+  
+  /* success / error */
+  .status-success {
+    background: rgba(46, 204, 113, 0.12);
+    color: #2e8b57; /* green */
+    border: 1px solid rgba(46, 204, 113, 0.18);
+  }
+  
+  .status-error {
+    background: rgba(255, 99, 71, 0.08);
+    color: #b22222; /* red */
+    border: 1px solid rgba(178, 34, 34, 0.12);
+  }
+  
+  /* reset button style */
+  .reset-btn {
+    background: #ffffff;
+    color: var(--muted);
+    border: 1px solid #d0d0d0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .reset-btn:hover { background: #fafafa; }
+
+  /* container must be relative so overlay can position over the select */
+.phone-input { position: relative; display: flex; align-items: center; gap: 8px; }
+
+/* make select text invisible when overlay is visible, but keep caret/arrow and background */
+.country-select-with-overlay {
+  /* keep current styles, then add: */
+  color: transparent;              /* hide option text when closed (overlay shows dial_code) */
+  -webkit-text-fill-color: transparent; /* for some WebKit browsers */
+  /* ensure the dropdown arrow is still visible; if arrow disappears, remove appearance rules */
+}
+
+/* when control receives focus (user clicked/opened the select), reveal select text and hide overlay */
+.phone-input:focus-within .country-select-with-overlay {
+  color: inherit;                  /* reveal native option text while interacting */
+  -webkit-text-fill-color: initial;
+}
+
+/* overlay styling — adjust padding/font to match your select */
+.country-overlay {
+  position: absolute;
+  left: 0.6rem;                    /* tune to align with select padding */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;            /* clicks still go to native select */
+  font-size: 0.95rem;
+  line-height: 1;
+  white-space: nowrap;
+  padding-right: 0.4rem;
+  background: transparent;
+  color: inherit;                  /* matches surrounding text color */
+}
+
+/* Hide overlay while user is interacting/opening the select */
+.phone-input:focus-within .country-overlay {
+  display: none;
+}
+
+/* make sure input doesn't get covered by overlay — adjust select width if needed */
+.country-select-with-overlay {
+  /* ensure the select still shows its dropdown arrow and fits layout */
+  /* e.g., padding-right to avoid arrow overlap */
+  padding-right: 2.2rem; /* give space for arrow + overlay positioning */
+}
   

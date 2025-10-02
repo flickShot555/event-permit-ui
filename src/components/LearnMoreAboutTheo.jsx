@@ -1,8 +1,9 @@
 // src/components/LearnMoreAboutTheO.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import LPHeader from "./MiniHeader";
 //import UpdatedFooter from "./UpdatedFooter";
 import UpdatedFooter from "./UpdatedFooter";
+import ContactUs from "./ContactUs";
 // top of file — add these imports
 import {
   Building,
@@ -13,6 +14,7 @@ import {
   CreditCard,
   PhoneIncoming,
   Globe2,
+  Clock
 } from "lucide-react";
 
 
@@ -41,6 +43,7 @@ export default function LearnMoreAboutTheO({
   showHeaderFooter = true,
 }) {
   // inject minimal CSS once
+  const [showContact, setShowContact] = useState(false);
   useEffect(() => {
     if (typeof document === "undefined") return;
     if (document.getElementById("learnmore-styles")) return;
@@ -412,6 +415,89 @@ export default function LearnMoreAboutTheO({
     .lead { font-size: 1.05rem; color: var(--muted); max-width: 65ch; }
     .muted { color: var(--muted); }
     
+    .btn-demo-try-demo {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;           /* keep icon+text aligned */
+      align-items: center;
+      gap: 10px;                      /* spacing between icon and text */
+      padding: 10px 16px;
+      border: none;
+      border-radius: 10px;
+      border: 1px solid #96bbbb;
+      background-color: #fff;         /* white initially */
+      color: #96bbbb;                 /* accent text initially */
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      z-index: 0;
+    }
+
+    .btn-demo-try-demo::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #96bbbb;
+      background-color: #96bbbb;      /* accent background on hover */
+      z-index: -1;                    /* behind text */
+      transition: left 0.5s ease;
+    }
+
+    .btn-demo-try-demo:hover::before {
+      left: 0;                        /* slide accent in from left */
+    }
+
+    /* inner wrapper for content scaling */
+    .btn-demo-try-demo span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-demo-try-demo:hover span {
+      transform: scale(1.05) !important;         /* only contents scale */
+    }
+
+    .btn-demo-try-demo:hover {
+      color: #fff;                    /* text & icon turn white */
+    }
+
+    .btn-demo-try-demo .btn-icon {
+      transition: color 0.3s ease;
+    }
+
+    .btn-demo-try-demo:hover .btn-icon {
+      color: #fff;                    /* icon turns white on hover */
+    }
+    .btn-icon { width: 18px; height: 18px; }
+
+    .btn-demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(22, 34, 36, 0.06);
+    }
+    .btn-demo.page-cta .btn-icon { opacity: 0.95; }
+
+    .btn-demo.outline {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid rgba(50,72,88,0.06);
+    }
+
+
     /* responsive tweaks */
     @media (min-width: 960px) {
       .lm-hero {
@@ -433,6 +519,7 @@ export default function LearnMoreAboutTheO({
     
     /* reduce motion for users who prefer it */
     @media (prefers-reduced-motion: reduce) {
+      .btn-demo { padding: 9px 12px; font-size: 0.95rem; border-radius: 8px; }
       .lm-card, .btn, .lm-card:hover, .lm-card:focus { transition: none !important; transform: none !important; }
     }`;
     document.head.appendChild(style);
@@ -570,8 +657,9 @@ export default function LearnMoreAboutTheO({
           </p>
 
           <div className="lm-cta">
-            <button className="btn primary" onClick={onTryDemo} aria-label="Try our demo">Try our Demo</button>
-            <button className="btn ghost" onClick={onContact} aria-label="Contact our team">Contact Our Team</button>
+            <button className="btn-demo page-cta" onClick={onTryDemo} aria-label="Try our demo"><Clock className="btn-icon" /> Try our Demo</button>
+            <button className="btn-demo-try-demo" onClick={() => setShowContact(true)} aria-label="Contact our team">Contact Our Team</button>
+            <ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />
           </div>
         </section>
       </main>
