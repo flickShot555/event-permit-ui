@@ -81,10 +81,10 @@ export default function Autocomplete({
         role="combobox"
         style={{ width: "100%", boxSizing: "border-box" ,border: "1px solid #d0d0d0",
             background: "#fff",
-            marginTop: 10,
-            borderRadius: 16,
-            borderRadius: "10px",
-            fontSize:" 0.95rem", padding: "10px 12px"}}
+            marginTop: 0,
+            borderRadius: 10,
+            
+            fontSize:" 0.95rem", padding: "11px 8px"}}
       />
 
       {open && filtered.length > 0 && (

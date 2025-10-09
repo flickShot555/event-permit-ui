@@ -275,6 +275,7 @@
   
   /* label text clickable and aligned */
   .checkbox-label-text {
+    margin-left: 10px;
     cursor: pointer;
     user-select: none;
     font-weight: 600;

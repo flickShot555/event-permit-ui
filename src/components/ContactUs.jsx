@@ -424,7 +424,7 @@ ${formData.query}
                   onChange={handleChange}
                   placeholder="Phone number"
                   required
-                  style={{ width: 200, padding: "8px", borderRadius: 6 }}
+                  style={{ width: 200, padding: "11px 8px", borderRadius: 10, marginTop: 5, }}
                 />
               </div>
             </div>

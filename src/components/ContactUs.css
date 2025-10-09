@@ -181,6 +181,7 @@
   
   /* ---------- Phone input ---------- */
   .phone-input {
+    margin-top: 0 !important;
     position: relative;
     display: flex;
     align-items: center;
@@ -275,6 +276,7 @@
   
   /* label text clickable and aligned */
   .checkbox-label-text {
+    margin-left:10px;
     cursor: pointer;
     user-select: none;
     font-weight: 600;
