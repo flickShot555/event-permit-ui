@@ -17,10 +17,12 @@ import {
 import "./DetailedFeatures.css";
 import LPHeader from "./MiniHeader";
 import UpdatedFooter from "./UpdatedFooter";
+import FloatingMenu from "./FOB";
 
 const DetailedFeatures = () => {
   return (
     <div className="df-page-wrapper">
+      <FloatingMenu />
       <LPHeader />
 
       {/* Key Features Section */}

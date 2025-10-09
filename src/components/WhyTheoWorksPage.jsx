@@ -18,6 +18,7 @@ import UpdatedFooter from "./UpdatedFooter";
 import LPHeader from "./MiniHeader";
 import ScrollToTopButton from "./ScrollToTopButton";
 import DemoContact from "./DemoContact";
+import FloatingMenu from "./FOB";
 
 /**
  * HowTheoWorksPage
@@ -39,6 +40,7 @@ export default function WhyTheoWorksPage({
   return (
     <div className="theo-page-root">
       {/* optional header passed in by the caller (keeps its own styles) */}
+      <FloatingMenu />
       <ScrollToTopButton />
       <LPHeader />
 

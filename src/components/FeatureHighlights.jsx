@@ -1,7 +1,7 @@
 import React , {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "./FeatureHighlights.css";
-import ContactUs from "./ContactUs";
+import FloatingMenu from "./FOB";
 import { MessageSquare, Users, ShieldCheck, Lightbulb, Layers, Cloud, CheckCircle } from 'lucide-react';
 
 const HIGHLIGHTS = [
@@ -65,6 +65,7 @@ const FeatureHighlights = React.forwardRef(function FeatureHighlights({ visible 
       role="region"
       aria-labelledby="fh-section-title"
     >
+    <FloatingMenu />
       <h1 id="fh-section-title" className="fh-section-title">
         Features &amp; Benefits
       </h1>

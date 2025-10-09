@@ -1,17 +1,18 @@
 import React, { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 
 const FloatingMenu = () => {
   const [open, setOpen] = useState(false);
 
   // Menu items array
   const menuItems = [
-    { label: "Home", href: "#header", delay: "0.1s" },
-    { label: "How it Works", href: "#how", delay: "0.2s" },
-    { label: "Features", href: "#features", delay: "0.3s" },
+    { label: "Home", href: "/#header", delay: "0.1s" },
+    { label: "How it Works", href: "/#how", delay: "0.2s" },
+    { label: "Features", href: "/#features", delay: "0.3s" },
     
-    { label: "Pricing", href: "#pricing", delay: "0.4s" },
-    { label: "Get Started", href: "#start", delay: "0.5s" },
-    { label: "About", href: "#about", delay: "0.6s" },
+    //{ label: "Pricing", href: "/#pricing", delay: "0.4s" },
+    { label: "Get Started", href: "/#start", delay: "0.5s" },
+    { label: "About", href: "/#about", delay: "0.6s" },
   ];
 
   return (
@@ -46,12 +47,14 @@ const FloatingMenu = () => {
               style={{ animationDelay: item.delay }}
               className={open ? "fob-tray-item show" : "fob-tray-item"}
             >
-              <a href={item.href}>{item.label}</a>
+              <HashLink smooth to={item.href}>{item.label}</HashLink>
             </li>
           ))}
         </ul>
       </div>
-
+{/**<HashLink smooth to="/#home" className="nav-link-entrance" style={{ "--delay": "0.1s" }}>
+                Home
+            </HashLink> */}
       {/* Internal Styles */}
       <style>{`
         .fob-button {

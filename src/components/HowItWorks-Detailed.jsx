@@ -7,7 +7,7 @@ import LPHeader from "./MiniHeader";      // as requested
 import ContactUs from "./ContactUs";
 import ScrollToTopButton from "./ScrollToTopButton";
 import DemoContact from "./DemoContact";
-
+import FloatingMenu from "./FOB";
 import {
   Send,
   Zap,
@@ -65,6 +65,7 @@ export default function HowTheoWorksDetailed() {
 
   return (
     <div className="hiw-page">
+      <FloatingMenu />
       <LPHeader />
       <ScrollToTopButton />
 

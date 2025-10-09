@@ -77,18 +77,18 @@ export default function UpdatedFooter() {
               </div>
 
         <div className="lp-footer-col footer-contact footer-contact-spectacular">
-          <p>
-            <Mail size={16} color="#ffff" style={{ marginRight: 5 }} /> hello@the-O.io
+          <p >
+            <Mail size={16} color="#ffff" style={{ marginRight: 5 }} /><a href="mailto:hello@the-O.io" style={{color:"white", textDecoration:'none'}}>hello@the-O.io</a>
           </p>
           <p>
             <MessageSquare size={16} color="#ffff" style={{ marginRight: 5 }} /> Live Chat
           </p>
 
           <div className="lp-social">
-            <a href="http://www.linkedin.com/company/theo-technology" className="social-spectacular" style={{ "--delay": "0.1s" }}>
+            <a href="http://www.linkedin.com/company/theo-technology" target="_blank" className="social-spectacular" style={{ "--delay": "0.1s" }}>
               <Linkedin color="#ffff" />
             </a>
-            <a href="http://X.com/TheOTechies" className="social-spectacular" style={{ "--delay": "0.2s" }}>
+            <a href="http://X.com/TheOTechies" target="_blank" className="social-spectacular" style={{ "--delay": "0.2s" }}>
               <Twitter color="#ffff" />
             </a>
           </div>

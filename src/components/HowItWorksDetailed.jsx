@@ -7,6 +7,7 @@ import UpdatedFooter from "./UpdatedFooter";
 import LPHeader from "./MiniHeader";
 import DemoContact from "./DemoContact";
 import ContactUs from "./ContactUs";
+import FloatingMenu from "./FOB";
 /**
  * HowItWorksDetaled
  *
@@ -119,6 +120,7 @@ export default function HowItWorksDetailed({
 
   return (
     <div >
+    <FloatingMenu />
     <ScrollToTopButton />
     <LPHeader />
 {/**      <header className="lp-nav">

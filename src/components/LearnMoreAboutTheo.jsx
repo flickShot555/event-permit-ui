@@ -5,6 +5,7 @@ import LPHeader from "./MiniHeader";
 import UpdatedFooter from "./UpdatedFooter";
 import ContactUs from "./ContactUs";
 import DemoContact from "./DemoContact";
+import FloatingMenu from "./FOB";
 // top of file — add these imports
 import {
   Building,
@@ -130,6 +131,7 @@ export default function LearnMoreAboutTheO({
       flex: 1 1 320px;      /* prefer ~320px but will shrink on small screens */
       min-width: 0;         /* CRITICAL: lets flex items shrink below their content width */
       box-sizing: border-box;
+      gap:10px;
     }
     
     /* Prevent overflow from long words/URLs */
@@ -234,6 +236,7 @@ export default function LearnMoreAboutTheO({
     .lm-grid {
       display: flex;
       flex-direction: row;
+      gap:10px;
     }
     /* Persona card styling (matches the screenshot layout) */
 .lm-grid .lm-card {
@@ -262,6 +265,7 @@ export default function LearnMoreAboutTheO({
   transform: translateY(-6px);
   box-shadow: 0 14px 36px rgba(16,24,40,0.08);
   border-color: rgba(16,24,40,0.06);
+  border: 1px solid #96bbbb;
 }
 
 /* keyboard focus-visible */
@@ -529,6 +533,7 @@ export default function LearnMoreAboutTheO({
 
   return (
     <div className="learnmore-outer">
+      <FloatingMenu />
       {showHeaderFooter && <LPHeader />}
 
       <main className="learnmore-container" role="main" aria-labelledby="lm-heading">
