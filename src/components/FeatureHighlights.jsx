@@ -94,9 +94,9 @@ const FeatureHighlights = React.forwardRef(function FeatureHighlights({ visible 
               </div>
 
               <div className="fh-card-body">
-                <h3 id={`fh-card-title-${idx}`} className="fh-card-title">
+                <h6 id={`fh-card-title-${idx}`} className="fh-card-title">
                   {h.title}
-                </h3>
+                </h6>
                 <p className="fh-card-desc">{h.desc}</p>
               </div>
 
