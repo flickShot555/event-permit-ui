@@ -220,6 +220,11 @@ export default function LandingPage() {
           <li>Ensure GDPR-compliant record keeping</li>
           <li>Provide a better experience for the public and applicants</li>
         </ul>
+
+        <h5>Flexible Options for Every Council</h5>
+        <p>Whether you're a small team with a paper-based system or a large 
+        metropolitan council with digital infrastructure, TheO adapts to your
+         scale and goals</p>
   
         <p>→ <em>Ready to get started?</em> <strong>[Book a Consultation]</strong> • <strong>[Download the Local Authority Onboarding Pack]</strong></p>
       </>
@@ -269,9 +274,26 @@ export default function LandingPage() {
           <li>Receive alerts for disruptions or local opportunities</li>
           <li>Improve visibility through TheO's vendor marketplace</li>
         </ul>
+
+        <h5>who It's For</h5>
+        <ul>
+          <li>cafés, bars, restaurants</li>
+          <li>Retail stores and shopping centres</li>
+          <li>Independent vendors and pop-ups</li>
+          <li>Food trucks and mobile providers</li>
+          <li>Logistics and delivery teams</li>
+        </ul>
+
+        <h5>ready to Get Started?</h5>
+        <ol>
+          <li>Create your free business profile on TheO</li>
+          <li>Browse upcoming events, works, and opportunities</li>
+          <li>Apply for permits and manage your applications at one place</li>
+        </ol>
   
         <p>→ <strong>[Sign Up Now]</strong> • <strong>[Try our Demo for Your Business]</strong></p>
-        <p>For larger commercial operators contact <a href="mailto:business@theo-platform.com">business@theo-platform.com</a>.</p>
+        <p>For larger commercial operators or organizations managing multiple locations, TheO offers tailored enterprise solutions. Contact us at <a href="mailto:business@theo-platform.com">business@theo-platform.com</a> to learn more.</p>
+        <p><strong>TheO makes local planning work for you.</strong></p>
       </>
     ),
   
@@ -281,7 +303,10 @@ export default function LandingPage() {
         <p><strong>Early Access. Clear Oversight. Smarter Planning.</strong></p>
         <p>
           TheO gives statutory agencies a direct view into upcoming events, works, and permit applications
-          that affect public safety, mobility, and compliance — enabling faster, more coordinated decisions.
+          that affect public safety, mobility, and compliance. Instead of 
+          chasing emails or waiting on late notifications, you’ll get 
+          immediate access to what matters — enabling faster, more 
+          coordinated decisions.
         </p>
   
         <h5>Why Statutory Agencies Use TheO</h5>
@@ -300,19 +325,49 @@ export default function LandingPage() {
           <li>Health & Safety Authority (HSA)</li>
           <li>Environmental Protection Agency (EPA)</li>
           <li>Health Service Executive (HSE)</li>
+          <li>Local authority departments (e.g. planning, transport, emergency response)</li>
+        </ul>
+
+        <h5>TheO Enables You To:</h5>
+        <ul>
+          <li>Identify high-risk activities early and provide preemptive guidance</li>
+          <li>Track permit activity by date, region, risk level, or event type</li>
+          <li>Collaborate with multiple agencies and applicants in one place</li>
+          <li>Set or enforce conditional approvals (e.g. security, crowd control, first aid)</li>
+          <li>Contribute to post-event reporting and continuous improvement</li>
         </ul>
   
         <h5>Key Features for Statutory Reviewers</h5>
         <ul>
-          <li>Stakeholder Tagging & Alerts</li>
-          <li>Smart Forms to ensure the right information is submitted</li>
-          <li>Permit Timeline View</li>
-          <li>Audit Trail of comments and decisions</li>
-          <li>Secure Role-Based Access</li>
+          <li><strong>Stakeholder Tagging:</strong> Automatically alerted when an application involves your remit</li>
+          <li><strong>Smart Forms:</strong> Ensure organisers answer the right questions and submit the correct files</li>
+          <li><strong>Permit Timeline View:</strong> See what is happening, when, and where in real time.</li>
+          <li><strong>Audit Trail: </strong> Every comment, condition, and decision is logged and timestamped.</li>
+          <li><strong>Secure, Role-Based Access:</strong> Only see what’s relevant to your agency or jurisdiction</li>
         </ul>
-  
+
+        <h5>Benefits</h5>
+        <ul>
+          <li>Reduce communication delays and manual chasing.</li>
+          <li>Improve consistency in how permits are reviewed and conditions applied.</li>
+          <li>Strenghten safety outcomes through earlier intervention.</li>
+          <li>Free up resources with centralised & trackable processes.</li>
+          <li>Better coordination acress local and national teams.</li>
+        </ul>
+
+        <h5>How to Get Started</h5>
+        <ol>
+          <li>Request a secure statutory agency account from TheO admin Team.</li>
+          <li>Define your regional coverage and review criteria.</li>
+          <li>Begin receiving alets and reviewing permits in real time.</li>
+          <li>Log feedback and collaboration with other agencies.</li>
+          <li>Monitor ativity across your area and contribute to strategic planning</li>
+        </ol>
+
         <p>→ <strong>[Request Access]</strong> • <strong>[Schedule a Walkthrough]</strong></p>
-        <p>Contact <a href="mailto:statutory@theo-platform.com">statutory@theo-platform.com</a> for enterprise options.</p>
+        <p>For national departments or cross-jurisdictional agencies, TheO can 
+        provide aggregateeed dashboards and custom data access. Contact <a href="mailto:hello@the-O.io">hello@the-O.io</a> to learn more.</p>
+        <p><strong>TheO puts public safety at the centre of every plan.</strong></p>
       </>
     ),
   
@@ -352,31 +407,73 @@ export default function LandingPage() {
         <h4>TheO for Voluntary Services</h4>
         <p><strong>Be Prepared. Stay Informed. Support Safely.</strong></p>
         <p>
-          Voluntary services (Civil Defence, Order of Malta, Irish Red Cross, etc.) get early visibility and access
-          to critical information so teams can plan and deploy safely.
+        Voluntary services like Civil Defence, Order of Malta, the Red 
+        Cross, and other first aid or support teams play a vital role in 
+        the safety and success of public events. TheO ensures your teams 
+        are included in the planning process with early visibility and 
+        access to critical information.
         </p>
   
         <h5>Why Voluntary Services Use TheO</h5>
         <ul>
-          <li>Advance Notice for events needing support</li>
-          <li>Access to key documents: site maps, risk assessments, emergency procedures</li>
-          <li>Defined Roles and better coordination with organisers</li>
-          <li>Efficient Deployment with location & timing data</li>
+          <li><strong>Advance Notice</strong> Get notified when an event or public activity may require your support.</li>
+          <li><strong>Access to key documents:</strong> View event plans, site maps, risk assessments, and emergency procedures.</li>
+          <li><strong>Defined Roles</strong> See where your services are expected and what level of support is requested</li>
+          <li><strong>Improved Coordination:</strong> Communicate directly with organisers and emergency services</li>
+          <li><strong>Efficient Deployment:</strong> Use location and timing data to assign resources where they’re needed most</li>
         </ul>
   
-        <h5>What You Can Do</h5>
+        <h5>What You Can Do in TheO</h5>
         <ul>
           <li>View upcoming events requiring voluntary medical or safety support</li>
           <li>Access logistical and safety documentation</li>
           <li>Confirm availability and provide feedback in-platform</li>
+          <li>Use location and timing data to assign resources where they’re needed most</li>
           <li>Support after-action reviews via shared reporting</li>
         </ul>
   
+        <h5>Key Features for Voluntary Services</h5>
+        <ul>
+          <li><strong>Stakeholder Alerts:</strong> Be tagged on relevant applications for your region.</li>
+          <li><strong>Duty Planning Tools: </strong> See shift times, locations, and estimated attendance.</li>
+          <li><strong>Centralised Access: </strong> No more chasing emails or piecing together event info.</li>
+          <li><strong>Real-Time Changes: </strong> Stay updated on weather plans, location changes, or last-minute decisions.</li>
+          <li><strong>Post-Event Notes: </strong> Upload or review incident reports to support continuous improvement</li>
+        </ul>
+
+        <h5>Who is it for</h5>
+        <ul>
+          <li>Civil defence</li>
+          <li>Order of malta</li>
+          <li>Irish Red Cross</li>
+          <li>First aid volunteers</li>
+          <li>Crowd and welfare support teams</li>
+        </ul>
+
+        <h5>Benefits</h5>
+        <ul>
+          <li>Improve preparedness and reduce gaps in medical or safety coverage</li>
+          <li>Strengthen relationships with organisers and local authorities</li>
+          <li>Ensure clear roles and expectations in advance</li>
+          <li>Improve volunteer experience through structured planning</li>
+          <li>Contribute meaningfully to public safety outcomes</li>
+        </ul>
+
+        <h5>How to Get Started</h5>
+        <ol>
+          <li>Request a secure voluntary services login from TheO support team</li>
+          <li>Define your regional coverage and service capacity</li>
+          <li>Begin receiving alerts for events or activities needing your involvement</li>
+          <li>Access key documentation and liaise with stakeholders in one platform</li>
+          <li>Support event delivery and contribute to post-event reporting</li>
+        </ol>
+
         <p>→ <strong>[Request Access for Your Team]</strong> • <strong>[Schedule a Briefing or Demo]</strong></p>
-        <p>Contact <a href="mailto:voluntary@theo-platform.com">voluntary@theo-platform.com</a> for aggregated reporting tools.</p>
+        <p>For regional or national volunteer organisations, TheO offers aggregated reporting tools and historical access to activity records. Contact <a href="mailto:hello@the-O.io">hello@the-O.io</a> to get started.</p>
+        <p><strong>With TheO, your team is informed, integrated, and ready to serve.</strong></p>
       </>
     ),
-  
+  //info added till here
     "Vendors": (
       <>
         <h4>TheO for Vendors & Service Providers</h4>
