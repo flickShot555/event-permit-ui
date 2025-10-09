@@ -1906,6 +1906,7 @@ html {
   flex-direction: column;
   transform-origin: center;
   animation: pxh-popIn 240ms cubic-bezier(.2,.95,.3,1);
+  padding: 20px 10px;
 }
 
 /* header */
@@ -1951,8 +1952,9 @@ html {
   color: #334153;
   line-height: 1.55;
   margin-bottom: 8px;
+  margin-left: 15px;
 }
-.pxh-modal-content ul { padding-left: 20px; margin-bottom: 8px; }
+.pxh-modal-content ul { padding-left: 40px; margin-bottom: 8px; }
 
 /* footer */
 .pxh-modal-footer {
