@@ -812,7 +812,7 @@ export default function LandingPage() {
           </div>
         ))}
       </div>
-    </div>
+      </div>
 
       {/* TRANSFORMING EVENT PLANNING FRAME */}
       <section
@@ -1146,7 +1146,7 @@ export default function LandingPage() {
         <a href="#live-demo" className="lp-live-demo demo-link-spectacular">
           → See a Live Demo
         </a>*/}
-        <HowLink>How it works</HowLink>
+        <HowLink className="btn-secondary-outline">How it works</HowLink>
       </section>
       {/*<HowItWorks howRef={{howRef}} visibleSections={{visibleSections}} />*/}
 

@@ -98,7 +98,7 @@ export default function HowLink({
   const combinedClassName = `${className ? className + " " : ""}lp-live-demo`;
 
   return (
-    <a href={to} onClick={handleClick} className={combinedClassName} {...rest}>
+    <a href={to} onClick={handleClick} className={className} {...rest}>
       {children}
     </a>
   );
