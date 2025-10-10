@@ -109,7 +109,7 @@ const FeatureHighlights = React.forwardRef(function FeatureHighlights({ visible 
       </div>
 
       <div className="fh-cta">
-        <button className="fh-btn" type="button" onClick={movetoDetailedFeatures}>
+        <button className="btn-secondary-outline" type="button" onClick={movetoDetailedFeatures}>
           Learn More
         </button>
         {/*<ContactUs isOpen={showContact} onClose={() => setShowContact(false)} />*/}

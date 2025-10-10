@@ -405,7 +405,7 @@ ${formData.query}
                 />
                 </div> */}
               </label>
-              <div className="phone-input" style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <div className="phone-input" style={{ display: "flex", gap: 8, alignItems: "center" , marginTop:10}}>
              
 
                 <div style={{ flex: 1 }}>
@@ -424,7 +424,7 @@ ${formData.query}
                   onChange={handleChange}
                   placeholder="Phone number"
                   required
-                  style={{ width: 200, padding: "11px 8px", borderRadius: 10, marginTop: 5, }}
+                  style={{ width: 200, padding: "10px 12px", borderRadius: 10, marginTop: 0, }}
                 />
               </div>
             </div>

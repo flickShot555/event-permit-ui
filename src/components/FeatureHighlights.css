@@ -135,7 +135,7 @@
   /* hover & focus — now matches action-box behaviour */
   .fh-cards .fh-card:hover,
   .fh-cards .fh-card:focus-visible {
-    transform: translateY(-8px) scale(1.03);
+    transform: translateY(-2px) scale(1.03);
     box-shadow: var(--fh-card-shadow-hover);
     z-index: 10;
     cursor: pointer;

@@ -84,7 +84,7 @@ export default function Autocomplete({
             marginTop: 0,
             borderRadius: 10,
             
-            fontSize:" 0.95rem", padding: "11px 8px"}}
+            fontSize:" 0.95rem", padding: "10px 12px"}}
       />
 
       {open && filtered.length > 0 && (
