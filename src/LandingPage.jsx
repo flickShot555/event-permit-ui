@@ -479,25 +479,45 @@ export default function LandingPage() {
         <h4>TheO for Vendors & Service Providers</h4>
         <p><strong>Be Visible. Get Booked. Grow Your Business.</strong></p>
         <p>
-          TheO helps vendors connect with organisers and local authorities looking for trusted suppliers: showcase offerings,
-          manage credentials, and win more work.
+        TheO helps vendors and service providers connect with organisers and local authorities looking for trusted suppliers. Whether you provide staging, fencing, catering, medical cover, signage, traffic management, or any other support services—TheO gives you a central place to showcase your offering, manage credentials, and win more work.
         </p>
   
         <h5>Why Vendors Use TheO</h5>
         <ul>
-          <li>Dedicated Marketplace and verified vendor directory</li>
-          <li>Centralised Profile: upload insurance, certifications, company info</li>
-          <li>Easy Bookings & direct contact from organisers</li>
-          <li>Reuse documents across jobs and permit types</li>
+          <li><strong>Dedicated Marketplace:</strong> List your services in a verified, searchable vendor directory viewed by organisers and councils</li>
+          <li><strong>Centralised Profile:</strong> Upload insurance, certifications, company info, and service categories in one place</li>
+          <li><strong>Easy Bookings:</strong> Respond to vendor call-outs or be contacted directly by organisers</li>
+          <li><strong>Built-in Credibility:</strong> Be seen as a compliant, approved vendor through verified documentation</li>
+          <li><strong>Save Time:</strong>Reuse uploaded documents across jobs and permit types</li>
         </ul>
-  
+
+        <h5>What you can do at TheO</h5>
+        <ul>
+          <li>Create a public or private vendor profile.</li>
+          <li>List your services (e.g. security, barriers, AV, sanitation, lighting, signage, traffic plans, food trucks, etc.)</li>
+          <li>Upload and update ket documents: insurance certs, company registration, health & safety statements, relevant qualifications.</li>
+          <li>Track interest or bookings through your dashboard</li>
+          <li>Receive notifications when event organisers or councils search for your category</li>
+        </ul>
+
         <h5>Marketplace Categories</h5>
         <ul>
-          <li>Infrastructure (stages, tents, fencing)</li>
+          <li>Infrastructure (stages, tents, fencing. toilets)</li>
           <li>Traffic & Safety (marshals, stewards, TM plans)</li>
-          <li>Health & Medical (first aid, medics)</li>
-          <li>Catering (food vendors, mobile services)</li>
-          <li>Sustainability & General Support</li>
+          <li>Health & Medical (first aid, defib hire, medics)</li>
+          <li>Equipment (Av, lighting, signage, power)</li>
+          <li>Catering (food vendors, beverage stands)</li>
+          <li>Sustainability (recycling, water refill stations)</li>
+          <li>General Support (cleaning, waste removal, photography)</li>
+        </ul>
+
+        <h5>Key Features for Vendors</h5>
+        <ul>
+          <li><strong>Verified Status: </strong>Vendors with up-to-date documentation appear as “verified” to organisers and councils</li>
+          <li><strong>Quick Quotes & Inquiries: </strong>Organisers can contact you directly from your listing</li>
+          <li><strong>Smart Filters: </strong>Find opportunities by event type, location, or required services</li>
+          <li><strong>Mobile Friendly: </strong>Manage your vendor profile on the go</li>
+          <li><strong>Activity Log: </strong>Keep track of interest, inquiries, and bookings in one simple view</li>
         </ul>
   
         <p>→ <strong>[Register Your Company]</strong> • <strong>[Try our Demo for Vendors]</strong></p>
@@ -529,29 +549,62 @@ export default function LandingPage() {
         <h4>TheO for the General Public</h4>
         <p><strong>Stay Informed. Get Involved. Be Heard.</strong></p>
         <p>
-          TheO empowers citizens by making local activities more transparent, accessible, and easier to engage with.
-          Check road closures, participate in public consultations, or see what’s happening near you.
-        </p>
+        TheO empowers citizens by making local activities more transparent, accessible, and easier to engage with. Whether you want to check for road closures, participate in public consultations, or simply understand what’s happening in your area—TheO puts real-time information in your hands.</p>
   
         <h5>Why the Public Uses TheO</h5>
         <ul>
-          <li>Live Local Info: approved events, roadworks, and public activities</li>
-          <li>Alerts & Disruptions: notifications about closures and crowds</li>
-          <li>Transparency: see what permits have been issued and what’s pending</li>
-          <li>Public Participation: submit observations or feedback</li>
-          <li>Privacy-Respecting: no sign-up required to view public data</li>
+          <li><strong>Live Local Info:</strong> View approved events, roadworks, and other public activities in your area</li>
+          <li><strong>Alerts & Disruptions: </strong>nGet notified about road closures, noise notices, and crowd events</li>
+          <li><strong>Transparency: </strong>See what permits have been issued and what’s pending</li>
+          <li><strong>Public Participation: </strong>Submit observations or feedback as part of the consultation process</li>
+          <li><strong>Confidence in Safety: </strong>Trust that permitted activities have gone through proper review</li>
         </ul>
   
-        <h5>What You Can Do</h5>
+        <h5>What You Can Do with TheO</h5>
         <ul>
           <li>Search events/works by date, location, or type</li>
           <li>Access permit summaries and responsible parties</li>
           <li>Check impact notifications (noise, traffic, diversions)</li>
-          <li>Participate in consultations and submit comments</li>
-          <li>Subscribe to local alerts</li>
+          <li>Read public notices issued by local authorities</li>
+          <li>Participate in open consultations and make formal submissions</li>
+          <li>Subscribe to alerts for your neighbourhood or route</li>
         </ul>
   
+        <h5>key Features</h5>
+        <ul>
+          <li><strong>Interactive Public Calendar: </strong>View daily, weekly, or monthly activity in your area. Get notified when events you are interested in are planned</li>
+          <li><strong>Map-Based Search: </strong>See what’s planned near your home, school, or commute</li>
+          <li><strong>Consultation Alerts: </strong>Get notified when the public is invited to comment</li>
+          <li><strong>Mobile-Friendly Access: </strong>Stay informed on the go via any device</li>
+          <li><strong>Privacy-Respecting:</strong>No sign-up required to view or access public data</li>
+        </ul>
+
+        <h5>Benefits</h5>
+        <ol>
+          <li>Avoid unnecessary disruptions to your day</li>
+          <li>Make your voice heard in local planning decisions</li>
+          <li>Build community awareness and engagement</li>
+          <li>Understand who is responsible for public activities near you</li>
+          <li>Foster greater trust between residents and local authorities</li>
+        </ol>
+
+        <h5>Who It's For</h5>
+        <ul>
+          <li>Residents of all ages and backgrounds</li>
+          <li>Commuters and transport users</li>
+          <li>Parents, teachers, and community leaders</li>
+          <li>Concerned citizens who want better local transparency</li>
+        </ul>
+
+        <h5>How to Start Using TheO</h5>
+        <ol>
+          <li>Visit your local council’s TheO public portal</li>
+          <li>Search your area or upcoming date range</li>
+          <li>Subscribe to receive alerts or updates</li>
+          <li>Participate in open consultations when relevant</li>
+        </ol>
         <p>→ <strong>[View What’s Happening Near Me]</strong> • <strong>[Submit an Observation or Comment]</strong></p>
+        <p><strong>TheO helps build informed, connected, and empowered communities.</strong></p>
       </>
     ),
   };
